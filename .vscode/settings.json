@@ -1,0 +1,6 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tokenColorCustomizations": {
+    "comments": "#ddff00" // 원하는 색상
+  }
+}

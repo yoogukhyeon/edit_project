@@ -1,24 +1,22 @@
+import Test from 'pages/Test';
+import { GlobalStyle } from 'css/Globalstyles';
+import Layout from 'pages/Layout';
+import Main from 'pages/Main';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Test2 from 'pages/Test2';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Main />}></Route>
+          <Route path="/test" element={<Test />}></Route>
+          <Route path="/Test2" element={<Test2 />}></Route>
+        </Route>
+      </Routes>
     </div>
   );
 }
