@@ -28,5 +28,8 @@ module.exports = {
     'no-continue': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     'import/extensions': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-expressions': 'off',
+    'import/no-extraneous-dependencies': 'off',
   },
 };
