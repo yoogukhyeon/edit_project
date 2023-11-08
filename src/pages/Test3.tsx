@@ -28,7 +28,7 @@ const Test2 = () => {
           // 캔버스에 이미지를 그린다.
           ctx.drawImage(img, 0, 0);
 
-          const pngDataUrl = canvas.toDataURL('image/png');
+          const pngDataUrl = canvas.toDataURL('image/jpeg');
 
           setConvertedImg(pngDataUrl);
         }

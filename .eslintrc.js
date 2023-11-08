@@ -31,5 +31,10 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-unused-expressions': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'no-console': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    'no-require-imports': 'off',
+    'no-alert': 'off',
+    '@typescript-eslint/no-shadow': 'off',
   },
 };

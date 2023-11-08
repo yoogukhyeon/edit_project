@@ -16,11 +16,15 @@ const Main = () => {
   // Handle the `onChange` event of the `file` input
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { files } = e.target;
+
+    // 이진 데이터를 나타내며, 텍스트, 이미지, 오디오, 비디오 등 다양한 형식을 지원합니다
+    // blob 이진데이터를 브라우저 url로 사용하기 위해서 createObjectURL로 변환
+    // Base64는 바이너리 데이터를 문자열로 표현하는 인코딩 방식
     files.length > 0 && setUrl(URL.createObjectURL(files[0]));
   };
 
   return (
-    <div style={{ padding: '0 20px' }}>
+    <div>
       <input type="file" accept=".pdf" onChange={onChange} />
       <div style={{ height: '750px' }}>
         {url ? (
@@ -33,23 +37,6 @@ const Main = () => {
               height: '100%',
             }}
           >
-            <div
-              style={{
-                alignItems: 'center',
-                backgroundColor: '#eeeeee',
-                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
-                display: 'flex',
-                padding: '4px',
-              }}
-            >
-              <Toolbar />
-            </div>
-            <div
-              style={{
-                flex: 1,
-                overflow: 'hidden',
-              }}
-            ></div>
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js">
               <div style={{ height: '750px' }}>
                 <Viewer fileUrl={url} plugins={[defaultLayoutPluginInstance, toolbarPluginInstance]} />

@@ -6,9 +6,13 @@ import { Outlet } from 'react-router-dom';
 const Layout = () => {
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <div style={{ padding: '0 20px' }}>
+        <Header />
+        <div style={{ margin: '20px 0 50px' }}>
+          <Outlet />
+        </div>
+        <Footer />
+      </div>
     </>
   );
 };

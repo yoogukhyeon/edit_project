@@ -5,6 +5,7 @@ import Main from 'pages/Main';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Test2 from 'pages/Test2';
+import Test3 from 'pages/Test3';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Main />}></Route>
           <Route path="/test" element={<Test />}></Route>
           <Route path="/Test2" element={<Test2 />}></Route>
+          <Route path="/Test3" element={<Test3 />}></Route>
         </Route>
       </Routes>
     </div>
