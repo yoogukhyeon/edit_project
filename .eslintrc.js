@@ -36,5 +36,7 @@ module.exports = {
     'no-require-imports': 'off',
     'no-alert': 'off',
     '@typescript-eslint/no-shadow': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+    'no-empty-pattern': 'off',
   },
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { styled } from 'styled-components';
+import ThemeButton from './ThemeButton';
 
 const Header = () => {
   return (
@@ -30,6 +31,7 @@ const Header = () => {
               </NavLink>
             </Li>
           </ul>
+          <ThemeButton />
         </nav>
       </div>
     </div>
