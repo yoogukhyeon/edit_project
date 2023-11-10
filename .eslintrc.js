@@ -38,5 +38,6 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     'no-empty-pattern': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 };

@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
-import { Viewer, Worker } from '@react-pdf-viewer/core';
+import { LocalizationMap, Viewer, Worker, CharacterMap, SpecialZoomLevel } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
+import ko_KR from '@react-pdf-viewer/locales/lib/ko_KR.json';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+
+const characterMap: CharacterMap = {
+  isCompressed: true,
+  // The url has to end with "/"
+  url: 'https://unpkg.com/pdfjs-dist@2.6.347/cmaps/',
+};
 
 const Main = () => {
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
@@ -39,7 +46,13 @@ const Main = () => {
           >
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js">
               <div style={{ height: '750px' }}>
-                <Viewer fileUrl={url} plugins={[defaultLayoutPluginInstance, toolbarPluginInstance]} />
+                <Viewer
+                  characterMap={characterMap}
+                  localization={ko_KR as unknown as LocalizationMap}
+                  fileUrl={url}
+                  plugins={[defaultLayoutPluginInstance, toolbarPluginInstance]}
+                  defaultScale={SpecialZoomLevel.PageFit}
+                />
               </div>
             </Worker>
           </div>
