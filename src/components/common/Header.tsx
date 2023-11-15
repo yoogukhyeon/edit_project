@@ -5,8 +5,12 @@ import ThemeButton from './ThemeButton';
 
 const Header = () => {
   return (
-    <div>
-      <h1>헤더</h1>
+    <div className="pt-3">
+      <div className="flex justify-between items-center">
+        <h1>웹툴 모음집</h1>
+        <ThemeButton />
+      </div>
+
       <div>
         <nav className="py-4 text-sm font-medium">
           <ul className="flex space-x-3">
@@ -31,7 +35,6 @@ const Header = () => {
               </NavLink>
             </Li>
           </ul>
-          <ThemeButton />
         </nav>
       </div>
     </div>

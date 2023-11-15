@@ -9,3 +9,7 @@ body {
 svg {
   @apply text-black dark:text-white;
 }
+
+a {
+  @apply text-black;
+}
