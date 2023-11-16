@@ -1,3 +1,5 @@
+import Alert from '@components/common/common/Alert';
+import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -5,20 +7,31 @@ const Test = () => {
   const [img, setImg] = useState<string>('');
   const [oriFile, setOriFile] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false);
+  const [fileSize, setFileSize] = useAlert(false);
+  const [fileType, setFileType] = useAlert(false);
   const onFileChange = async (e: ChangeEvent<HTMLInputElement>) => {
-    setLoading(true);
     const { files } = e.target;
 
     // eslint-disable-next-line no-useless-return
     if (files.length === 0) return;
 
+    // max
+    const size = 1024 ** 2 * 5; // 5mb
+    // 5mb 이하로 용량 체크
+    if (files[0].size > size) {
+      setFileSize(true);
+      return;
+    }
+
     const file = files[0];
     setOriFile(file);
 
     if (file.type !== 'application/pdf') {
-      alert('PDF 파일만 업로드 해주세요.');
+      setFileType(true);
       return;
     }
+
+    setLoading(true);
 
     const pdfBlob = await file.arrayBuffer();
     const pdfjslib = await import('pdfjs-dist/build/pdf');
@@ -106,6 +119,8 @@ const Test = () => {
                 파일을 선택해주세요.
               </label>
             </div>
+            {fileSize && <Alert text="해당 파일은 제한된 용량을 초과하였습니다." setValue={setFileSize} />}
+            {fileType && <Alert text="PDF 파일만 업로드 해주세요." setValue={setFileType} />}
           </div>
           {img ? (
             <>

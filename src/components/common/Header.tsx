@@ -37,6 +37,32 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+      <div>
+        <nav className="py-4 text-sm font-medium">
+          <ul className="flex space-x-3">
+            <Li>
+              <NavLink to="/text" className="block px-5 py-4 rounded-md bg-slate-50">
+                HTML 태그 제거기
+              </NavLink>
+            </Li>
+            <Li>
+              <NavLink to="/text1" className="block px-5 py-4 rounded-md bg-slate-50">
+                영어 대문자 소문자 변환
+              </NavLink>
+            </Li>
+            <Li>
+              <NavLink to="/text2" className="block px-5 py-4 rounded-md bg-slate-50">
+                글자수 문자수 계산기
+              </NavLink>
+            </Li>
+            <Li>
+              <NavLink to="/text3" className="block px-5 py-4 rounded-md bg-slate-50">
+                내아이피
+              </NavLink>
+            </Li>
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 };

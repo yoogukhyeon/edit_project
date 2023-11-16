@@ -6,6 +6,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Test2 from 'pages/Test2';
 import Test3 from 'pages/Test3';
+import Text from 'pages/Text';
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Main />}></Route>
           <Route path="/test" element={<Test />}></Route>
-          <Route path="/Test2" element={<Test2 />}></Route>
-          <Route path="/Test3" element={<Test3 />}></Route>
+          <Route path="/test2" element={<Test2 />}></Route>
+          <Route path="/test3" element={<Test3 />}></Route>
+          <Route path="/text" element={<Text />}></Route>
         </Route>
       </Routes>
     </div>
