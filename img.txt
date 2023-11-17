@@ -13,3 +13,13 @@
 4. webp
 png, jpeg 등 보다 포맷 크기가 작고 google에서 인터넷 이미지 로딩시간을 단축시키기위해서 출시한 파일 포맷
 이미지 품질은 유지하면서 파일 크기는 절반이하로 줄어서 품질, 용량에 최적화된다.
+
+
+https://www.npmjs.com/package/letter-count
+
+
+문자수: chars
+단어수: words
+숫자수: numbers
+글자수: letters 
+특수문자: wordsigns

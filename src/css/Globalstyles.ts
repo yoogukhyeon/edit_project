@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components'; // ✨ 1
 
 export const GlobalStyle = createGlobalStyle`  // ✨ 2
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
