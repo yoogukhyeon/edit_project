@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 interface IProps {
   text: string;
@@ -13,7 +13,7 @@ const Alert = ({ text, setValue }: IProps) => {
   return (
     <div
       id="alert-border-2"
-      className="flex rounded-lg items-center p-4 my-2 text-red-800 border-t-4 border-red-300 bg-red-50 dark:text-red-400 dark:bg-gray-800 dark:border-red-800"
+      className="flex rounded-lg items-center p-3 my-2 text-red-800 border-t-4 border-red-300 bg-red-50 dark:text-red-400 dark:bg-gray-800 dark:border-red-800"
       role="alert"
     >
       <svg

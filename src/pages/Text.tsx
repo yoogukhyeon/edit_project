@@ -1,13 +1,16 @@
 import Alert from '@components/common/common/Alert';
 import Button from '@components/common/common/Button';
+import Infor from '@components/common/common/Infor';
 import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import { copyFnc } from 'utill/copy';
 
 const Text = () => {
   const [original, setOriginal] = useState<string>('');
   const [convertTag, setConvertTag] = useState<string>('');
   const [isCheck, setIsCheck] = useState<boolean>(false);
   const [html, setHtml] = useAlert(false);
+  const [copy, setCopy] = useAlert(false);
 
   const onChange = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
     setHtml(false);
@@ -26,6 +29,8 @@ const Text = () => {
 
   const onReset = useCallback(() => {
     setOriginal('');
+    setConvertTag('');
+    setCopy(false);
   }, []);
 
   const removeHtmlTag = () => {
@@ -37,6 +42,10 @@ const Text = () => {
     if (isCheck) result = result.replace(/(\s*)/g, '');
     setConvertTag(result);
   };
+
+  const onClickCopy = useCallback(async () => {
+    copyFnc(original, setCopy);
+  }, [convertTag]);
 
   return (
     <div>
@@ -77,9 +86,13 @@ const Text = () => {
           />
         </div>
         <div>
-          <label htmlFor="new" className="h-7 block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            HTML 제거 결과
-          </label>
+          <div className="flex justify-start items-center mb-3 gap-3">
+            <label htmlFor="new" className="h-7 block text-sm font-medium text-gray-900 dark:text-white">
+              HTML 제거 결과
+              {convertTag !== '' && <Button onReset={onClickCopy} text="복사" isCopy={true} />}
+            </label>
+          </div>
+          {copy && <Infor setValue={setCopy} text="복사를 완료했습니다." />}
           <textarea
             id="new"
             rows={11}
