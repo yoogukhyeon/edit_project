@@ -36,6 +36,10 @@ const Text2 = () => {
     setTextFirstUpper(firstUpper);
   };
 
+  const onClickCopy = useCallback(async () => {
+    alert('12313');
+  }, []);
+
   return (
     <div>
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">영어 대문자 소문자 변환</p>
@@ -69,9 +73,12 @@ const Text2 = () => {
           </div>
         </div>
         <div>
-          <label htmlFor="new" className="py-2 block text-sm font-medium text-gray-900 dark:text-white">
-            소문자
-          </label>
+          <div className="flex justify-start items-center gap-3">
+            <label htmlFor="new" className="py-2 block text-sm font-medium text-gray-900 dark:text-white">
+              소문자
+              <Button onReset={onClickCopy} text="복사" isCopy={true} />
+            </label>
+          </div>
           <textarea
             id="new"
             rows={5}
@@ -80,10 +87,12 @@ const Text2 = () => {
             readOnly
             value={textLower}
           />
-
-          <label htmlFor="new" className="py-2 block  text-sm font-medium text-gray-900 dark:text-white">
-            대문자
-          </label>
+          <div className="flex justify-start items-center gap-3">
+            <label htmlFor="new" className="py-2 block  text-sm font-medium text-gray-900 dark:text-white">
+              대문자
+              <Button onReset={onClickCopy} text="복사" isCopy={true} />
+            </label>
+          </div>
           <textarea
             id="new"
             rows={5}
@@ -92,10 +101,12 @@ const Text2 = () => {
             readOnly
             value={textUpper}
           />
-
-          <label htmlFor="new" className="py-2 block  text-sm font-medium text-gray-900 dark:text-white">
-            첫글자 대문자
-          </label>
+          <div className="flex justify-start items-center gap-3">
+            <label htmlFor="new" className="py-2 block  text-sm font-medium text-gray-900 dark:text-white">
+              첫글자 대문자
+              <Button onReset={onClickCopy} text="복사" isCopy={true} />
+            </label>
+          </div>
           <textarea
             id="new"
             rows={5}
