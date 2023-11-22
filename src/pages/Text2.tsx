@@ -1,14 +1,18 @@
 import Alert from '@components/common/common/Alert';
 import Button from '@components/common/common/Button';
+import Infor from '@components/common/common/Infor';
 import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import { copyFnc } from 'utill/copy';
 
 const Text2 = () => {
   const [text, setText] = useState<string>('');
   const [textUpper, setTextUpper] = useState<string>('');
   const [textLower, setTextLower] = useState<string>('');
   const [textFirstUpper, setTextFirstUpper] = useState<string>('');
-
+  const [copyUpper, setCopyUpper] = useAlert(false);
+  const [copyLower, setCopyLower] = useAlert(false);
+  const [copyFirstUpper, setCopyFirstUpper] = useAlert(false);
   const [html, setHtml] = useAlert(false);
 
   const onChange = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -18,8 +22,14 @@ const Text2 = () => {
 
   const onReset = useCallback(() => {
     setText('');
+    setCopyUpper(false);
+    setCopyLower(false);
+    setCopyFirstUpper(false);
+    setTextUpper('');
+    setTextLower('');
+    setTextFirstUpper('');
   }, []);
-  function capitalize(str) {
+  function capitalize(str: string) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
@@ -36,9 +46,26 @@ const Text2 = () => {
     setTextFirstUpper(firstUpper);
   };
 
-  const onClickCopy = useCallback(async () => {
-    alert('12313');
-  }, []);
+  const onClickCopy = useCallback(
+    async (type?: string) => {
+      if (type === 'textLower') {
+        copyFnc(textLower, setCopyLower);
+        setCopyUpper(false);
+        setCopyFirstUpper(false);
+      }
+      if (type === 'textUpper') {
+        copyFnc(textUpper, setCopyUpper);
+        setCopyLower(false);
+        setCopyFirstUpper(false);
+      }
+      if (type === 'textFirstUpper') {
+        copyFnc(textFirstUpper, setCopyFirstUpper);
+        setCopyUpper(false);
+        setCopyLower(false);
+      }
+    },
+    [textUpper, textUpper, textFirstUpper],
+  );
 
   return (
     <div>
@@ -74,11 +101,12 @@ const Text2 = () => {
         </div>
         <div>
           <div className="flex justify-start items-center gap-3">
-            <label htmlFor="new" className="py-2 block text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="new" className={`${textLower === '' && 'pb-2'} pt-2 block  text-sm font-medium text-gray-900 dark:text-white`}>
               소문자
-              <Button onReset={onClickCopy} text="복사" isCopy={true} />
+              {textLower !== '' && <Button onReset={onClickCopy} type="textLower" text="복사" isCopy={true} />}
             </label>
           </div>
+          {copyLower && <Infor setValue={setCopyLower} text="복사를 완료했습니다." />}
           <textarea
             id="new"
             rows={5}
@@ -88,11 +116,12 @@ const Text2 = () => {
             value={textLower}
           />
           <div className="flex justify-start items-center gap-3">
-            <label htmlFor="new" className="py-2 block  text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="new" className={`${textUpper === '' && 'pb-2'} pt-2 block  text-sm font-medium text-gray-900 dark:text-white`}>
               대문자
-              <Button onReset={onClickCopy} text="복사" isCopy={true} />
+              {textUpper !== '' && <Button onReset={onClickCopy} type="textUpper" text="복사" isCopy={true} />}
             </label>
           </div>
+          {copyUpper && <Infor setValue={setCopyUpper} text="복사를 완료했습니다." />}
           <textarea
             id="new"
             rows={5}
@@ -102,11 +131,12 @@ const Text2 = () => {
             value={textUpper}
           />
           <div className="flex justify-start items-center gap-3">
-            <label htmlFor="new" className="py-2 block  text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="new" className={`${textFirstUpper === '' && 'pb-2'} pt-2 block  text-sm font-medium text-gray-900 dark:text-white`}>
               첫글자 대문자
-              <Button onReset={onClickCopy} text="복사" isCopy={true} />
+              {textFirstUpper !== '' && <Button onReset={onClickCopy} type="textFirstUpper" text="복사" isCopy={true} />}
             </label>
           </div>
+          {copyFirstUpper && <Infor setValue={setCopyFirstUpper} text="복사를 완료했습니다." />}
           <textarea
             id="new"
             rows={5}
