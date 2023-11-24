@@ -6,6 +6,7 @@ import ko_KR from '@react-pdf-viewer/locales/lib/ko_KR.json';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import styled from 'styled-components';
 
 const characterMap: CharacterMap = {
   isCompressed: true,
@@ -31,12 +32,12 @@ const Main = () => {
   };
 
   return (
-    <div>
+    <MainWrap>
       <input type="file" accept=".pdf" onChange={onChange} />
       <div style={{ height: '750px' }}>
         {url ? (
           <div
-            className="rpv-core__viewer"
+            className="rpv-core__viewer mt-2.5"
             style={{
               border: '1px solid rgba(0, 0, 0, 0.3)',
               display: 'flex',
@@ -60,20 +61,39 @@ const Main = () => {
           <div
             style={{
               alignItems: 'center',
-              border: '2px dashed rgba(0, 0, 0, .3)',
               display: 'flex',
               fontSize: '2rem',
               height: '100%',
               justifyContent: 'center',
               width: '100%',
             }}
+            className="mt-2.5 border-dashed border-2 border-slate-500 dark:border-slate-200 "
           >
             Preview area
           </div>
         )}
       </div>
-    </div>
+    </MainWrap>
   );
 };
+
+const MainWrap = styled.div`
+  input[type='file']::file-selector-button {
+    width: 150px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+      background: skyblue;
+      color: #fff;
+    }
+  }
+
+  input[type='file'] {
+    font-size: 14px;
+  }
+`;
 
 export default Main;

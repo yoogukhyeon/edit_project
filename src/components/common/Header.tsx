@@ -1,6 +1,6 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { styled } from 'styled-components';
+import Ip from '@components/ip/Ip';
 import ThemeButton from './ThemeButton';
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
         <h1>웹툴 모음집</h1>
         <ThemeButton />
       </div>
-
+      <Ip />
       <div>
         <nav className="py-4 text-sm font-medium">
           <ul className="flex gap-3 justify-center items-center max-sm:flex-col">
