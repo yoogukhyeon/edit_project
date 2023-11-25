@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 
 interface IpData {
@@ -16,7 +16,7 @@ const Ip = () => {
     setIP(res.data);
   };
 
-  getData();
+  useMemo(() => getData(), []);
 
   return (
     <div className="mb-5 text-center">

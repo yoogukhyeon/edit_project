@@ -40,7 +40,7 @@ const Test2 = () => {
 
   const onFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { files } = e.target;
-    console.log('files:::', files);
+
     if (files && files.length > 0) {
       const file = files[0];
 
@@ -53,7 +53,6 @@ const Test2 = () => {
     }
   };
 
-  console.log('convertedImg::', convertedImg);
   return (
     <div>
       <div className="flex items-center justify-center w-full">
