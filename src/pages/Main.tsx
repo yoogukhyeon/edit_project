@@ -3,7 +3,6 @@ import { LocalizationMap, Viewer, Worker, CharacterMap, SpecialZoomLevel } from 
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
 import ko_KR from '@react-pdf-viewer/locales/lib/ko_KR.json';
-
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import styled from 'styled-components';

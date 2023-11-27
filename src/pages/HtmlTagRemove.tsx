@@ -5,7 +5,7 @@ import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { copyFnc } from 'utill/copy';
 
-const Text = () => {
+const HtmlTagRemove = () => {
   const [original, setOriginal] = useState<string>('');
   const [convertTag, setConvertTag] = useState<string>('');
   const [isCheck, setIsCheck] = useState<boolean>(false);
@@ -115,4 +115,4 @@ const Text = () => {
   );
 };
 
-export default Text;
+export default HtmlTagRemove;

@@ -5,7 +5,7 @@ import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { copyFnc } from 'utill/copy';
 
-const Text2 = () => {
+const TextConvert = () => {
   const [text, setText] = useState<string>('');
   const [textUpper, setTextUpper] = useState<string>('');
   const [textLower, setTextLower] = useState<string>('');
@@ -151,4 +151,4 @@ const Text2 = () => {
   );
 };
 
-export default Text2;
+export default TextConvert;
