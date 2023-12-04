@@ -51,7 +51,7 @@ const Header = () => {
               </NavLink>
             </Li>
             <Li className="max-sm: w-full">
-              <NavLink to="/text2" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+              <NavLink to="/counter-char" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
                 글자수 문자수 계산기
               </NavLink>
             </Li>

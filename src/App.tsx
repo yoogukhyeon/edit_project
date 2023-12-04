@@ -9,6 +9,7 @@ import HtmlTagRemove from 'pages/HtmlTagRemove';
 import TextConvert from 'pages/TextConvert';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CounterChar from 'pages/CounterChar';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/img-jpg" element={<ImgToJpg />}></Route>
           <Route path="/html-remove" element={<HtmlTagRemove />}></Route>
           <Route path="/text-convert" element={<TextConvert />}></Route>
+          <Route path="/counter-char" element={<CounterChar />}></Route>
         </Route>
       </Routes>
     </div>
