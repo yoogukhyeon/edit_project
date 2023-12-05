@@ -17,6 +17,7 @@
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.6.2",
     "craco": "^0.0.3",
+    "letter-count": "^5.2.1",
     "pdfjs-dist": "^3.4.120",
     "prettier": "^3.0.3",
     "react": "^18.2.0",

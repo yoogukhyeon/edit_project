@@ -19,7 +19,7 @@ const Ip = () => {
   useMemo(() => getData(), []);
 
   return (
-    <div className="mb-5 text-center">
+    <div className="mt-5 mb-7 text-center">
       <p className="mb-3 text-gray-500 dark:text-gray-400 first-line:uppercase first-line:tracking-widest first-letter:text-3xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-1 first-letter:float-start">
         My IP 주소
       </p>

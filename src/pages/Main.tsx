@@ -33,7 +33,7 @@ const Main = () => {
   return (
     <MainWrap>
       <input type="file" accept=".pdf" onChange={onChange} />
-      <div style={{ height: '750px' }}>
+      <div style={{ height: '500px' }}>
         {url ? (
           <div
             className="rpv-core__viewer mt-2.5"
@@ -68,7 +68,7 @@ const Main = () => {
             }}
             className="mt-2.5 border-dashed border-2 border-slate-500 dark:border-slate-200 "
           >
-            Preview area
+            PDF PREVIEW
           </div>
         )}
       </div>

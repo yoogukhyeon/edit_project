@@ -10,6 +10,7 @@ import TextConvert from 'pages/TextConvert';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CounterChar from 'pages/CounterChar';
+import MakeQr from 'pages/MakeQr';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/html-remove" element={<HtmlTagRemove />}></Route>
           <Route path="/text-convert" element={<TextConvert />}></Route>
           <Route path="/counter-char" element={<CounterChar />}></Route>
+          <Route path="/make-qr" element={<MakeQr />}></Route>
         </Route>
       </Routes>
     </div>

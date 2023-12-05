@@ -1,14 +1,35 @@
 import Alert from '@components/common/common/Alert';
+import Button from '@components/common/common/Button';
 import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useCallback, useState } from 'react';
+import { count } from 'letter-count';
+import { toast } from 'react-toastify';
 
 const CounterChar = () => {
   const [text, setText] = useState<string>('');
+  const [charVal, setCharVal] = useState<any>({});
   const [html, setHtml] = useAlert(false);
   const onChange = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
-    setHtml(false);
-    setText(event.target.value);
+    const { value } = event.target;
+
+    setText(value);
   }, []);
+
+  const onReset = useCallback(() => {
+    setText('');
+  }, []);
+
+  const calculateText = () => {
+    if (text === '') {
+      setHtml(true);
+      return;
+    }
+
+    const result = count(text);
+    toast.info('문장 계산을 완료했습니다.');
+    setCharVal(result);
+    setHtml(false);
+  };
 
   return (
     <div>
@@ -21,9 +42,10 @@ const CounterChar = () => {
           <div className="flex justify-start items-center mb-3 gap-3">
             <label htmlFor="original" className="h-7 block text-sm font-medium text-gray-900 dark:text-white ">
               문장을 넣어 주세요
+              <Button onReset={onReset} text="초기화" />
             </label>
           </div>
-          {html && <Alert setValue={setHtml} text="HTML 소스를 넣어주세요." />}
+          {html && <Alert setValue={setHtml} text="문장을 넣어주세요." />}
           <textarea
             id="original"
             rows={10}
@@ -32,26 +54,49 @@ const CounterChar = () => {
             onChange={onChange}
             value={text}
           />
-          <div className="mt-5 text-center">
+          <div className="my-5 text-center">
             <button
-              onClick={() => alert('123')}
+              onClick={calculateText}
               className="inline-block text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-base px-5 py-2.5 text-center"
             >
-              변환하기
+              계산하기
             </button>
           </div>
         </div>
       </div>
       <div className="mt-5">
-        <div className="flex justify-center items-start gap-3 max-sm:flex-col">
+        <div className="flex justify-start items-start gap-3 max-sm:flex-col">
           <div className="max-sm:w-full">
             <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-              문자수
+              문자수(공백포함)
             </label>
             <input
               type="text"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               readOnly
+              value={charVal?.chars || 0}
+            />
+          </div>
+          <div className="max-sm:w-full">
+            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              글자수(공백제외)
+            </label>
+            <input
+              type="text"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              readOnly
+              value={charVal?.letters || 0}
+            />
+          </div>
+          <div className="max-sm:w-full">
+            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              문장수
+            </label>
+            <input
+              type="text"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              readOnly
+              value={charVal?.spaces || 0}
             />
           </div>
           <div className="max-sm:w-full">
@@ -62,6 +107,20 @@ const CounterChar = () => {
               type="text"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               readOnly
+              value={charVal?.words || 0}
+            />
+          </div>
+        </div>
+        <div className="flex justify-start items-start gap-3 max-sm:flex-col mt-5">
+          <div className="max-sm:w-full">
+            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              라인수
+            </label>
+            <input
+              type="text"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              readOnly
+              value={charVal?.lines || 0}
             />
           </div>
           <div className="max-sm:w-full">
@@ -72,18 +131,10 @@ const CounterChar = () => {
               type="text"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               readOnly
+              value={charVal?.numbers || 0}
             />
           </div>
-          <div className="max-sm:w-full">
-            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-              글자수
-            </label>
-            <input
-              type="text"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              readOnly
-            />
-          </div>
+
           <div className="max-sm:w-full">
             <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               특수문자수
@@ -92,6 +143,7 @@ const CounterChar = () => {
               type="text"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               readOnly
+              value={charVal?.wordsigns || 0}
             />
           </div>
         </div>

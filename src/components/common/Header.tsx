@@ -10,28 +10,28 @@ const Header = () => {
         <h1>웹툴 모음집</h1>
         <ThemeButton />
       </div>
-      <Ip />
+
       <div>
         <nav className="py-4 text-sm font-medium ">
           <ul className="flex gap-3 justify-center items-center max-sm:flex-col">
             <Li className="max-sm: w-full">
               <NavLink to="/" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
-                PDF
+                PDF 보기
               </NavLink>
             </Li>
             <Li className="max-sm: w-full">
               <NavLink to="/pdf-img" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
-                PDF to IMG
+                PDF 이미지 변환
               </NavLink>
             </Li>
             <Li className="max-sm: w-full">
               <NavLink to="/img-png" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
-                IMG to PNG
+                이미지 PNG 변환
               </NavLink>
             </Li>
             <Li className="max-sm: w-full">
               <NavLink to="/img-jpg" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
-                IMG to JPG
+                이미지 JPG 변환
               </NavLink>
             </Li>
           </ul>
@@ -56,13 +56,14 @@ const Header = () => {
               </NavLink>
             </Li>
             <Li className="max-sm: w-full">
-              <NavLink to="/text3" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
-                내아이피
+              <NavLink to="/make-qr" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+                나만의 QR코드 만들기
               </NavLink>
             </Li>
           </ul>
         </nav>
       </div>
+      <Ip />
     </div>
   );
 };
