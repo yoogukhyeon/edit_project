@@ -57,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-private-property-in-object": "^7.22.11",
     "@types/pdfjs-dist": "^2.10.378",
     "@types/styled-components": "^5.1.29",
