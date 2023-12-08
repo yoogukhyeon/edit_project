@@ -63,15 +63,35 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+      <div>
+        <nav className="pt-4 pb-1 text-sm font-medium max-sm:pt-2">
+          <ul className="flex gap-3 justify-start items-center max-sm:flex-col">
+            <Li className="nav_third">
+              <NavLink to="/make-meta" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+                메타태그(meta tag) 만들기
+              </NavLink>
+            </Li>
+          </ul>
+        </nav>
+      </div>
       <Ip />
     </div>
   );
 };
 
 const Li = styled.li`
+  &.nav_third {
+    width: 30%;
+  }
   > a.active {
     background-color: skyblue;
     color: #fff;
+  }
+
+  @media (max-width: 640px) {
+    &.nav_third {
+      width: 100%;
+    }
   }
 `;
 

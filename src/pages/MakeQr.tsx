@@ -2,6 +2,19 @@ import React, { useCallback, useState } from 'react';
 // QRCode 안에는 canvas 속성이 있다
 import QRCode from 'qrcode.react';
 import styled from 'styled-components';
+import { Tilt } from 'react-tilt';
+
+const defaultOptions = {
+  reverse: false,
+  max: 35,
+  perspective: 1000,
+  scale: 1.0,
+  speed: 1000,
+  transition: true,
+  axis: null,
+  reset: true,
+  easing: 'cubic-bezier(.03,.98,.52,.99)',
+};
 
 const MakeQr = () => {
   const [urlValue, setUrlValue] = useState('http://localhost:3000');
@@ -52,7 +65,9 @@ const MakeQr = () => {
       </div>
       <div className="grid w-full md:grid-cols-1">
         <QrCodeWrap className="flex justify-center items-center flex-col">
-          <QRCode value={urlValue} size={600} bgColor={'#ffffff'} fgColor={'#000000'} level={'L'} includeMargin={true} />
+          <Tilt options={defaultOptions}>
+            <QRCode value={urlValue} size={600} bgColor={'#ffffff'} fgColor={'#000000'} level={'L'} includeMargin={true} />
+          </Tilt>
           <div className="py-4 text-center">
             <button
               onClick={handleDownloadClick}
@@ -68,6 +83,10 @@ const MakeQr = () => {
 };
 
 const QrCodeWrap = styled.div`
+  canvas {
+    border: 1px solid #eee;
+  }
+
   @media (max-width: 515px) {
     > svg {
       width: 400px;

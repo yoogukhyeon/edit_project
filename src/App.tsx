@@ -11,6 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CounterChar from 'pages/CounterChar';
 import MakeQr from 'pages/MakeQr';
+import MetaTag from 'pages/MetaTag';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/text-convert" element={<TextConvert />}></Route>
           <Route path="/counter-char" element={<CounterChar />}></Route>
           <Route path="/make-qr" element={<MakeQr />}></Route>
+          <Route path="/make-meta" element={<MetaTag />}></Route>
         </Route>
       </Routes>
     </div>
