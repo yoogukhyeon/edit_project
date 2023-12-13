@@ -101,14 +101,14 @@ const TextConvert = () => {
         </div>
         <div>
           <div className="flex justify-start items-center gap-3">
-            <label htmlFor="new" className={`${textLower === '' && 'pb-2'} pt-2 block  text-sm font-medium text-gray-900 dark:text-white`}>
+            <label htmlFor="lower" className={`${textLower === '' && 'pb-2'} pt-2 block  text-sm font-medium text-gray-900 dark:text-white`}>
               소문자
               {textLower !== '' && <Button onReset={onClickCopy} type="textLower" text="복사" isCopy={true} />}
             </label>
           </div>
           {copyLower && <Infor setValue={setCopyLower} text="복사를 완료했습니다." />}
           <textarea
-            id="new"
+            id="lower"
             rows={5}
             className="outline-none block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="태그제거 결과"
@@ -116,14 +116,14 @@ const TextConvert = () => {
             value={textLower}
           />
           <div className="flex justify-start items-center gap-3">
-            <label htmlFor="new" className={`${textUpper === '' && 'pb-2'} pt-2 block  text-sm font-medium text-gray-900 dark:text-white`}>
+            <label htmlFor="upper" className={`${textUpper === '' && 'pb-2'} pt-2 block  text-sm font-medium text-gray-900 dark:text-white`}>
               대문자
               {textUpper !== '' && <Button onReset={onClickCopy} type="textUpper" text="복사" isCopy={true} />}
             </label>
           </div>
           {copyUpper && <Infor setValue={setCopyUpper} text="복사를 완료했습니다." />}
           <textarea
-            id="new"
+            id="upper"
             rows={5}
             className="outline-none block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="태그제거 결과"
@@ -131,14 +131,17 @@ const TextConvert = () => {
             value={textUpper}
           />
           <div className="flex justify-start items-center gap-3">
-            <label htmlFor="new" className={`${textFirstUpper === '' && 'pb-2'} pt-2 block  text-sm font-medium text-gray-900 dark:text-white`}>
+            <label
+              htmlFor="first_upper"
+              className={`${textFirstUpper === '' && 'pb-2'} pt-2 block  text-sm font-medium text-gray-900 dark:text-white`}
+            >
               첫글자 대문자
               {textFirstUpper !== '' && <Button onReset={onClickCopy} type="textFirstUpper" text="복사" isCopy={true} />}
             </label>
           </div>
           {copyFirstUpper && <Infor setValue={setCopyFirstUpper} text="복사를 완료했습니다." />}
           <textarea
-            id="new"
+            id="first_upper"
             rows={5}
             className="outline-none block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="태그제거 결과"

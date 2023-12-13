@@ -5,7 +5,7 @@ import ThemeButton from './ThemeButton';
 
 const Header = () => {
   return (
-    <div className="pt-3">
+    <header className="pt-3">
       <div className="flex justify-between items-center">
         <h1>웹툴 모음집</h1>
         <ThemeButton />
@@ -75,7 +75,7 @@ const Header = () => {
         </nav>
       </div>
       <Ip />
-    </div>
+    </header>
   );
 };
 

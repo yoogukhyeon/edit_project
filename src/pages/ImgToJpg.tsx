@@ -2,8 +2,10 @@ import Alert from '@components/common/common/Alert';
 import Loading from '@components/common/common/Loading';
 import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import SEOMetaTag from 'seo/SEOMetaTag';
 import { convertToPNG } from 'utill/convertToImg';
 import { getByteSize } from 'utill/getByteSize';
 
@@ -45,6 +47,7 @@ const ImgToJpg = () => {
 
   return (
     <div className="w-full">
+      <SEOMetaTag title={'이미지 JPG 변환'} />
       {loading ? (
         <Loading />
       ) : (

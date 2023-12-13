@@ -15,3 +15,8 @@ svg {
 a {
   @apply text-black;
 }
+
+input,
+textarea {
+  @apply placeholder:text-xs;
+}

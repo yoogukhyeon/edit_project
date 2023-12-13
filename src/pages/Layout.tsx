@@ -71,9 +71,9 @@ const Layout = () => {
         {!loading && (
           <>
             <Header />
-            <div style={{ margin: '20px 0 50px' }}>
+            <main style={{ margin: '20px 0 20px' }}>
               <Outlet />
-            </div>
+            </main>
             <Footer />
           </>
         )}

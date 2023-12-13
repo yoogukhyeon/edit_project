@@ -11,8 +11,8 @@ const MetaInfo = ({ text, type, isCheckInfo }) => {
   return (
     <div
       className={`${
-        isCheckInfo?.key === type ? 'h-16' : 'h-0'
-      } z-10 w-full absolute left-0 bottom--5 flex items-center p-3 text-xs text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400`}
+        isCheckInfo?.key === type ? 'h-16 p-3' : 'h-0 p-0'
+      } z-10 w-full absolute left-0 bottom--5 flex items-center text-xs text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400`}
       role="alert"
       style={{
         overflow: 'hidden',

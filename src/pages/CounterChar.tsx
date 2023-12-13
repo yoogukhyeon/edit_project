@@ -67,44 +67,48 @@ const CounterChar = () => {
       <div className="mt-5">
         <div className="flex justify-start items-start gap-3 max-sm:flex-col">
           <div className="max-sm:w-full">
-            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="chars" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               문자수(공백포함)
             </label>
             <input
               type="text"
+              id="chars"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               readOnly
               value={charVal?.chars || 0}
             />
           </div>
           <div className="max-sm:w-full">
-            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="letters" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               글자수(공백제외)
             </label>
             <input
               type="text"
+              id="letters"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               readOnly
               value={charVal?.letters || 0}
             />
           </div>
           <div className="max-sm:w-full">
-            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="spaces" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               문장수
             </label>
             <input
               type="text"
+              id="spaces"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               readOnly
               value={charVal?.spaces || 0}
             />
           </div>
           <div className="max-sm:w-full">
-            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="words" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               단어수
             </label>
             <input
               type="text"
+              id="words"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               readOnly
               value={charVal?.words || 0}
@@ -113,22 +117,24 @@ const CounterChar = () => {
         </div>
         <div className="flex justify-start items-start gap-3 max-sm:flex-col mt-5">
           <div className="max-sm:w-full">
-            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="lines" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               라인수
             </label>
             <input
               type="text"
+              id="lines"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               readOnly
               value={charVal?.lines || 0}
             />
           </div>
           <div className="max-sm:w-full">
-            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="numbers" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               숫자수
             </label>
             <input
               type="text"
+              id="numbers"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               readOnly
               value={charVal?.numbers || 0}
@@ -136,11 +142,12 @@ const CounterChar = () => {
           </div>
 
           <div className="max-sm:w-full">
-            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="wordsings" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               특수문자수
             </label>
             <input
               type="text"
+              id="wordsings"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               readOnly
               value={charVal?.wordsigns || 0}

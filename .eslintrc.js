@@ -39,5 +39,6 @@ module.exports = {
     '@typescript-eslint/no-empty-interface': 'off',
     'no-empty-pattern': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/naming-convention': 'off',
   },
 };
