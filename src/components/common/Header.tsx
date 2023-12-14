@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="pt-3">
       <div className="flex justify-between items-center">
-        <h1>웹툴 모음집</h1>
+        <h1 className=" text-2xl font-extrabold dark:text-white">EVERYDAY 웹툴</h1>
         <ThemeButton />
       </div>
 

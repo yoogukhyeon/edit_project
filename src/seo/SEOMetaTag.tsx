@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 const SEOMetaTag = (props: any) => {
   return (
     <Helmet>
-      <title>{props.title} | FNF웹툴</title>
+      <title>{props.title} | EVERYDAY 웹툴</title>
 
       {/* <meta name="description" content={props.description} />
       <meta name="keywords" content={props.keywords} />
