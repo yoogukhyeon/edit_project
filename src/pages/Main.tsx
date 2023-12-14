@@ -45,7 +45,7 @@ const Main = () => {
             }}
           >
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js">
-              <div style={{ height: '750px' }}>
+              <div style={{ minHeight: '750px' }}>
                 <Viewer
                   characterMap={characterMap}
                   localization={ko_KR as unknown as LocalizationMap}
