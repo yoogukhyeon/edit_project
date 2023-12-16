@@ -21,7 +21,7 @@ const Header = () => {
       </div>
 
       <div>
-        <nav className="py-4 text-sm font-medium ">
+        <nav className="pt-4 text-sm font-medium max-sm:pb-4">
           <ul className="flex gap-3 justify-center items-center max-sm:flex-col">
             <Li className="max-sm: w-full">
               <NavLink to="/" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
