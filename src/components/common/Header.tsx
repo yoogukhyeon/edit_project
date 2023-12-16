@@ -1,13 +1,22 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 import Ip from '@components/ip/Ip';
 import ThemeButton from './ThemeButton';
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const goToHome = () => {
+    navigate('/');
+  };
+
   return (
     <header className="pt-3">
       <div className="flex justify-between items-center">
-        <h1 className=" text-2xl font-extrabold dark:text-white">EVERYDAY 웹툴</h1>
+        <h1 onClick={goToHome} className="cursor-pointer flex gap-3 justify-start items-center text-2xl font-extrabold dark:text-white">
+          <img src="/images/logo.png" alt="로고" width={40} height={40} />
+          EVERYDAY 웹툴
+        </h1>
         <ThemeButton />
       </div>
 
@@ -68,7 +77,7 @@ const Header = () => {
           <ul className="flex gap-3 justify-start items-center max-sm:flex-col">
             <Li className="nav_third">
               <NavLink to="/make-meta" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
-                메타태그(meta tag) 만들기
+                메타태그(SEO) 만들기
               </NavLink>
             </Li>
           </ul>
