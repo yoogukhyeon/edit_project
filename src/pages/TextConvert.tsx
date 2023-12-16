@@ -3,6 +3,7 @@ import Button from '@components/common/common/Button';
 import Infor from '@components/common/common/Infor';
 import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import SEOMetaTag from 'seo/SEOMetaTag';
 import { copyFnc } from 'utill/copy';
 
 const TextConvert = () => {
@@ -69,6 +70,12 @@ const TextConvert = () => {
 
   return (
     <div>
+      <SEOMetaTag
+        title={'영어 대문자 소문자 변환'}
+        description={'영어 대문자 소문자 변환 - webtool.everyday-365.com'}
+        url={'https://webtool.everyday-365.com/text-convert'}
+        imgsrc={'/images/logo.png'}
+      />
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">영어 대문자 소문자 변환</p>
       <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
         영어 스펠링 철자를 전부 대문자, 전부 소문자 또는 첫글자만 대문자 등으로 변환합니다.

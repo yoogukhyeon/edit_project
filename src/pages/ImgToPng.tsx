@@ -4,6 +4,7 @@ import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import SEOMetaTag from 'seo/SEOMetaTag';
 import { convertToPNG } from 'utill/convertToImg';
 import { getByteSize } from 'utill/getByteSize';
 
@@ -45,6 +46,12 @@ const ImgToPng = () => {
 
   return (
     <div className="w-full">
+      <SEOMetaTag
+        title={'이미지 PNG 변환'}
+        description={'이미지 PNG 변환 - webtool.everyday-365.com'}
+        url={'https://webtool.everyday-365.com/img-png'}
+        imgsrc={'/images/logo.png'}
+      />
       {loading ? (
         <Loading />
       ) : (

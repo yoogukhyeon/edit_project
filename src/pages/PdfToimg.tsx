@@ -4,6 +4,7 @@ import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import SEOMetaTag from 'seo/SEOMetaTag';
 import { getByteSize } from 'utill/getByteSize';
 
 const PdfToimg = () => {
@@ -71,6 +72,12 @@ const PdfToimg = () => {
 
   return (
     <div className="w-full">
+      <SEOMetaTag
+        title={'PDF 이미지 변환'}
+        description={'PDF 이미지 변환 - webtool.everyday-365.com'}
+        url={'https://webtool.everyday-365.com/pdf-img'}
+        imgsrc={'/images/logo.png'}
+      />
       {loading ? (
         <Loading />
       ) : (

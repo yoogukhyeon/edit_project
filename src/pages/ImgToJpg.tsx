@@ -47,7 +47,12 @@ const ImgToJpg = () => {
 
   return (
     <div className="w-full">
-      <SEOMetaTag title={'이미지 JPG 변환'} />
+      <SEOMetaTag
+        title={'이미지 JPG 변환'}
+        description={'이미지 JPG 변환 - webtool.everyday-365.com'}
+        url={'https://webtool.everyday-365.com/img-jpg'}
+        imgsrc={'/images/logo.png'}
+      />
       {loading ? (
         <Loading />
       ) : (

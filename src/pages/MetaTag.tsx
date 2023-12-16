@@ -3,6 +3,7 @@ import useAlert from '@hooks/useAlert';
 import { script } from 'constants/metaTag';
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
+import SEOMetaTag from 'seo/SEOMetaTag';
 import { copyFnc } from 'utill/copy';
 
 export type CheckInfo = {
@@ -95,6 +96,12 @@ const MetaTag = () => {
 
   return (
     <div>
+      <SEOMetaTag
+        title={'메타태그(SEO) 만들기'}
+        description={'메타태그(SEO) 만들기 - webtool.everyday-365.com'}
+        url={'https://webtool.everyday-365.com/make-meta'}
+        imgsrc={'/images/logo.png'}
+      />
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">meta tag 란?</p>
       <p className="mb-5 text-sm text-gray-500 whitespace-pre-line dark:text-gray-400">
         하이퍼텍스트(Hyper text) 생성 언어 HTML 문서의 맨 위쪽에 위치하는 태그(tag)로 HEAD 태그 사이 또는 뒤에 있어도 되지만 반드시 BODY 태그 앞쪽에

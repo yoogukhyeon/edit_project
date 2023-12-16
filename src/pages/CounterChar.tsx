@@ -4,6 +4,7 @@ import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useCallback, useState } from 'react';
 import { count } from 'letter-count';
 import { toast } from 'react-toastify';
+import SEOMetaTag from 'seo/SEOMetaTag';
 
 const CounterChar = () => {
   const [text, setText] = useState<string>('');
@@ -33,6 +34,12 @@ const CounterChar = () => {
 
   return (
     <div>
+      <SEOMetaTag
+        title={'글자수 문자수 계산기'}
+        description={'글자수 문자수 계산기 - webtool.everyday-365.com'}
+        url={'https://webtool.everyday-365.com/counter-char'}
+        imgsrc={'/images/logo.png'}
+      />
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">글자수 문자수 계산기</p>
       <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
         붙여넣으신 문장 or 작성하신 문장에 글자수 문자수 숫자수 특수문자를 계산합니다.

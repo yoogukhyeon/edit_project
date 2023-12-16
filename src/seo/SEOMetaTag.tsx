@@ -10,11 +10,12 @@ const SEOMetaTag = (props: any) => {
       <link rel="shortcut icon" href="/images/favicon.ico" />
       <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
 
-      <meta property="og:image" content="/images/logo.png" />
-
-      {/*
       <meta name="description" content={props.description} />
-      <meta name="keywords" content={props.keywords} />
+      <meta
+        name="keywords"
+        content="PDF 미리보기, PDF 이미지 변환, 이미지 PNG 변환, 이미지 JPG 변환, HTML 태그 제거기, 영어 대문자 소문자 변환, 글자수 문자수 계산기, 나만의 QR코드 만들기, 메타태그(SEO) 만들기"
+      />
+
       <meta property="og:type" content="website" />
       <meta property="og:title" content={props.title} />
       <meta property="og:site_name" content={props.title} />
@@ -22,13 +23,12 @@ const SEOMetaTag = (props: any) => {
       <meta property="og:image" content={props.imgsrc} />
       <meta property="og:url" content={props.url} />
       <meta name="robots" content="index, follow" />
-   
 
       <meta name="twitter:title" content={props.title} />
       <meta name="twitter:description" content={props.description} />
       <meta name="twitter:image" content={props.imgsrc} />
 
-      <link rel="canonical" href={props.url} /> */}
+      <link rel="canonical" href={props.url} />
     </Helmet>
   );
 };

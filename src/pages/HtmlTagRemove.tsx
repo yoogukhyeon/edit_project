@@ -3,6 +3,7 @@ import Button from '@components/common/common/Button';
 import Infor from '@components/common/common/Infor';
 import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import SEOMetaTag from 'seo/SEOMetaTag';
 import { copyFnc } from 'utill/copy';
 
 const HtmlTagRemove = () => {
@@ -49,6 +50,12 @@ const HtmlTagRemove = () => {
 
   return (
     <div>
+      <SEOMetaTag
+        title={'HTML 태그 제거기'}
+        description={'HTML 태그 제거기 - webtool.everyday-365.com'}
+        url={'https://webtool.everyday-365.com/html-remove'}
+        imgsrc={'/images/logo.png'}
+      />
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">HTML 태그 제거기</p>
       <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
         웹페이지는 html로 이루어져 있습니다. 소스보기를 해서 내용을 가져오고 싶을때가 있습니다. 그럴때 html tag 때문에 골치가 아픈데요.
