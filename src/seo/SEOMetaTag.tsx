@@ -21,7 +21,7 @@ const SEOMetaTag = (props: any) => {
       <meta property="og:description" content={props.description} />
       <meta property="og:image" content={props.imgsrc} />
       <meta property="og:url" content={props.url} />
-
+      <meta name="robots" content="index, follow" />
    
 
       <meta name="twitter:title" content={props.title} />

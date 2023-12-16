@@ -12,13 +12,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import CounterChar from 'pages/CounterChar';
 import MakeQr from 'pages/MakeQr';
 import MetaTag from 'pages/MetaTag';
-import { Helmet } from 'react-helmet-async';
-import SEOMetaTag from 'seo/SEOMetaTag';
 
 function App() {
   return (
     <div className="App">
-      <SEOMetaTag title={'PDF 보기'} />
       <GlobalStyle />
       <ToastContainer
         position="top-center"

@@ -6,6 +6,7 @@ import ko_KR from '@react-pdf-viewer/locales/lib/ko_KR.json';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import styled from 'styled-components';
+import SEOMetaTag from 'seo/SEOMetaTag';
 
 const characterMap: CharacterMap = {
   isCompressed: true,
@@ -32,6 +33,12 @@ const Main = () => {
 
   return (
     <MainWrap>
+      <SEOMetaTag
+        title={'PDF 보기'}
+        description={
+          '웹에서 바로 사용할 수 있는 다양한 웹툴을 제공합니다. PDF 미리보기, PDF 이미지 변환, 이미지 PNG 변환, 이미지 JPG 변환, HTML 태그 제거기, 영어 대문자 소문자 변환, 글자수 문자수 계산기, 나만의 QR코드 만들기, 메타태그(SEO) 만들기, UserAgent확인'
+        }
+      />
       <input type="file" accept=".pdf" onChange={onChange} />
       <div style={{ height: '500px' }}>
         {url ? (
