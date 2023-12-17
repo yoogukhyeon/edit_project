@@ -80,6 +80,11 @@ const Header = () => {
                 메타태그(SEO) 만들기
               </NavLink>
             </Li>
+            <Li className="nav_third">
+              <NavLink to="/my-ip" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+                내 아이피 확인(IP address)
+              </NavLink>
+            </Li>
           </ul>
         </nav>
       </div>
