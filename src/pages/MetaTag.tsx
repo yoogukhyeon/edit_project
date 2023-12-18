@@ -112,6 +112,9 @@ const MetaTag = () => {
         <div className={`mb-6 relative ${isCheckInfo?.key === 'title' ? 'overflow-visible' : 'overflow-hidden'}`}>
           <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
             ⌨️ 제목
+            <span className="ml-1 text-xs text-gray-500 whitespace-pre-line dark:text-gray-400">
+              ★ 웹사이트 제목은 75자 미만이 SEO 최적화 글자 수 입니다.
+            </span>
           </label>
           <input
             onChange={onChange}
@@ -140,6 +143,9 @@ const MetaTag = () => {
           <div className={`relative ${isCheckInfo?.key === 'desc' ? 'overflow-visible' : 'overflow-hidden'}`}>
             <label htmlFor="desc" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               ⌨️ 설명
+              <span className="ml-1 text-xs text-gray-500 whitespace-pre-line dark:text-gray-400">
+                ★ 웹사이트 설명은 160자 미만이 SEO 최적화 글자 수 입니다.
+              </span>
             </label>
             <textarea
               onChange={onChange}
@@ -167,6 +173,9 @@ const MetaTag = () => {
           <div className={`relative ${isCheckInfo?.key === 'keyword' ? 'overflow-visible' : 'overflow-hidden'}`}>
             <label htmlFor="keyword" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               ⌨️ 키워드 / 해시태그
+              <span className="ml-1 text-xs text-gray-500 whitespace-pre-line dark:text-gray-400">
+                ★ 키워드는 160자 미만이 SEO 최적화 글자 수 입니다.
+              </span>
             </label>
             <textarea
               onChange={onChange}

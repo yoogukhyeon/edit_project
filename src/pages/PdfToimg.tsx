@@ -32,6 +32,7 @@ const PdfToimg = () => {
 
     if (file.type !== 'application/pdf') {
       toast.error('PDF 파일만 업로드 해주세요.');
+      setImg('');
       setFileType(true);
       return;
     }
@@ -130,7 +131,7 @@ const PdfToimg = () => {
                   <Link
                     className="flex items-center justify-center w-full h-full text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-base px-5 py-2.5 text-center "
                     to={img}
-                    download="Example-PDF-document"
+                    download="PDF-IMG"
                     target="_blank"
                     rel="noreferrer"
                   >

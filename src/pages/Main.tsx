@@ -41,28 +41,20 @@ const Main = () => {
         url={'https://webtool.everyday-365.com'}
         imgsrc={'/images/logo.png'}
       />
-      <input type="file" accept=".pdf" onChange={onChange} />
-      <div style={{ height: '500px' }}>
+      <label htmlFor="file">
+        <input id="file" type="file" accept=".pdf" onChange={onChange} />
+      </label>
+      <div>
         {url ? (
-          <div
-            className="rpv-core__viewer mt-2.5"
-            style={{
-              border: '1px solid rgba(0, 0, 0, 0.3)',
-              display: 'flex',
-              flexDirection: 'column',
-              height: '100%',
-            }}
-          >
+          <div className="mt-3">
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js">
-              <div style={{ minHeight: '750px' }}>
-                <Viewer
-                  characterMap={characterMap}
-                  localization={ko_KR as unknown as LocalizationMap}
-                  fileUrl={url}
-                  plugins={[defaultLayoutPluginInstance, toolbarPluginInstance]}
-                  defaultScale={SpecialZoomLevel.PageFit}
-                />
-              </div>
+              <Viewer
+                characterMap={characterMap}
+                localization={ko_KR as unknown as LocalizationMap}
+                fileUrl={url}
+                plugins={[defaultLayoutPluginInstance, toolbarPluginInstance]}
+                defaultScale={SpecialZoomLevel.PageWidth}
+              />
             </Worker>
           </div>
         ) : (
@@ -71,7 +63,7 @@ const Main = () => {
               alignItems: 'center',
               display: 'flex',
               fontSize: '2rem',
-              height: '100%',
+              minHeight: '500px',
               justifyContent: 'center',
               width: '100%',
             }}
