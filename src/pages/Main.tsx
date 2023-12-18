@@ -10,7 +10,6 @@ import SEOMetaTag from 'seo/SEOMetaTag';
 
 const characterMap: CharacterMap = {
   isCompressed: true,
-  // The url has to end with "/"
   url: 'https://unpkg.com/pdfjs-dist@2.6.347/cmaps/',
 };
 
