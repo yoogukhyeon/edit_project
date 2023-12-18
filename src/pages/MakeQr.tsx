@@ -18,7 +18,7 @@ const defaultOptions = {
 };
 
 const MakeQr = () => {
-  const [urlValue, setUrlValue] = useState('http://localhost:3000');
+  const [urlValue, setUrlValue] = useState('https://webtool.everyday-365.com/');
 
   const onChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
