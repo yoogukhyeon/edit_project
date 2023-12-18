@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import CounterChar from 'pages/CounterChar';
 import MakeQr from 'pages/MakeQr';
 import MetaTag from 'pages/MetaTag';
+import MyIp from 'pages/MyIp';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/counter-char" element={<CounterChar />}></Route>
           <Route path="/make-qr" element={<MakeQr />}></Route>
           <Route path="/make-meta" element={<MetaTag />}></Route>
+          <Route path="/my-ip" element={<MyIp />}></Route>
         </Route>
       </Routes>
     </div>
