@@ -23,7 +23,7 @@ const Ip = () => {
       <p className="mb-3 text-gray-500 first-line:uppercase first-line:tracking-widest first-letter:text-3xl first-letter:font-bold first-letter:text-gray-900 first-letter:me-1 first-letter:float-start">
         My IP 주소
       </p>
-      <p className="text-gray-600 text-3xl max-sm:text-base">{ip?.ip}</p>
+      <p className="text-gray-600 mb-1 text-3xl max-sm:text-base">{ip?.ip}</p>
       <p className="text-gray-600  text-sm ">국가코드: {ip?.country_code}</p>
       <p className="text-gray-600  text-sm ">지역: {ip?.country_name?.ko}</p>
     </div>
