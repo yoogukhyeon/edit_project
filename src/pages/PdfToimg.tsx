@@ -70,7 +70,6 @@ const PdfToimg = () => {
       console.error('오류 PDF', err);
     }
   };
-
   return (
     <div className="w-full">
       <SEOMetaTag
