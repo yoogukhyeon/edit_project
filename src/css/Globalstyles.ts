@@ -79,7 +79,7 @@ a{
 #mobonDivBanner_902510 {
   position: absolute;
   right: 50%;
-  top: -110px;
+  top: -97px;
   transform: translateX(50%);
 
   @media (max-width: 710px) {
