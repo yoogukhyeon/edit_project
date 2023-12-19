@@ -13,7 +13,7 @@ const MyIp = () => {
       <div className="mt-3 mb-5">
         <div className="mt-5 mb-7 text-center bg-slate-100 p-5 rounded-md">
           <p className="mb-2 text-lg font-medium text-gray-900 ">사용자 브라우저 정보 확인</p>
-          <p className="text-gray-500 text-sm max-sm:text-base">{navigator.userAgent}</p>
+          <p className="text-gray-500 text-base max-sm:text-sm">{navigator.userAgent}</p>
         </div>
       </div>
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white"> IP 주소를 확인하는 가장 쉽고 빠른 방법?</p>

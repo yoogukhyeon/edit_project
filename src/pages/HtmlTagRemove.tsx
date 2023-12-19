@@ -85,7 +85,7 @@ const HtmlTagRemove = () => {
           {html && <Alert setValue={setHtml} text="HTML 소스를 넣어주세요." />}
           <textarea
             id="original"
-            rows={11}
+            rows={13}
             className="outline-none block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="HTML 소스를 넣어주세요."
             onChange={onChange}
@@ -102,7 +102,7 @@ const HtmlTagRemove = () => {
           {copy && <Infor setValue={setCopy} text="복사를 완료했습니다." />}
           <textarea
             id="new"
-            rows={11}
+            rows={13}
             className="outline-none block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="태그제거 결과"
             readOnly

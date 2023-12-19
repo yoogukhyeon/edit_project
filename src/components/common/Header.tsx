@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 import Ip from '@components/ip/Ip';
 import ThemeButton from './ThemeButton';
+import DropDown from './common/DropDown';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -17,7 +18,10 @@ const Header = () => {
           <img src="/images/logo.png" alt="로고" width={40} height={40} />
           EVERYDAY 웹툴
         </h1>
-        <ThemeButton />
+        <div className="flex justify-center items-center gap-2">
+          <DropDown />
+          <ThemeButton />
+        </div>
       </div>
 
       <div>

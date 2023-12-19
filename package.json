@@ -17,6 +17,7 @@
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.6.2",
     "craco": "^0.0.3",
+    "flowbite-react": "^0.7.2",
     "html-react-parser": "^5.0.7",
     "letter-count": "^5.2.1",
     "pdfjs-dist": "^3.4.120",

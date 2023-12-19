@@ -35,12 +35,12 @@ const ImgToPng = () => {
         }
         setOriFile(file);
         convertToPNG(file, setConvertedImg, 'image/png');
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
       } else {
         toast.error('이미지 파일만 업로드 해주세요.');
       }
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     }
   };
 
