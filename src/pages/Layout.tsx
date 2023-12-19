@@ -20,7 +20,7 @@ const Layout = () => {
 
   return (
     <>
-      <div style={{ padding: '0 20px' }} className="max-w-4xl w-full mx-auto">
+      <div style={{ padding: '0 20px' }} className="max-w-4xl w-full mx-auto mt-24 max-sm:mt-0">
         {loading && (
           <>
             <div role="status" className="space-y-8 animate-pulse w-full mt-10">
