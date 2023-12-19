@@ -56,5 +56,41 @@ a{
   text-decoration: none
 }
 
+ #mobonDivBanner_902498 {
+  position: absolute;
+  left: -150px;
+  top: 80px;
 
+  @media (max-width: 1210px) {
+      display: none;
+  }
+}
+
+#mobonDivBanner_902509 {
+  position: absolute;
+  right: -150px;
+  top: 80px;
+
+  @media (max-width: 1210px) {
+      display: none;
+  }
+} 
+
+#mobonDivBanner_902510 {
+  position: fixed;
+  right: 50%;
+  bottom: 0;
+  transform: translateX(50%);
+
+  @media (max-width: 710px) {
+      display: none;
+  }
+}
+
+.root_wrap {
+  position: relative;
+  max-width: 896px;
+  width: 100%;
+  margin: 0 auto;
+}
 `;
