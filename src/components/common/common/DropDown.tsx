@@ -12,13 +12,13 @@ const DropDown = () => {
           <span className="block text-sm">개발자 유국현</span>
           <span className="block truncate text-sm font-medium">rnrgus5897@gmail.com</span>
         </Dropdown.Header>
-        <Dropdown.Item className="px-4" as="a" href="https://flowbite.com/" target="_blank" icon={FaGithub}>
+        <Dropdown.Item className="px-4" as="a" href="https://github.com/yoogukhyeon" target="_blank" icon={FaGithub}>
           Git
         </Dropdown.Item>
-        <Dropdown.Item className="px-4" as="a" href="https://flowbite.com/" target="_blank" icon={TbBrandBlogger}>
+        <Dropdown.Item className="px-4" as="a" href="https://cometruedream.tistory.com" target="_blank" icon={TbBrandBlogger}>
           blog
         </Dropdown.Item>
-        <Dropdown.Item className="px-4" as="a" href="https://flowbite.com/" target="_blank" icon={MdSportsSoccer}>
+        <Dropdown.Item className="px-4" as="a" href="http://everyday-365.com" target="_blank" icon={MdSportsSoccer}>
           business
         </Dropdown.Item>
       </Dropdown>
