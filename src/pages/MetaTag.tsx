@@ -4,6 +4,7 @@ import { script } from 'constants/metaTag';
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import SEOMetaTag from 'seo/SEOMetaTag';
+import { useMetaStore } from 'store/metaStore';
 import { copyFnc } from 'utill/copy';
 
 export type CheckInfo = {
@@ -26,14 +27,9 @@ const MetaTag = () => {
     key: '',
     isFocus: false,
   });
-  const [inputs, setInputs] = useState<Inputs>({
-    title: '',
-    desc: '',
-    keyword: '',
-    url: '',
-    writer: '',
-    curl: '',
-  });
+
+  const { inputs, setInputs } = useMetaStore();
+
   const [rememberChk, setRememberChk] = useState<string>('Y');
   const [seoScript, setSeoScript] = useState<string>('');
   const [_, setCopySeo] = useAlert(false);
