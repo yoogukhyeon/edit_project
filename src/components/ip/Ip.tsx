@@ -16,7 +16,7 @@ const Ip = () => {
     setIP(res.data);
   };
 
-  useMemo(() => getData(), []);
+  useMemo(() => getData(), [ip]);
 
   return (
     <div className="mt-5 mb-7 text-center bg-slate-200 p-5 rounded-md">
