@@ -1,4 +1,3 @@
-import React from 'react';
 import { Dropdown } from 'flowbite-react';
 import { FaGithub } from 'react-icons/fa';
 import { TbBrandBlogger } from 'react-icons/tb';
