@@ -5,9 +5,9 @@ const MyIp = () => {
   return (
     <div>
       <SEOMetaTag
-        title={'나만의 QR코드 만들기'}
+        title={'아이피 확인'}
         description={'IP, ip 확인, ip주소 확인, ipconfig, ip 조회, ip 주소를 확인하는 가장 쉬운 방법 - webtool.everyday-365.com'}
-        url={'https://webtool.everyday-365.com/make-qr'}
+        url={'https://webtool.everyday-365.com/my-ip'}
         imgsrc={'/images/logo.png'}
       />
       <div className="mt-3 mb-5">

@@ -288,6 +288,26 @@ const MetaTag = () => {
           </button>
         )}
       </div>
+      <div className="flex p-4 my-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+        <svg
+          className="flex-shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+        </svg>
+        <span className="sr-only">Info</span>
+        <div>
+          <span className="font-medium">{`${`HTML <meta> 태그 정의 및 특징`}`}:</span>
+          <ul className="mt-1.5 space-y-1 list-disc list-inside">
+            <li>{`${`<meta> 태그는 해당 문서에 대한 정보인 메타데이터(metadata)를 정의할 때 사용합니다.`}`} </li>
+            <li>{`${`이러한 <meta> 요소는 언제나 <head> 요소 내부에 위치해야 합니다.`}`}</li>
+            <li>{`${`<meta> 요소는 <base>, <link>, <script>, <style>, <title> 요소와 같은 다른 메타데이터 관련 요소들이 나타낼 수 없는 다양한 종류의 메타데이터를 제공할 때 사용되며, 이렇게 제공된 정보는 브라우저나 검색 엔진, 다른 웹 서비스에서 사용하게 됩니다.`}`}</li>
+          </ul>
+        </div>
+      </div>
       <div className="grid w-full md:grid-cols-1 mt-6">
         <label htmlFor="metatag" className="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
           📦 메타태그 출력
