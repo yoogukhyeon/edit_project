@@ -1,4 +1,4 @@
-import { createRef, useEffect, useRef } from 'react';
+import { createRef, useEffect } from 'react';
 
 interface IProps {
   pathname: string;
