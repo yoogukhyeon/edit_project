@@ -1,11 +1,11 @@
-import { createRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface IProps {
   pathname: string;
 }
 
 export default function Comment({ pathname }: IProps) {
-  const element = createRef<HTMLDivElement>();
+  const element = useRef<HTMLDivElement>();
 
   useEffect(() => {
     if (element.current === null) return;
