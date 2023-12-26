@@ -301,7 +301,7 @@ const MetaTag = () => {
         <span className="sr-only">Info</span>
         <div>
           <span className="font-medium">{`${`HTML <meta> 태그 정의 및 특징`}`}:</span>
-          <ul className="mt-1.5 space-y-1 list-disc list-inside">
+          <ul className="mt-1.5 space-y-1 list-disc list-inside max-sm:text-xs">
             <li>{`${`<meta> 태그는 해당 문서에 대한 정보인 메타데이터(metadata)를 정의할 때 사용합니다.`}`} </li>
             <li>{`${`이러한 <meta> 요소는 언제나 <head> 요소 내부에 위치해야 합니다.`}`}</li>
             <li>{`${`<meta> 요소는 <base>, <link>, <script>, <style>, <title> 요소와 같은 다른 메타데이터 관련 요소들이 나타낼 수 없는 다양한 종류의 메타데이터를 제공할 때 사용되며, 이렇게 제공된 정보는 브라우저나 검색 엔진, 다른 웹 서비스에서 사용하게 됩니다.`}`}</li>
