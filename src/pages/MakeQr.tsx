@@ -4,6 +4,7 @@ import QRCode from 'qrcode.react';
 import styled from 'styled-components';
 import { Tilt } from 'react-tilt';
 import SEOMetaTag from 'seo/SEOMetaTag';
+import Comment from '@components/common/common/Comment';
 
 const defaultOptions = {
   reverse: false,
@@ -86,6 +87,7 @@ const MakeQr = () => {
           </div>
         </QrCodeWrap>
       </div>
+      <Comment pathname="makeQr" />
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import Comment from '@components/common/common/Comment';
 import React from 'react';
 import SEOMetaTag from 'seo/SEOMetaTag';
 
@@ -26,6 +27,8 @@ const MyIp = () => {
         IP란 인터넷 프로토콜(Internet Protocol)의 약자로 인터넷에 연결되어 있는 장치를 식별하기 위해 각각의 장비에 부여하는 고유 주소입니다. 데이터를
         주고 받기 위해서 데이터를 발신하는 곳과 수신하는 곳이 필요합니다. 통신을 위해 부여한 주소가 IP 주소(Internet Protocol Address)입니다.
       </p>
+
+      <Comment pathname="myIp" />
     </div>
   );
 };

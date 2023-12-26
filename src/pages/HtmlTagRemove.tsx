@@ -1,5 +1,6 @@
 import Alert from '@components/common/common/Alert';
 import Button from '@components/common/common/Button';
+import Comment from '@components/common/common/Comment';
 import Infor from '@components/common/common/Infor';
 import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useCallback, useState } from 'react';
@@ -118,6 +119,7 @@ const HtmlTagRemove = () => {
           태그 제거
         </button>
       </div>
+      <Comment pathname="htemlTagRemove" />
     </div>
   );
 };

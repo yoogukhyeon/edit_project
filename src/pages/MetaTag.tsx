@@ -1,3 +1,4 @@
+import Comment from '@components/common/common/Comment';
 import MetaInfo from '@components/common/common/MetaInfo';
 import useAlert from '@hooks/useAlert';
 import { script } from 'constants/metaTag';
@@ -320,6 +321,7 @@ const MetaTag = () => {
           defaultValue={seoScript}
         />
       </div>
+      <Comment pathname="metaTag" />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import Alert from '@components/common/common/Alert';
 import Button from '@components/common/common/Button';
+import Comment from '@components/common/common/Comment';
 import Infor from '@components/common/common/Infor';
 import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
@@ -157,6 +158,7 @@ const TextConvert = () => {
           />
         </div>
       </div>
+      <Comment pathname="textConvert" />
     </div>
   );
 };

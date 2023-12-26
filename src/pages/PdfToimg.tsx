@@ -1,4 +1,5 @@
 import Alert from '@components/common/common/Alert';
+import Comment from '@components/common/common/Comment';
 import Loading from '@components/common/common/Loading';
 import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useState } from 'react';
@@ -175,6 +176,8 @@ const PdfToimg = () => {
           )}
         </>
       )}
+
+      <Comment pathname="pdfToImg" />
     </div>
   );
 };

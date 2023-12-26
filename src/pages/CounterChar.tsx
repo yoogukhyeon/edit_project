@@ -5,6 +5,7 @@ import React, { ChangeEvent, useCallback, useState } from 'react';
 import { count } from 'letter-count';
 import { toast } from 'react-toastify';
 import SEOMetaTag from 'seo/SEOMetaTag';
+import Comment from '@components/common/common/Comment';
 
 const CounterChar = () => {
   const [text, setText] = useState<string>('');
@@ -162,6 +163,7 @@ const CounterChar = () => {
           </div>
         </div>
       </div>
+      <Comment pathname="counterChar" />
     </div>
   );
 };

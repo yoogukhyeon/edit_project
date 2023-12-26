@@ -7,6 +7,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import styled from 'styled-components';
 import SEOMetaTag from 'seo/SEOMetaTag';
+import Comment from '@components/common/common/Comment';
 
 const characterMap: CharacterMap = {
   isCompressed: true,
@@ -72,6 +73,7 @@ const Main = () => {
           </div>
         )}
       </div>
+      <Comment pathname="main" />
     </MainWrap>
   );
 };
