@@ -1,26 +1,37 @@
-import { useEffect, useRef } from 'react';
+import { createRef, useEffect, useRef } from 'react';
 
 interface IProps {
   pathname: string;
 }
 
 export default function Comment({ pathname }: IProps) {
-  const commentsEl = useRef<HTMLDivElement>(null);
+  const element = createRef<HTMLDivElement>();
 
   useEffect(() => {
-    const scriptEl = document.createElement('script');
-    scriptEl.async = true;
-    scriptEl.src = 'https://utteranc.es/client.js';
-    scriptEl.setAttribute('repo', 'yoogukhyeon/edit_project');
-    scriptEl.setAttribute('issue-term', pathname);
-    scriptEl.setAttribute('theme', 'github-light');
-    scriptEl.setAttribute('crossorigin', 'anonymous');
-    commentsEl.current?.appendChild(scriptEl);
+    if (element.current === null) return;
+
+    const utterances: HTMLScriptElement = document.createElement('script');
+
+    const attributes: any = {
+      src: 'https://utteranc.es/client.js',
+      repo: 'yoogukhyeon/edit_project',
+      'issue-term': pathname,
+      label: 'Comment',
+      theme: `github-light`,
+      crossorigin: 'anonymous',
+      async: 'true',
+    };
+
+    Object.entries(attributes).forEach(([key, value]: any) => {
+      utterances.setAttribute(key, value);
+    });
+
+    element.current.appendChild(utterances);
   }, []);
 
   return (
     <div className="mt-5">
-      <div ref={commentsEl} />
+      <div ref={element} />
     </div>
   );
 }
