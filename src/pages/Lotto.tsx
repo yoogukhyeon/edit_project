@@ -7,7 +7,9 @@ const Lotto = () => {
     const url =
       window.location.hostname === 'localhost'
         ? 'http://localhost:3000/lottowinnumber/fo/lottowinnumberlist'
-        : `${process.env.REACT_APP_HOST}/lottowinnumber/fo/lottowinnumberlist`;
+        : '/api/lottowinnumber/fo/lottowinnumberlist';
+
+    // `${process.env.REACT_APP_HOST}/lottowinnumber/fo/lottowinnumberlist`;
     // eslint-disable-next-line consistent-return
     async function fetchdata() {
       try {
