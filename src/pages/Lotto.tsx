@@ -2,18 +2,16 @@ import axios from 'axios';
 import cheerio from 'cheerio';
 import React, { useEffect } from 'react';
 
-const instance = axios.create({
-  baseURL: 'https://www.fullayer.com',
-});
-
 const Lotto = () => {
   useEffect(() => {
+    const url =
+      window.location.hostname === 'localhost'
+        ? 'http://localhost:3000/lottowinnumber/fo/lottowinnumberlist'
+        : `${process.env.REACT_APP_DB_HOST}/lottowinnumber/fo/lottowinnumberlist`;
     // eslint-disable-next-line consistent-return
     async function fetchdata() {
       try {
-        return await instance.get('/lottowinnumber/fo/lottowinnumberlist', {
-          withCredentials: true,
-        });
+        return await axios.get(url);
       } catch (error) {
         console.error(error);
       }
