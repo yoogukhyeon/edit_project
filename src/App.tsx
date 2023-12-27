@@ -13,6 +13,7 @@ import CounterChar from 'pages/CounterChar';
 import MakeQr from 'pages/MakeQr';
 import MetaTag from 'pages/MetaTag';
 import MyIp from 'pages/MyIp';
+import Lotto from 'pages/Lotto';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="/make-qr" element={<MakeQr />}></Route>
           <Route path="/make-meta" element={<MetaTag />}></Route>
           <Route path="/my-ip" element={<MyIp />}></Route>
+          <Route path="/lotto" element={<Lotto />}></Route>
         </Route>
       </Routes>
     </div>

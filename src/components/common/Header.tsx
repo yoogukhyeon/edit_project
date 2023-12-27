@@ -89,6 +89,11 @@ const Header = () => {
                 내 아이피 확인(IP address)
               </NavLink>
             </Li>
+            <Li className="nav_third">
+              <NavLink to="/lotto" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+                로또회차별
+              </NavLink>
+            </Li>
           </ul>
         </nav>
       </div>
