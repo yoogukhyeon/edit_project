@@ -7,7 +7,11 @@ const Lotto = () => {
     // eslint-disable-next-line consistent-return
     async function fetchdata() {
       try {
-        return await axios.get('/lottowinnumber/fo/lottowinnumberlist');
+        const url =
+          window.location.hostname === 'localhost'
+            ? '/lottowinnumber/fo/lottowinnumberlist'
+            : 'https://www.fullayer.com/lottowinnumber/fo/lottowinnumberlist';
+        return await axios.get(url);
       } catch (error) {
         console.error(error);
       }
