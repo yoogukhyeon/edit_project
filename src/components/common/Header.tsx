@@ -92,7 +92,7 @@ const Header = () => {
             </Li>
             <Li className="nav_third">
               <NavLink to="/lotto" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
-                로또회차별
+                로또회차별당첨번호
               </NavLink>
             </Li>
           </ul>
