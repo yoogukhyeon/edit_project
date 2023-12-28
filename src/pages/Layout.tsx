@@ -10,7 +10,7 @@ const Layout = () => {
     setLoading(true);
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 900);
+    }, 600);
 
     timer;
     return () => {

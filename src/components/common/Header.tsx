@@ -1,12 +1,13 @@
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 import Ip from '@components/ip/Ip';
+import FirstLotto from '@components/lotto/FirstLotto';
 import ThemeButton from './ThemeButton';
 import DropDown from './common/DropDown';
 
 const Header = () => {
   const navigate = useNavigate();
-
+  const location = useLocation();
   const goToHome = () => {
     navigate('/');
   };
@@ -97,7 +98,8 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <Ip />
+      {location?.pathname === '/lotto' && <FirstLotto />}
+      {location?.pathname !== '/lotto' && <Ip />}
     </header>
   );
 };
