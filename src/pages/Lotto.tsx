@@ -1,3 +1,4 @@
+import Loading from '@components/common/common/Loading';
 import List from '@components/lotto/List';
 import axios from 'axios';
 import cheerio from 'cheerio';
@@ -111,6 +112,7 @@ const Lotto = () => {
           </div>
         </div>
       )}
+      {lottoList?.length < 1 && <Loading />}
     </>
   );
 };
