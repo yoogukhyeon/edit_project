@@ -41,7 +41,7 @@ const MakeQr = () => {
     <div>
       <SEOMetaTag
         title={'나만의 QR코드 만들기'}
-        description={'나만의 QR코드 만들기 - webtool.everyday-365.com'}
+        description={'1분만에 QR 코드 만들기, 쉽고 빠르게 나만의 QR 코드를 만들수 있습니다.'}
         url={'https://webtool.everyday-365.com/make-qr'}
         imgsrc={'/images/logo.png'}
       />

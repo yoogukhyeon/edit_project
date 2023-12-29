@@ -37,7 +37,9 @@ const CounterChar = () => {
     <div>
       <SEOMetaTag
         title={'글자수 문자수 계산기'}
-        description={'글자수 문자수 계산기 - webtool.everyday-365.com'}
+        description={
+          '블로그 포스팅, SEO 최적화 글자수, 이력서, 자기소개서, 에세이 작성을 잘 하기 위해서 필요한 글자수세기, 문장수세시, 숫자수세기, 라인수세기, 특수문자수세기'
+        }
         url={'https://webtool.everyday-365.com/counter-char'}
         imgsrc={'/images/logo.png'}
       />

@@ -75,7 +75,7 @@ const PdfToimg = () => {
     <div className="w-full">
       <SEOMetaTag
         title={'PDF 이미지 변환'}
-        description={'PDF 이미지 변환 - webtool.everyday-365.com'}
+        description={'PDF 형식을 JPG로 신속하게 무료로 변환하세요. PDF 형식을 손쉽게 JPG 파일로 변환할 수 있습니다.'}
         url={'https://webtool.everyday-365.com/pdf-img'}
         imgsrc={'/images/logo.png'}
       />

@@ -95,7 +95,7 @@ const MetaTag = () => {
     <div>
       <SEOMetaTag
         title={'메타태그(SEO) 만들기'}
-        description={'메타태그(SEO) 만들기 - webtool.everyday-365.com'}
+        description={'EVERYDAY웹툴에서 SEO 메타 태그 생성기는 한 번의 클릭으로 웹 페이지에 대한 메타 태그를 생성하는 무료 SEO 도구입니다.'}
         url={'https://webtool.everyday-365.com/make-meta'}
         imgsrc={'/images/logo.png'}
       />

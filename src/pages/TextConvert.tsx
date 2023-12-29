@@ -73,7 +73,7 @@ const TextConvert = () => {
     <div>
       <SEOMetaTag
         title={'영어 대문자 소문자 변환'}
-        description={'영어 대문자 소문자 변환 - webtool.everyday-365.com'}
+        description={'영어 대문자에서 소문자로, 소문자에서 대문자로 변경할 수 있는 무료 온라인 대/소문자 변환기.'}
         url={'https://webtool.everyday-365.com/text-convert'}
         imgsrc={'/images/logo.png'}
       />
