@@ -1,5 +1,4 @@
 import Comment from '@components/common/common/Comment';
-import React from 'react';
 import SEOMetaTag from 'seo/SEOMetaTag';
 
 const MyIp = () => {
