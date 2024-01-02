@@ -78,7 +78,7 @@ const Lotto = () => {
           '6개월 전부터 현재까지 모든 로또당첨번호, 일등당첨수, 일등 당첨금액, 발표일 등의 정보를 제공합니다. 로또당첨번호, 로또당첨번호조회를 확인할수 있습니다.'
         }
         url={'https://webtool.everyday-365.com/lotto'}
-        imgsrc={'/images/logo.png'}
+        imgsrc={'/images/meta.png'}
       />
       {lottoList?.length > 0 && (
         <div className="flex flex-col ">

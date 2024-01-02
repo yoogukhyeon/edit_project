@@ -8,7 +8,7 @@ const MyIp = () => {
         title={'아이피 확인'}
         description={'IP, ip 확인, ip주소 확인, ipconfig, ip 조회, ip 주소를 확인하는 가장 쉬운 방법'}
         url={'https://webtool.everyday-365.com/my-ip'}
-        imgsrc={'/images/logo.png'}
+        imgsrc={'/images/meta.png'}
       />
       <div className="mt-3 mb-5">
         <div className="mt-5 mb-7 text-center bg-slate-100 p-5 rounded-md">

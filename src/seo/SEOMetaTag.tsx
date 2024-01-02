@@ -4,7 +4,7 @@ import React from 'react';
 const SEOMetaTag = (props: any) => {
   return (
     <Helmet>
-      <title>{props.title} | EVERYDAY 웹툴</title>
+      <title>{props.title}</title>
 
       <link rel="shortcut icon" href="/images/favicon.ico" />
       <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />

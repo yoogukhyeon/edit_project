@@ -57,7 +57,7 @@ const HtmlTagRemove = () => {
           '웹페이지는 html로 이루어져 있어서 개발자모드에서 html 소스를 가져오고 싶을때가 있다. 그런 경우에 html tag를 지우고 정보만 필요한 경우 html태그제거앱을 이용하면 간단합니다. html 태그제거기를 활용해서 순수한 텍스트만 추출해서 사용할 수 있습니다.'
         }
         url={'https://webtool.everyday-365.com/html-remove'}
-        imgsrc={'/images/logo.png'}
+        imgsrc={'/images/meta.png'}
       />
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">HTML 태그 제거기</p>
       <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">

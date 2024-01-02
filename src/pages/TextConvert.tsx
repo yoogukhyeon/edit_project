@@ -75,7 +75,7 @@ const TextConvert = () => {
         title={'영어 대문자 소문자 변환'}
         description={'영어 대문자에서 소문자로, 소문자에서 대문자로 변경할 수 있는 무료 온라인 대/소문자 변환기.'}
         url={'https://webtool.everyday-365.com/text-convert'}
-        imgsrc={'/images/logo.png'}
+        imgsrc={'/images/meta.png'}
       />
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">영어 대문자 소문자 변환</p>
       <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">

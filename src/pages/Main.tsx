@@ -39,7 +39,7 @@ const Main = () => {
           '웹에서 바로 사용할 수 있는 다양한 웹툴을 제공합니다. PDF 미리보기, 이미지 변환, HTML 태그 제거기, 영어 대문자 소문자 변환, 글자수 문자수 계산기, 나만의 QR코드 만들기, 메타태그(SEO) 만들기, UserAgent확인, ip, 아이피, 내 아이피 쉽게 확인할수 있습니다.'
         }
         url={'https://webtool.everyday-365.com'}
-        imgsrc={'/images/logo.png'}
+        imgsrc={'/images/meta.png'}
       />
       <label htmlFor="file">
         <input id="file" type="file" accept=".pdf" onChange={onChange} />
