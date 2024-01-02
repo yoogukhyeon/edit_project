@@ -64,6 +64,7 @@ const PdfToimg = () => {
       const imgDataUrl = canvas.toDataURL('image/jpeg');
 
       setImg(imgDataUrl);
+      setFileType(false);
       setTimeout(() => {
         setLoading(false);
       }, 2000);
