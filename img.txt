@@ -34,7 +34,6 @@ meta tag 란?
 //메타 태그로 refresh 다른 페이지로 리다이렉트 시킬수 있다.
 <meta http-equiv="refresh" content="5;url=http://www.naver.com" />
 
-
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
