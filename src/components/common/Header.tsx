@@ -95,11 +95,16 @@ const Header = () => {
                 로또회차별당첨번호
               </NavLink>
             </Li>
+            <Li className="nav_third">
+              <NavLink to="/invest-lucky" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+                오늘의 투자운세
+              </NavLink>
+            </Li>
           </ul>
         </nav>
       </div>
       {location?.pathname === '/lotto' && <FirstLotto />}
-      {location?.pathname !== '/lotto' && <Ip />}
+      {location?.pathname !== '/lotto' && location?.pathname !== '/invest-lucky' && <Ip />}
     </header>
   );
 };
