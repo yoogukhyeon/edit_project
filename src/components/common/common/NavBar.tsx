@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const goToHome = () => {
+    navigate('/');
+  };
+
   const [nav, setNav] = useState<boolean>(false);
 
   const handleNav = () => {
@@ -43,7 +49,13 @@ const Navbar = () => {
         }
       >
         {/* Mobile Logo */}
-        <h1 className="w-full text-3xl font-bold text-black m-4">REACT.</h1>
+        <h1
+          onClick={goToHome}
+          className="p-4 cursor-pointer text-black flex gap-3 justify-start items-center text-base font-extrabold dark:text-white"
+        >
+          <img src="/images/logo.png" alt="로고" width={40} height={40} />
+          EVERYDAY 웹툴
+        </h1>
 
         {/* Mobile Navigation Items */}
         {navItems.map((item) => (
