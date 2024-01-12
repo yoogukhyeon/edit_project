@@ -4,6 +4,7 @@ import Ip from '@components/ip/Ip';
 import FirstLotto from '@components/lotto/FirstLotto';
 import ThemeButton from './ThemeButton';
 import DropDown from './common/DropDown';
+import Navbar from './common/NavBar';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -22,10 +23,11 @@ const Header = () => {
         <div className="flex justify-center items-center gap-2">
           <DropDown />
           <ThemeButton />
+          <Navbar />
         </div>
       </div>
 
-      <div>
+      <div className="max-md:hidden">
         <nav className="pt-4 text-sm font-medium max-sm:pb-4">
           <ul className="flex gap-3 justify-center items-center max-sm:flex-col">
             <Li className="max-sm: w-full">
@@ -51,7 +53,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <div>
+      <div className="max-md:hidden">
         <nav className="pt-4 pb-1 text-sm font-medium max-sm:pt-0">
           <ul className="flex gap-3 justify-center items-center max-sm:flex-col">
             <Li className="max-sm: w-full">
@@ -77,7 +79,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <div>
+      <div className="max-md:hidden">
         <nav className="pt-4 pb-1 text-sm font-medium max-sm:pt-2">
           <ul className="flex gap-3 justify-start items-center max-sm:flex-col">
             <Li className="nav_third">

@@ -20,7 +20,7 @@ const Ip = () => {
 
   return (
     <div className="mt-5 mb-7 text-center bg-slate-200 p-5 rounded-md">
-      <p className="mb-3 text-gray-500 first-line:uppercase first-line:tracking-widest first-letter:text-3xl first-letter:font-bold first-letter:text-gray-900 first-letter:me-1 first-letter:float-start">
+      <p className="max-sm:text-base max-sm:first-letter:text-2xl mb-3 text-gray-500 first-line:uppercase first-line:tracking-widest first-letter:text-3xl first-letter:font-bold first-letter:text-gray-900 first-letter:me-1 first-letter:float-start">
         My IP 주소
       </p>
       <p className="text-gray-600 mb-1 text-3xl max-sm:text-base">{ip?.ip}</p>
