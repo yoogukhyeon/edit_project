@@ -18,6 +18,7 @@ png, jpeg 등 보다 포맷 크기가 작고 google에서 인터넷 이미지 �
 https://www.npmjs.com/package/letter-count
 
 
+
 문자수: chars
 단어수: words
 숫자수: numbers
