@@ -97,6 +97,13 @@ const QrCodeWrap = styled.div`
     border: 1px solid #eee;
   }
 
+  @media (max-width: 645px) {
+    canvas {
+      width: 300px !important;
+      height: 300px !important;
+    }
+  }
+
   @media (max-width: 515px) {
     > svg {
       width: 400px;

@@ -11,8 +11,8 @@ const InvestLucky = () => {
         imgsrc={'/images/meta.png'}
       />
       <InvestLuckyWrap>
-        <p className="mb-2 text-3xl font-medium text-gray-900 dark:text-white">오늘의 투자 운세</p>
-        <iframe src="https://webtool.cusis.net/ex/today-lucky/tl.html" frameBorder="0"></iframe>
+        <p className="mb-2 text-3xl font-medium text-gray-900 dark:text-white ">오늘의 투자 운세</p>
+        <iframe src="https://webtool.cusis.net/ex/today-lucky/tl.html" className="dark:bg-white dark:py-3 dark:rounded-sm" frameBorder="0"></iframe>
       </InvestLuckyWrap>
     </>
   );
