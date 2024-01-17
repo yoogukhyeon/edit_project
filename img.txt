@@ -15,6 +15,7 @@ png, jpeg 등 보다 포맷 크기가 작고 google에서 인터넷 이미지 �
 이미지 품질은 유지하면서 파일 크기는 절반이하로 줄어서 품질, 용량에 최적화된다.
 
 
+
 https://www.npmjs.com/package/letter-count
 
 문자수: chars
