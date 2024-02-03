@@ -17,7 +17,7 @@ const Navbar = () => {
 
   // Array containing navigation items
   const navItems = [
-    { id: 1, path: '/', title: 'PDF 보기' },
+    // { id: 1, path: '/', title: 'PDF 보기' },
     { id: 2, path: '/pdf-img', title: 'PDF 이미지 변환' },
     { id: 3, path: '/img-png', title: '이미지 PNG 변환' },
     { id: 4, path: '/img-jpg', title: '이미지 JPG 변환' },
@@ -28,6 +28,7 @@ const Navbar = () => {
     { id: 9, path: '/my-ip', title: '내 아이피 확인(IP address)' },
     { id: 10, path: '/lotto', title: '로또회차별당첨번호' },
     { id: 11, path: '/invest-lucky', title: '오늘의 투자운세' },
+    { id: 12, path: '/make-meta', title: 'SEO 만들기' },
   ];
 
   return (
