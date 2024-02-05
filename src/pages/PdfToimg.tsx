@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { getByteSize } from 'utill/getByteSize';
+import JSZip from 'jszip';
+import { saveAs } from 'file-saver';
 
 const PdfToimg = () => {
   const [img, setImg] = useState<string>('');
@@ -49,24 +51,48 @@ const PdfToimg = () => {
     try {
       const pdf = await pdfjslib.getDocument({ data: pdfBlob }).promise;
 
-      const page = await pdf.getPage(1);
+      const pdfToPdfUrl = [];
 
-      const canvas = document.createElement('canvas');
-      const context = canvas.getContext('2d');
-      const viewport = page.getViewport({ scale: 1.0 });
+      // setImg(imgDataUrl);
+      // setFileType(false);
+      setTimeout(async () => {
+        // eslint-disable-next-line no-plusplus
+        for (let i = 0; i < pdf.numPages; i++) {
+          const page = await pdf.getPage(i + 1);
 
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          const viewport = page.getViewport({ scale: 1.0 });
 
-      await page.render({ canvasContext: context, viewport }).promise;
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
 
-      // 데이터를 인코딩된 문자열로 변환 (base64)
-      const imgDataUrl = canvas.toDataURL('image/jpeg');
+          await page.render({ canvasContext: context, viewport }).promise;
 
-      setImg(imgDataUrl);
-      setFileType(false);
-      setTimeout(() => {
-        setLoading(false);
+          // 데이터를 인코딩된 문자열로 변환 (base64)
+          const imgDataUrl = canvas.toDataURL('image/png');
+          pdfToPdfUrl.push(imgDataUrl);
+        }
+
+        const zip: any = new JSZip();
+        const imagesFolder = zip.folder('images');
+
+        const imagesFetcher = await Promise.all(
+          pdfToPdfUrl.map(async (imgSrc, index) => {
+            const res = await fetch(imgSrc);
+
+            return res.blob();
+          }),
+        );
+
+        imagesFetcher.forEach((imgBlob, index) => {
+          imagesFolder.file(`img_${index}.jpg`, imgBlob, { blob: true });
+        });
+
+        zip.generateAsync({ type: 'blob' }).then((content) => {
+          saveAs(content, `${file.name.split('.')[0]}.zip`);
+          setLoading(false);
+        });
       }, 2000);
     } catch (err) {
       console.error('오류 PDF', err);
