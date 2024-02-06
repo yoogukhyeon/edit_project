@@ -93,6 +93,8 @@ const PdfToimg = () => {
           saveAs(content, `${file.name.split('.')[0]}.zip`);
           setLoading(false);
         });
+
+        toast.info('PDF 이미지 압축을 완료했습니다.');
       }, 2000);
     } catch (err) {
       console.error('오류 PDF', err);
