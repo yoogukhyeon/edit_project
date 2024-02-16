@@ -15,7 +15,6 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-  // Array containing navigation items
   const navItems = [
     // { id: 1, path: '/', title: 'PDF 보기' },
     { id: 2, path: '/pdf-img', title: 'PDF 이미지 변환' },
