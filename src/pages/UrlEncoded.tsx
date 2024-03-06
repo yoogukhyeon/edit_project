@@ -3,7 +3,7 @@ import Button from '@components/common/common/Button';
 import Comment from '@components/common/common/Comment';
 import Infor from '@components/common/common/Infor';
 import useAlert from '@hooks/useAlert';
-import React, { ChangeEvent, useCallback, useState } from 'react';
+import { ChangeEvent, useCallback, useState } from 'react';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { copyFnc } from 'utill/copy';
 
