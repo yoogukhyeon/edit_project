@@ -28,6 +28,7 @@ const Navbar = () => {
     { id: 10, path: '/lotto', title: '로또회차별당첨번호' },
     { id: 11, path: '/invest-lucky', title: '오늘의 투자운세' },
     { id: 12, path: '/make-meta', title: 'SEO 만들기' },
+    { id: 13, path: '/encode-decode', title: 'URL 인코드 / 디코드 변환' },
   ];
 
   return (

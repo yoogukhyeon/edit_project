@@ -15,6 +15,7 @@ import MetaTag from 'pages/MetaTag';
 import MyIp from 'pages/MyIp';
 import Lotto from 'pages/Lotto';
 import InvestLucky from 'pages/InvestLucky';
+import UrlEncoded from 'pages/UrlEncoded';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/my-ip" element={<MyIp />}></Route>
           <Route path="/lotto" element={<Lotto />}></Route>
           <Route path="/invest-lucky" element={<InvestLucky />}></Route>
+          <Route path="/encode-decode" element={<UrlEncoded />}></Route>
         </Route>
       </Routes>
     </div>

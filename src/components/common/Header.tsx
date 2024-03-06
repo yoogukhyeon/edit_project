@@ -105,6 +105,17 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+      <div className="max-md:hidden">
+        <nav className="pt-4 pb-1 text-sm font-medium max-sm:pt-2">
+          <ul className="flex gap-3 justify-start items-center max-sm:flex-col">
+            <Li className="nav_third">
+              <NavLink to="/encode-decode" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+                URL 인코드 / 디코드 변환
+              </NavLink>
+            </Li>
+          </ul>
+        </nav>
+      </div>
       {location?.pathname === '/lotto' && <FirstLotto />}
       {location?.pathname !== '/lotto' && location?.pathname !== '/invest-lucky' && <Ip />}
     </header>
