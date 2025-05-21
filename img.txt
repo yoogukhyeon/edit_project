@@ -15,7 +15,6 @@ png, jpeg 등 보다 포맷 크기가 작고 google에서 인터넷 이미지 �
 이미지 품질은 유지하면서 파일 크기는 절반이하로 줄어서 품질, 용량에 최적화된다.
 
 
-
 https://www.npmjs.com/package/letter-count
 
 문자수: chars
@@ -25,7 +24,6 @@ https://www.npmjs.com/package/letter-count
 특수문자: wordsigns
 
 meta tag 란?
-
 
 하이퍼텍스트(Hyper text) 생성 언어 HTML 문서의 맨 위쪽에 위치하는 태그(tag)로 HEAD 태그 사이 또는 뒤에 있어도 되지만 반드시 BODY 태그 앞쪽에 위치해야 한다.
 브라우저와 검색 엔진을 사용할 수 있도록 웹 문서의 정보를 포함하고 있다.​
