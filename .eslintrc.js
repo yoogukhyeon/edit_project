@@ -41,4 +41,12 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/naming-convention': 'off',
   },
+  overrides: [
+    {
+      files: ['sitemap-generator.js'],
+      parserOptions: {
+        project: null, // 타입 기반 ESLint를 적용하지 않음
+      },
+    },
+  ],
 };

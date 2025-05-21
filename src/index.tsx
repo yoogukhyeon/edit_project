@@ -1,12 +1,14 @@
-import React from 'react';
+import './polyfills'; // 반드시 최상단
+
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
 root.render(
   <BrowserRouter>
     <HelmetProvider>

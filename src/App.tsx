@@ -1,21 +1,21 @@
-import PdfToimg from 'pages/PdfToimg';
 import { GlobalStyle } from 'css/Globalstyles';
-import Layout from 'pages/Layout';
-import Main from 'pages/Main';
-import { Route, Routes } from 'react-router-dom';
-import ImgToPng from 'pages/ImgToPng';
-import ImgToJpg from 'pages/ImgToJpg';
-import HtmlTagRemove from 'pages/HtmlTagRemove';
-import TextConvert from 'pages/TextConvert';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import CounterChar from 'pages/CounterChar';
+import HtmlTagRemove from 'pages/HtmlTagRemove';
+import ImgToJpg from 'pages/ImgToJpg';
+import ImgToPng from 'pages/ImgToPng';
+import InvestLucky from 'pages/InvestLucky';
+import Layout from 'pages/Layout';
+import Lotto from 'pages/Lotto';
+import Main from 'pages/Main';
 import MakeQr from 'pages/MakeQr';
 import MetaTag from 'pages/MetaTag';
 import MyIp from 'pages/MyIp';
-import Lotto from 'pages/Lotto';
-import InvestLucky from 'pages/InvestLucky';
+import PdfToimg from 'pages/PdfToimg';
+import TextConvert from 'pages/TextConvert';
 import UrlEncoded from 'pages/UrlEncoded';
+import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
