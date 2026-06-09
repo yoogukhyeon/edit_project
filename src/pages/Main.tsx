@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
+import ToolIndex from '@components/common/ToolIndex';
 
 const characterMap: CharacterMap = {
   isCompressed: true,
@@ -75,6 +76,7 @@ const Main = () => {
           </div>
         )}
       </div>
+      <ToolIndex />
       <SEOContent page="main" />
       <Comment pathname="main" />
     </MainWrap>

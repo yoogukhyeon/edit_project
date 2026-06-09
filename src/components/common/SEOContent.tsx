@@ -8,6 +8,7 @@ type SEOContentProps = {
 
 const SEOContent = ({ page }: SEOContentProps) => {
   const content = seoContent[page];
+  const pageUrl = `https://webtool.everyday-365.com${content.path === '/' ? '/' : content.path}`;
   const faqStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -20,12 +21,38 @@ const SEOContent = ({ page }: SEOContentProps) => {
       },
     })),
   };
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'EVERYDAY 웹툴',
+        item: 'https://webtool.everyday-365.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: content.title,
+        item: pageUrl,
+      },
+    ],
+  };
 
   return (
     <section className="mt-10 border-t border-gray-200 pt-8 text-gray-700 dark:border-gray-700 dark:text-gray-200">
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(faqStructuredData)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbStructuredData)}</script>
       </Helmet>
+      <nav className="mb-4 text-xs text-gray-500 dark:text-gray-400" aria-label="현재 위치">
+        <Link className="hover:text-sky-600" to="/">
+          EVERYDAY 웹툴
+        </Link>
+        <span className="mx-2">/</span>
+        <span>{content.title}</span>
+      </nav>
       <h2 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">{content.title}</h2>
       <p className="text-sm leading-7 text-gray-600 dark:text-gray-300">{content.intro}</p>
 

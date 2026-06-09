@@ -24,6 +24,8 @@ type RelatedLink = {
 };
 
 export type SEOContentItem = {
+  path: string;
+  category: string;
   title: string;
   intro: string;
   sections: {
@@ -36,6 +38,8 @@ export type SEOContentItem = {
 
 export const seoContent: Record<SEOPageKey, SEOContentItem> = {
   main: {
+    path: '/',
+    category: 'PDF',
     title: 'PDF 보기 도구를 사용할 때 좋은 상황',
     intro: 'EVERYDAY 웹툴의 PDF 보기는 프로그램 설치 없이 브라우저에서 PDF 파일을 확인할 수 있는 무료 PDF 미리보기 도구입니다.',
     sections: [
@@ -60,6 +64,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   pdfToImg: {
+    path: '/pdf-img',
+    category: 'PDF',
     title: 'PDF 이미지 변환이 필요한 경우',
     intro: 'PDF 이미지 변환 도구는 PDF 문서를 이미지 파일로 바꿔 공유하거나 보관하고 싶을 때 사용할 수 있는 무료 변환 도구입니다.',
     sections: [
@@ -87,6 +93,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   imgToPng: {
+    path: '/img-png',
+    category: '이미지 변환',
     title: '이미지 PNG 변환 사용법',
     intro: '이미지 PNG 변환 도구는 JPG, GIF, SVG 등 다양한 이미지 파일을 PNG 형식으로 바꾸는 무료 온라인 이미지 변환기입니다.',
     sections: [
@@ -114,6 +122,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   imgToJpg: {
+    path: '/img-jpg',
+    category: '이미지 변환',
     title: '이미지 JPG 변환 사용법',
     intro: '이미지 JPG 변환 도구는 PNG, GIF, SVG 등 이미지 파일을 JPG 형식으로 바꾸는 무료 온라인 이미지 변환기입니다.',
     sections: [
@@ -141,6 +151,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   htmlTagRemove: {
+    path: '/html-remove',
+    category: '텍스트 도구',
     title: 'HTML 태그 제거기가 필요한 경우',
     intro: 'HTML 태그 제거기는 HTML 코드에서 태그를 제거하고 순수한 텍스트만 추출할 때 사용하는 무료 텍스트 정리 도구입니다.',
     sections: [
@@ -165,6 +177,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   textConvert: {
+    path: '/text-convert',
+    category: '텍스트 도구',
     title: '영어 대문자 소문자 변환 활용법',
     intro: '영어 대문자 소문자 변환 도구는 입력한 영어 문장을 대문자, 소문자, 첫 글자 대문자 형태로 바꾸는 무료 텍스트 변환기입니다.',
     sections: [
@@ -189,6 +203,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   counterChar: {
+    path: '/counter-char',
+    category: '텍스트 도구',
     title: '글자수 문자수 계산기를 써야 할 때',
     intro: '글자수 문자수 계산기는 블로그 글, 자기소개서, 이력서, SEO 문구의 길이를 확인할 때 사용하는 무료 텍스트 계산 도구입니다.',
     sections: [
@@ -213,6 +229,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   makeQr: {
+    path: '/make-qr',
+    category: 'QR 코드',
     title: 'QR코드 만들기 활용법',
     intro: 'QR코드 만들기 도구는 URL이나 텍스트를 입력해 브라우저에서 바로 QR코드를 생성하는 무료 QR 생성기입니다.',
     sections: [
@@ -237,6 +255,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   metaTag: {
+    path: '/make-meta',
+    category: 'SEO',
     title: '메타태그 SEO 만들기 사용법',
     intro: '메타태그 SEO 만들기 도구는 웹페이지의 title, description, Open Graph, canonical, robots 태그를 생성하는 무료 SEO 도구입니다.',
     sections: [
@@ -261,6 +281,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   myIp: {
+    path: '/my-ip',
+    category: '개발 도구',
     title: '내 아이피 확인이 필요한 경우',
     intro: '내 아이피 확인 도구는 현재 접속한 환경의 IP 주소와 브라우저 정보를 빠르게 확인할 수 있는 무료 웹툴입니다.',
     sections: [
@@ -285,6 +307,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   lotto: {
+    path: '/lotto',
+    category: '생활 정보',
     title: '로또 회차별 당첨번호 확인 방법',
     intro: '로또 회차별 당첨번호 페이지에서는 최근 로또 당첨번호, 보너스 번호, 1등 당첨자 수, 1등 당첨금액, 발표일을 확인할 수 있습니다.',
     sections: [
@@ -312,6 +336,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   investLucky: {
+    path: '/invest-lucky',
+    category: '생활 정보',
     title: '오늘의 투자운세 활용법',
     intro: '오늘의 투자운세는 띠별 운세를 가볍게 확인할 수 있는 페이지입니다. 실제 투자 판단은 신중한 정보 확인과 함께 해야 합니다.',
     sections: [
@@ -336,6 +362,8 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
   },
   urlEncoded: {
+    path: '/encode-decode',
+    category: '개발 도구',
     title: 'URL 인코더 디코더 사용법',
     intro: 'URL 인코더 디코더는 한글, 공백, 특수문자가 포함된 문자열을 URL에 안전하게 사용할 수 있도록 인코딩하거나 다시 디코딩하는 무료 웹툴입니다.',
     sections: [
