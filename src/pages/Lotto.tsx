@@ -1,4 +1,5 @@
 import Loading from '@components/common/common/Loading';
+import SEOContent from '@components/common/SEOContent';
 import List from '@components/lotto/List';
 import axios from 'axios';
 import cheerio from 'cheerio';
@@ -80,6 +81,7 @@ const Lotto = () => {
         url={'https://webtool.everyday-365.com/lotto'}
         imgsrc={'/images/meta.png'}
       />
+      <h1 className="mb-3 text-lg font-medium text-gray-900 dark:text-white">로또 회차별 당첨번호</h1>
       {lottoList?.length > 0 && (
         <div className="flex flex-col ">
           <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -113,6 +115,7 @@ const Lotto = () => {
         </div>
       )}
       {lottoList?.length < 1 && <Loading />}
+      <SEOContent page="lotto" />
     </>
   );
 };

@@ -16,10 +16,10 @@ const Header = () => {
   return (
     <header className="pt-7">
       <div className="flex justify-between items-center">
-        <h1 onClick={goToHome} className="cursor-pointer flex gap-3 justify-start items-center text-2xl font-extrabold dark:text-white">
+        <div onClick={goToHome} className="cursor-pointer flex gap-3 justify-start items-center text-2xl font-extrabold dark:text-white">
           <img src="/images/logo.png" alt="로고" width={40} height={40} />
           EVERYDAY 웹툴
-        </h1>
+        </div>
         <div className="flex justify-center items-center gap-2">
           <DropDown />
           <ThemeButton />

@@ -50,13 +50,13 @@ const Navbar = () => {
         }
       >
         {/* Mobile Logo */}
-        <h1
+        <div
           onClick={goToHome}
           className="p-4 cursor-pointer text-black flex gap-3 justify-start items-center text-base font-extrabold dark:text-white"
         >
           <img src="/images/logo.png" alt="로고" width={40} height={40} />
           EVERYDAY 웹툴
-        </h1>
+        </div>
 
         {/* Mobile Navigation Items */}
         {navItems.map((item) => (

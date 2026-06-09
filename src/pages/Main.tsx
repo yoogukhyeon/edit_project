@@ -8,6 +8,7 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import styled from 'styled-components';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import Comment from '@components/common/common/Comment';
+import SEOContent from '@components/common/SEOContent';
 
 const characterMap: CharacterMap = {
   isCompressed: true,
@@ -41,6 +42,7 @@ const Main = () => {
         url={'https://webtool.everyday-365.com'}
         imgsrc={'/images/meta.png'}
       />
+      <h1 className="mb-3 text-lg font-medium text-gray-900 dark:text-white">PDF 보기</h1>
       <label htmlFor="file">
         <input id="file" type="file" accept=".pdf" onChange={onChange} />
       </label>
@@ -73,6 +75,7 @@ const Main = () => {
           </div>
         )}
       </div>
+      <SEOContent page="main" />
       <Comment pathname="main" />
     </MainWrap>
   );

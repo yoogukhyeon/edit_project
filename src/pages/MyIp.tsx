@@ -1,4 +1,5 @@
 import Comment from '@components/common/common/Comment';
+import SEOContent from '@components/common/SEOContent';
 import SEOMetaTag from 'seo/SEOMetaTag';
 
 const MyIp = () => {
@@ -10,6 +11,7 @@ const MyIp = () => {
         url={'https://webtool.everyday-365.com/my-ip'}
         imgsrc={'/images/meta.png'}
       />
+      <h1 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">내 아이피 확인</h1>
       <div className="mt-3 mb-5">
         <div className="mt-5 mb-7 text-center bg-slate-100 p-5 rounded-md">
           <p className="mb-2 text-lg font-medium text-gray-900 ">사용자 브라우저 정보 확인</p>
@@ -27,6 +29,7 @@ const MyIp = () => {
         주고 받기 위해서 데이터를 발신하는 곳과 수신하는 곳이 필요합니다. 통신을 위해 부여한 주소가 IP 주소(Internet Protocol Address)입니다.
       </p>
 
+      <SEOContent page="myIp" />
       <Comment pathname="myIp" />
     </div>
   );

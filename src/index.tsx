@@ -1,20 +1,26 @@
 import './polyfills'; // 반드시 최상단
 
-import ReactDOM from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-
-root.render(
+const app = (
   <BrowserRouter>
     <HelmetProvider>
       <App />
     </HelmetProvider>
-  </BrowserRouter>,
+  </BrowserRouter>
 );
+
+const rootElement = document.getElementById('root') as HTMLElement;
+
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, app);
+} else {
+  createRoot(rootElement).render(app);
+}
 
 reportWebVitals();

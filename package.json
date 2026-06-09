@@ -51,9 +51,34 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "postbuild": "npm run generate:sitemap && node scripts/prerender-if-available.js",
+    "prerender": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate:sitemap": "node sitemap-generator.js"
+  },
+  "reactSnap": {
+    "inlineCss": true,
+    "skipThirdPartyRequests": true,
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "include": [
+      "/",
+      "/pdf-img",
+      "/img-png",
+      "/img-jpg",
+      "/html-remove",
+      "/text-convert",
+      "/counter-char",
+      "/make-qr",
+      "/make-meta",
+      "/my-ip",
+      "/lotto",
+      "/invest-lucky",
+      "/encode-decode"
+    ]
   },
   "eslintConfig": {
     "extends": [

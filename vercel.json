@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://www.fullayer.com/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

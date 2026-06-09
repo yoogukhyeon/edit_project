@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import SEOMetaTag from 'seo/SEOMetaTag';
+import SEOContent from '@components/common/SEOContent';
 
 const InvestLucky = () => {
   return (
@@ -11,9 +12,10 @@ const InvestLucky = () => {
         imgsrc={'/images/meta.png'}
       />
       <InvestLuckyWrap>
-        <p className="mb-2 text-3xl font-medium text-gray-900 dark:text-white ">오늘의 투자 운세</p>
+        <h1 className="mb-2 text-3xl font-medium text-gray-900 dark:text-white ">오늘의 투자 운세</h1>
         <iframe src="https://webtool.cusis.net/ex/today-lucky/tl.html" className="dark:bg-white dark:py-3 dark:rounded-sm" frameBorder="0"></iframe>
       </InvestLuckyWrap>
+      <SEOContent page="investLucky" />
     </>
   );
 };

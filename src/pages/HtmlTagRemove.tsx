@@ -1,6 +1,7 @@
 import Alert from '@components/common/common/Alert';
 import Button from '@components/common/common/Button';
 import Comment from '@components/common/common/Comment';
+import SEOContent from '@components/common/SEOContent';
 import Infor from '@components/common/common/Infor';
 import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useCallback, useState } from 'react';
@@ -59,7 +60,7 @@ const HtmlTagRemove = () => {
         url={'https://webtool.everyday-365.com/html-remove'}
         imgsrc={'/images/meta.png'}
       />
-      <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">HTML 태그 제거기</p>
+      <h1 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">HTML 태그 제거기</h1>
       <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
         웹페이지는 html로 이루어져 있습니다. 소스보기를 해서 내용을 가져오고 싶을때가 있습니다. 그럴때 html tag 때문에 골치가 아픈데요.
         html태그제거앱을 이용하면 간단합니다. html소스를 넣고 버튼만 누르면 됩니다. 그러면 html이 없는 순수한 텍스트만 받을수 있습니다.ㄴ
@@ -121,6 +122,7 @@ const HtmlTagRemove = () => {
           태그 제거
         </button>
       </div>
+      <SEOContent page="htmlTagRemove" />
       <Comment pathname="htemlTagRemove" />
     </div>
   );

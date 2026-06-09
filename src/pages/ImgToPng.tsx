@@ -1,6 +1,7 @@
 import Alert from '@components/common/common/Alert';
 import Comment from '@components/common/common/Comment';
 import Loading from '@components/common/common/Loading';
+import SEOContent from '@components/common/SEOContent';
 import useAlert from '@hooks/useAlert';
 import React, { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -53,6 +54,7 @@ const ImgToPng = () => {
         url={'https://webtool.everyday-365.com/img-png'}
         imgsrc={'/images/meta.png'}
       />
+      <h1 className="mb-3 text-lg font-medium text-gray-900 dark:text-white">이미지 PNG 변환</h1>
       {loading ? (
         <Loading />
       ) : (
@@ -151,6 +153,7 @@ const ImgToPng = () => {
         </>
       )}
 
+      <SEOContent page="imgToPng" />
       <Comment pathname="imgToPng" />
     </div>
   );

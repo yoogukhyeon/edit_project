@@ -6,6 +6,7 @@ import { count } from 'letter-count';
 import { toast } from 'react-toastify';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import Comment from '@components/common/common/Comment';
+import SEOContent from '@components/common/SEOContent';
 
 const CounterChar = () => {
   const [text, setText] = useState<string>('');
@@ -43,7 +44,7 @@ const CounterChar = () => {
         url={'https://webtool.everyday-365.com/counter-char'}
         imgsrc={'/images/meta.png'}
       />
-      <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">글자수 문자수 계산기</p>
+      <h1 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">글자수 문자수 계산기</h1>
       <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
         붙여넣으신 문장 or 작성하신 문장에 글자수 문자수 숫자수 특수문자를 계산합니다.
       </p>
@@ -165,6 +166,7 @@ const CounterChar = () => {
           </div>
         </div>
       </div>
+      <SEOContent page="counterChar" />
       <Comment pathname="counterChar" />
     </div>
   );

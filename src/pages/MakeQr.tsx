@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Tilt } from 'react-tilt';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import Comment from '@components/common/common/Comment';
+import SEOContent from '@components/common/SEOContent';
 
 const defaultOptions = {
   reverse: false,
@@ -45,6 +46,7 @@ const MakeQr = () => {
         url={'https://webtool.everyday-365.com/make-qr'}
         imgsrc={'/images/meta.png'}
       />
+      <h1 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">나만의 QR코드 만들기</h1>
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">QR코드는?</p>
       <p className="text-sm text-gray-500 whitespace-pre-line dark:text-gray-400">
         직사각형 그리드 패턴에 여러가지 정보를 포함 2차원 구성 코드이다. QR는 퀵 리스폰스의 약어입니다. 최초의 QR코드는 1994년에 전자 제품으로 불리는
@@ -87,6 +89,7 @@ const MakeQr = () => {
           </div>
         </QrCodeWrap>
       </div>
+      <SEOContent page="makeQr" />
       <Comment pathname="makeQr" />
     </div>
   );

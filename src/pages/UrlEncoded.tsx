@@ -1,6 +1,7 @@
 import Alert from '@components/common/common/Alert';
 import Button from '@components/common/common/Button';
 import Comment from '@components/common/common/Comment';
+import SEOContent from '@components/common/SEOContent';
 import Infor from '@components/common/common/Infor';
 import useAlert from '@hooks/useAlert';
 import { ChangeEvent, useCallback, useState } from 'react';
@@ -66,6 +67,7 @@ const UrlEncoded = () => {
         url={'https://webtool.everyday-365.com/encode-decode'}
         imgsrc={'/images/meta.png'}
       />
+      <h1 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">URL 인코더 / 디코더</h1>
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">인코딩이란?</p>
       <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
         사람이 인지할 수 있는 문자(언어)를 약속된 규칙에 따라 컴퓨터가 이해하는 언어 (0과 1)로 이루어진 코드로 바꾸는 것을 통틀어 일컫는다. 즉, 인코딩
@@ -141,6 +143,7 @@ const UrlEncoded = () => {
         </div>
       </div>
 
+      <SEOContent page="urlEncoded" />
       <Comment pathname="UrlEncoded" />
     </div>
   );

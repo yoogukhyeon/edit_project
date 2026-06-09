@@ -1,4 +1,5 @@
 import Comment from '@components/common/common/Comment';
+import SEOContent from '@components/common/SEOContent';
 import MetaInfo from '@components/common/common/MetaInfo';
 import useAlert from '@hooks/useAlert';
 import { script } from 'constants/metaTag';
@@ -99,6 +100,7 @@ const MetaTag = () => {
         url={'https://webtool.everyday-365.com/make-meta'}
         imgsrc={'/images/meta.png'}
       />
+      <h1 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">메타태그(SEO) 만들기</h1>
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">meta tag 란?</p>
       <p className="mb-5 text-sm text-gray-500 whitespace-pre-line dark:text-gray-400">
         하이퍼텍스트(Hyper text) 생성 언어 HTML 문서의 맨 위쪽에 위치하는 태그(tag)로 HEAD 태그 사이 또는 뒤에 있어도 되지만 반드시 BODY 태그 앞쪽에
@@ -321,6 +323,7 @@ const MetaTag = () => {
           defaultValue={seoScript}
         />
       </div>
+      <SEOContent page="metaTag" />
       <Comment pathname="metaTag" />
     </div>
   );
