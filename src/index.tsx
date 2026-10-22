@@ -9,7 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import { preloadPage } from './routes';
 
 const app = (
-  <BrowserRouter>
+  <BrowserRouter future={{ v7_startTransition: true }}>
     <HelmetProvider>
       <App />
     </HelmetProvider>
@@ -24,5 +24,12 @@ const rootElement = document.getElementById('root') as HTMLElement;
 preloadPage(window.location.pathname).finally(() => {
   createRoot(rootElement).render(app);
 });
+
+// 내부 링크에 마우스를 올리거나 터치하면 해당 페이지 코드를 미리 받아 이동을 빠르게 한다.
+const preloadLink = (e: Event) => {
+  const link = (e.target as Element | null)?.closest?.('a[href^="/"]');
+  if (link) preloadPage(link.getAttribute('href') as string);
+};
+['pointerover', 'touchstart', 'focusin'].forEach((type) => document.addEventListener(type, preloadLink, { passive: true }));
 
 reportWebVitals();
