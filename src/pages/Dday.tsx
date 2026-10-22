@@ -41,7 +41,7 @@ const Dday = () => {
         url={'https://webtool.everyday-365.com/d-day'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">D-day 계산기 · 날짜 계산기</h1>
+      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">D-day 계산기 · 날짜 계산기</h1>
       <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
         시험, 전역, 출산 예정일까지 남은 날이나 연애·결혼 기념일, N일 후 날짜를 계산합니다.
       </p>

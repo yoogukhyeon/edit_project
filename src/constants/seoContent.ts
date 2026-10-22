@@ -114,7 +114,7 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     ],
     faqs: [
       { question: 'JPG를 PNG로 변환할 수 있나요?', answer: '네. JPG 이미지를 선택하면 PNG 형식으로 변환할 수 있습니다.' },
-      { question: 'PNG 변환 시 용량 제한이 있나요?', answer: '현재 도구는 5MB 이하 이미지 파일 변환에 맞춰져 있습니다.' },
+      { question: 'PNG 변환 시 용량 제한이 있나요?', answer: '장당 20MB 이하 이미지를 한 번에 최대 20장까지 변환할 수 있습니다.' },
       {
         question: '투명 배경도 유지되나요?',
         answer: '원본 이미지에 투명 정보가 있으면 PNG 변환 시 유지될 수 있습니다. 원본에 투명이 없으면 새로 생성되지는 않습니다.',

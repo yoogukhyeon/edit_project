@@ -1,52 +1,31 @@
+import { toolCategories } from 'constants/tools';
 import { Link } from 'react-router-dom';
-import { SEOPageKey, seoContent } from 'constants/seoContent';
 
-const toolOrder: SEOPageKey[] = [
-  'pdfToImg',
-  'pdfMerge',
-  'pdfSplit',
-  'imgToPng',
-  'imgToJpg',
-  'imgCompress',
-  'htmlTagRemove',
-  'textConvert',
-  'counterChar',
-  'ageCalc',
-  'dday',
-  'makeQr',
-  'metaTag',
-  'myIp',
-  'lotto',
-  'investLucky',
-  'urlEncoded',
-];
-
+// 홈 상단의 카테고리별 툴 목록. PDF 보기는 홈 화면 자체에 있으므로 제외한다.
 const ToolIndex = () => {
   return (
-    <section className="mt-10 border-t border-gray-200 pt-8 dark:border-gray-700">
-      <h2 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">무료 웹툴 모음</h2>
-      <p className="mb-6 text-sm leading-7 text-gray-600 dark:text-gray-300">
-        PDF, 이미지 변환, 텍스트 정리, QR코드 생성, SEO 메타태그, URL 인코딩과 디코딩까지 자주 필요한 온라인 도구를 한 곳에서 사용할 수 있습니다.
-      </p>
-      <div className="grid gap-4 md:grid-cols-2">
-        {toolOrder.map((key) => {
-          const tool = seoContent[key];
-
-          return (
-            <article key={key} className="rounded-md border border-gray-200 p-4 transition hover:border-sky-300 dark:border-gray-700">
-              <div className="mb-2 text-xs font-semibold text-sky-600 dark:text-sky-300">{tool.category}</div>
-              <h3 className="mb-2 text-base font-semibold text-gray-900 dark:text-white">
-                <Link to={tool.path}>{tool.title}</Link>
-              </h3>
-              <p className="mb-3 text-sm leading-6 text-gray-600 dark:text-gray-300">{tool.intro}</p>
-              <Link className="text-sm font-semibold text-sky-600 hover:text-sky-700 dark:text-sky-300" to={tool.path}>
-                바로 사용하기
-              </Link>
-            </article>
-          );
-        })}
-      </div>
-    </section>
+    <div className="space-y-6">
+      {toolCategories.map((category) => (
+        <section key={category.name}>
+          <h2 className="mb-2 text-sm font-semibold text-sky-700 dark:text-sky-300">{category.name}</h2>
+          <ul className="grid grid-cols-2 gap-2 md:grid-cols-3">
+            {category.tools
+              .filter((tool) => tool.path !== '/')
+              .map((tool) => (
+                <li key={tool.path}>
+                  <Link
+                    to={tool.path}
+                    className="block h-full rounded-lg border border-slate-200 bg-slate-50 p-3 transition hover:border-sky-400 hover:bg-sky-50 dark:border-slate-600 dark:bg-slate-700/50 dark:hover:bg-slate-700"
+                  >
+                    <span className="block text-sm font-semibold text-gray-900 dark:text-white">{tool.title}</span>
+                    <span className="mt-1 block text-xs leading-5 text-gray-500 dark:text-gray-400">{tool.desc}</span>
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </section>
+      ))}
+    </div>
   );
 };
 

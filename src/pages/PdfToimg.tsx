@@ -109,7 +109,7 @@ const PdfToimg = () => {
         url={'https://webtool.everyday-365.com/pdf-img'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-3 text-lg font-medium text-gray-900 dark:text-white">PDF 이미지 변환</h1>
+      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">PDF 이미지 변환</h1>
       {loading ? (
         <Loading />
       ) : (

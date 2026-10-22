@@ -82,7 +82,7 @@ const PdfMerge = () => {
         url={'https://webtool.everyday-365.com/pdf-merge'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">PDF 합치기</h1>
+      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">PDF 합치기</h1>
       <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
         PDF 파일을 추가하고 순서를 정한 뒤 합치기를 누르세요. 파일은 브라우저 안에서만 처리됩니다.
       </p>

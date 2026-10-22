@@ -83,7 +83,7 @@ const Lotto = () => {
         url={'https://webtool.everyday-365.com/lotto'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-3 text-lg font-medium text-gray-900 dark:text-white">로또 회차별 당첨번호</h1>
+      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">로또 회차별 당첨번호</h1>
       <FirstLotto />
       {lottoList?.length > 0 && (
         <div className="flex flex-col ">

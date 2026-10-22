@@ -35,7 +35,7 @@ const AgeCalc = () => {
         url={'https://webtool.everyday-365.com/age-calc'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">만 나이 계산기</h1>
+      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">만 나이 계산기</h1>
       <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
         2023년 6월 28일부터 법적·사회적 나이는 만 나이로 통일되었습니다. 생년월일을 입력하면 바로 계산됩니다.
       </p>

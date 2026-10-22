@@ -19,7 +19,7 @@ const MyIp = () => {
         url={'https://webtool.everyday-365.com/my-ip'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">내 아이피 확인</h1>
+      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">내 아이피 확인</h1>
       <Ip />
       <div className="mb-5">
         <div className="mb-7 text-center bg-slate-100 p-5 rounded-md dark:bg-slate-700">

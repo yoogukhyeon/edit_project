@@ -21,7 +21,7 @@ const Footer = () => {
         ))}
       </nav>
       <span className="block text-base max-sm:text-xs text-gray-500  dark:text-white">
-        © Copyright 2023 👤 <span className="font-bold dark:text-sky-400">유국현</span> All Rights Reserved.
+        © 2023–{new Date().getFullYear()} 👤 <span className="font-bold dark:text-sky-400">유국현</span> All Rights Reserved.
       </span>
       <span className="block text-base max-sm:text-xs text-gray-500  dark:text-white">
         Contact US : <span className="font-bold dark:text-sky-400">rnrgus5897@gmail.com</span>
