@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://webtool.everyday-365.com/</loc>
-    <lastmod>2026-10-22T08:52:47.727Z</lastmod>
+    <lastmod>2026-10-22T09:26:14.276Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://webtool.everyday-365.com/pdf-view</loc>
+    <lastmod>2026-10-22T09:26:14.237Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/pdf-img</loc>

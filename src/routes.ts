@@ -3,6 +3,7 @@ import { LazyPage, lazyPage } from 'utill/lazyPage';
 // 경로별 페이지. 각 페이지는 별도 청크로 분리되어 해당 페이지에 들어갈 때만 내려받는다.
 export const pageRoutes: Record<string, LazyPage> = {
   '/': lazyPage(() => import('pages/Main')),
+  '/pdf-view': lazyPage(() => import('pages/PdfView')),
   '/pdf-img': lazyPage(() => import('pages/PdfToimg')),
   '/img-png': lazyPage(() => import('pages/ImgToPng')),
   '/img-jpg': lazyPage(() => import('pages/ImgToJpg')),

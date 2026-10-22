@@ -1,5 +1,6 @@
 export type SEOPageKey =
   | 'main'
+  | 'pdfView'
   | 'pdfToImg'
   | 'imgToPng'
   | 'imgToJpg'
@@ -44,6 +45,37 @@ export type SEOContentItem = {
 export const seoContent: Record<SEOPageKey, SEOContentItem> = {
   main: {
     path: '/',
+    category: '소개',
+    title: 'EVERYDAY 웹툴은 이런 사이트입니다',
+    intro:
+      'EVERYDAY 웹툴은 PDF, 이미지, 텍스트, 날짜 계산처럼 자주 필요한 작업을 프로그램 설치나 회원가입 없이 브라우저에서 바로 처리할 수 있는 무료 온라인 도구 모음입니다.',
+    sections: [
+      {
+        heading: '파일이 서버로 전송되지 않습니다',
+        body: 'PDF 합치기·나누기, 이미지 변환·압축 같은 파일 도구는 모두 사용 중인 브라우저 안에서 처리됩니다. 개인 서류나 사진도 외부에 업로드될 걱정 없이 사용할 수 있습니다.',
+      },
+      {
+        heading: '설치와 가입 없이 무료로 사용합니다',
+        body: 'PC와 모바일 어디서든 주소만 열면 바로 사용할 수 있습니다. 자주 쓰는 도구는 즐겨찾기에 추가해두면 편리합니다.',
+      },
+      {
+        heading: '필요한 도구를 카테고리별로 찾을 수 있습니다',
+        body: 'PDF, 이미지, 텍스트, 계산기, 기타 카테고리로 나뉘어 있어 상단 메뉴나 이 페이지의 목록에서 원하는 도구를 바로 찾을 수 있습니다.',
+      },
+    ],
+    faqs: [
+      { question: 'EVERYDAY 웹툴은 무료인가요?', answer: '네. 모든 도구를 회원가입 없이 무료로 사용할 수 있습니다.' },
+      { question: '업로드한 파일은 어디에 저장되나요?', answer: '파일 도구는 브라우저 안에서만 처리되며 서버에 저장되지 않습니다.' },
+      { question: '모바일에서도 사용할 수 있나요?', answer: '네. 모든 도구가 모바일 화면에 맞춰 동작합니다.' },
+    ],
+    related: [
+      { label: 'PDF 합치기', path: '/pdf-merge' },
+      { label: '이미지 용량 줄이기', path: '/img-compress' },
+      { label: '글자수 계산기', path: '/counter-char' },
+    ],
+  },
+  pdfView: {
+    path: '/pdf-view',
     category: 'PDF',
     title: 'PDF 보기 도구를 사용할 때 좋은 상황',
     intro: 'EVERYDAY 웹툴의 PDF 보기는 프로그램 설치 없이 브라우저에서 PDF 파일을 확인할 수 있는 무료 PDF 미리보기 도구입니다.',
@@ -92,7 +124,7 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
       },
     ],
     related: [
-      { label: 'PDF 보기', path: '/' },
+      { label: 'PDF 보기', path: '/pdf-view' },
       { label: '이미지 JPG 변환', path: '/img-jpg' },
       { label: '이미지 PNG 변환', path: '/img-png' },
     ],
@@ -475,7 +507,7 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     related: [
       { label: 'PDF 나누기', path: '/pdf-split' },
       { label: 'PDF 이미지 변환', path: '/pdf-img' },
-      { label: 'PDF 보기', path: '/' },
+      { label: 'PDF 보기', path: '/pdf-view' },
     ],
   },
   pdfSplit: {
@@ -511,7 +543,7 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     related: [
       { label: 'PDF 합치기', path: '/pdf-merge' },
       { label: 'PDF 이미지 변환', path: '/pdf-img' },
-      { label: 'PDF 보기', path: '/' },
+      { label: 'PDF 보기', path: '/pdf-view' },
     ],
   },
   ageCalc: {

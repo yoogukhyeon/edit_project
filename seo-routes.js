@@ -11,6 +11,13 @@ const routes = [
     keywords: ['무료 웹툴', '온라인 도구 모음', 'PDF 합치기', '이미지 용량 줄이기', '글자수 계산기'],
   },
   {
+    path: '/pdf-view',
+    source: 'src/pages/PdfView.tsx',
+    title: 'PDF 보기 | EVERYDAY 웹툴',
+    description: 'PDF 파일을 프로그램 설치 없이 브라우저에서 바로 열어보는 무료 PDF 뷰어입니다.',
+    keywords: ['PDF 보기', 'PDF 미리보기', 'PDF 뷰어', '온라인 PDF 뷰어'],
+  },
+  {
     path: '/pdf-img',
     source: 'src/pages/PdfToimg.tsx',
     title: 'PDF 이미지 변환 | EVERYDAY 웹툴',

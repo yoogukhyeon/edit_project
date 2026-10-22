@@ -76,10 +76,11 @@ a{
   }
 } 
 
+/* 상단 배너(640x107)는 .root_wrap 위쪽 여백(130px) 안에 표시된다 */
 #mobonDivBanner_902510 {
   position: absolute;
   right: 50%;
-  top: -97px;
+  top: -118px;
   transform: translateX(50%);
 
   @media (max-width: 710px) {
@@ -91,7 +92,12 @@ a{
   position: relative;
   max-width: 896px;
   width: 100%;
-  margin: 0 auto;
+  margin: 130px auto 0;
+
+  /* 상단 배너가 숨겨지는 화면에서는 여백도 없앤다 */
+  @media (max-width: 710px) {
+    margin-top: 0;
+  }
 }
 
 

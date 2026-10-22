@@ -7,7 +7,7 @@ export const toolCategories: ToolCategory[] = [
   {
     name: 'PDF',
     tools: [
-      { path: '/', title: 'PDF 보기', desc: 'PDF 파일을 설치 없이 브라우저에서 열어보기' },
+      { path: '/pdf-view', title: 'PDF 보기', desc: 'PDF 파일을 설치 없이 브라우저에서 열어보기' },
       { path: '/pdf-img', title: 'PDF 이미지 변환', desc: 'PDF 페이지를 이미지로 바꿔 ZIP으로 저장' },
       { path: '/pdf-merge', title: 'PDF 합치기', desc: '여러 PDF를 원하는 순서로 하나로 병합' },
       { path: '/pdf-split', title: 'PDF 나누기', desc: '원하는 페이지만 추출하거나 분할' },
