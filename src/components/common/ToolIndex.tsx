@@ -3,11 +3,16 @@ import { SEOPageKey, seoContent } from 'constants/seoContent';
 
 const toolOrder: SEOPageKey[] = [
   'pdfToImg',
+  'pdfMerge',
+  'pdfSplit',
   'imgToPng',
   'imgToJpg',
+  'imgCompress',
   'htmlTagRemove',
   'textConvert',
   'counterChar',
+  'ageCalc',
+  'dday',
   'makeQr',
   'metaTag',
   'myIp',

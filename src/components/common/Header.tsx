@@ -113,6 +113,37 @@ const Header = () => {
                 URL 인코드 / 디코드 변환
               </NavLink>
             </Li>
+            <Li className="nav_third">
+              <NavLink to="/img-compress" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+                이미지 용량 줄이기
+              </NavLink>
+            </Li>
+            <Li className="nav_third">
+              <NavLink to="/pdf-merge" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+                PDF 합치기
+              </NavLink>
+            </Li>
+          </ul>
+        </nav>
+      </div>
+      <div className="max-md:hidden">
+        <nav className="pt-4 pb-1 text-sm font-medium max-sm:pt-2">
+          <ul className="flex gap-3 justify-start items-center max-sm:flex-col">
+            <Li className="nav_third">
+              <NavLink to="/pdf-split" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+                PDF 나누기
+              </NavLink>
+            </Li>
+            <Li className="nav_third">
+              <NavLink to="/age-calc" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+                만 나이 계산기
+              </NavLink>
+            </Li>
+            <Li className="nav_third">
+              <NavLink to="/d-day" className="block px-2 py-3 rounded-md bg-slate-50 max-sm:text-xs">
+                D-day 계산기
+              </NavLink>
+            </Li>
           </ul>
         </nav>
       </div>

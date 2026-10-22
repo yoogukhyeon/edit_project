@@ -29,6 +29,11 @@ const Navbar = () => {
     { id: 11, path: '/invest-lucky', title: '오늘의 투자운세' },
     { id: 12, path: '/make-meta', title: 'SEO 만들기' },
     { id: 13, path: '/encode-decode', title: 'URL 인코드 / 디코드 변환' },
+    { id: 14, path: '/img-compress', title: '이미지 용량 줄이기' },
+    { id: 15, path: '/pdf-merge', title: 'PDF 합치기' },
+    { id: 16, path: '/pdf-split', title: 'PDF 나누기' },
+    { id: 17, path: '/age-calc', title: '만 나이 계산기' },
+    { id: 18, path: '/d-day', title: 'D-day 계산기' },
   ];
 
   return (

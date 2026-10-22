@@ -1,6 +1,9 @@
 import { GlobalStyle } from 'css/Globalstyles';
+import AgeCalc from 'pages/AgeCalc';
 import CounterChar from 'pages/CounterChar';
+import Dday from 'pages/Dday';
 import HtmlTagRemove from 'pages/HtmlTagRemove';
+import ImgCompress from 'pages/ImgCompress';
 import ImgToJpg from 'pages/ImgToJpg';
 import ImgToPng from 'pages/ImgToPng';
 import InvestLucky from 'pages/InvestLucky';
@@ -11,6 +14,8 @@ import MakeQr from 'pages/MakeQr';
 import MetaTag from 'pages/MetaTag';
 import MyIp from 'pages/MyIp';
 import NotFound from 'pages/NotFound';
+import PdfMerge from 'pages/PdfMerge';
+import PdfSplit from 'pages/PdfSplit';
 import PdfToimg from 'pages/PdfToimg';
 import TextConvert from 'pages/TextConvert';
 import UrlEncoded from 'pages/UrlEncoded';
@@ -49,6 +54,11 @@ function App() {
           <Route path="/lotto" element={<Lotto />}></Route>
           <Route path="/invest-lucky" element={<InvestLucky />}></Route>
           <Route path="/encode-decode" element={<UrlEncoded />}></Route>
+          <Route path="/img-compress" element={<ImgCompress />}></Route>
+          <Route path="/pdf-merge" element={<PdfMerge />}></Route>
+          <Route path="/pdf-split" element={<PdfSplit />}></Route>
+          <Route path="/age-calc" element={<AgeCalc />}></Route>
+          <Route path="/d-day" element={<Dday />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Route>
       </Routes>

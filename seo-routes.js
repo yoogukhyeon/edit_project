@@ -6,8 +6,7 @@ const routes = [
     path: '/',
     source: 'src/pages/Main.tsx',
     title: 'PDF 보기 | EVERYDAY 웹툴',
-    description:
-      '브라우저에서 PDF 파일을 바로 미리보기할 수 있는 무료 웹툴입니다. 설치 없이 PDF 문서를 열고 페이지 너비에 맞춰 확인하세요.',
+    description: '브라우저에서 PDF 파일을 바로 미리보기할 수 있는 무료 웹툴입니다. 설치 없이 PDF 문서를 열고 페이지 너비에 맞춰 확인하세요.',
     keywords: ['PDF 보기', 'PDF 미리보기', 'PDF 뷰어', '무료 PDF 도구'],
   },
   {
@@ -93,6 +92,41 @@ const routes = [
     title: 'URL 인코더 디코더 | EVERYDAY 웹툴',
     description: 'URL 문자열을 인코딩하거나 디코딩하는 무료 웹툴입니다. 한글, 특수문자, 쿼리 문자열을 빠르게 변환하세요.',
     keywords: ['URL 인코딩', 'URL 디코딩', 'URL 인코더', '문자열 인코딩'],
+  },
+  {
+    path: '/img-compress',
+    source: 'src/pages/ImgCompress.tsx',
+    title: '이미지 용량 줄이기 · 크기 조절 | EVERYDAY 웹툴',
+    description: 'JPG, PNG, WebP 이미지 용량을 브라우저에서 바로 줄이세요. 화질과 최대 가로 크기를 조절하고 여러 장을 한 번에 압축할 수 있습니다.',
+    keywords: ['이미지 용량 줄이기', '사진 용량 줄이기', '이미지 압축', '이미지 크기 조절'],
+  },
+  {
+    path: '/pdf-merge',
+    source: 'src/pages/PdfMerge.tsx',
+    title: 'PDF 합치기 | EVERYDAY 웹툴',
+    description: '여러 개의 PDF 파일을 하나로 합치는 무료 PDF 병합 도구입니다. 파일은 서버에 업로드되지 않습니다.',
+    keywords: ['PDF 합치기', 'PDF 병합', 'PDF 파일 합치기', 'PDF 묶기'],
+  },
+  {
+    path: '/pdf-split',
+    source: 'src/pages/PdfSplit.tsx',
+    title: 'PDF 나누기 · 페이지 추출 | EVERYDAY 웹툴',
+    description: 'PDF에서 원하는 페이지만 추출하거나 한 페이지씩, N페이지 단위로 나누는 무료 PDF 분할 도구입니다.',
+    keywords: ['PDF 나누기', 'PDF 분할', 'PDF 페이지 추출', 'PDF 자르기'],
+  },
+  {
+    path: '/age-calc',
+    source: 'src/pages/AgeCalc.tsx',
+    title: '만 나이 계산기 | EVERYDAY 웹툴',
+    description: '생년월일을 입력하면 만 나이, 연 나이, 세는 나이와 다음 생일까지 남은 날을 계산하는 무료 만 나이 계산기입니다.',
+    keywords: ['만 나이 계산기', '만나이 계산', '나이 계산기', '연 나이'],
+  },
+  {
+    path: '/d-day',
+    source: 'src/pages/Dday.tsx',
+    title: 'D-day 계산기 · 날짜 계산기 | EVERYDAY 웹툴',
+    description: '목표일까지 남은 날짜, 100일·1000일 기념일, N일 후 날짜를 계산하는 무료 D-day 계산기입니다.',
+    keywords: ['D-day 계산기', '디데이 계산기', '날짜 계산기', '100일 계산기'],
   },
 ];
 

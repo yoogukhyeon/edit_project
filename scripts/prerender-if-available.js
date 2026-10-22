@@ -20,7 +20,8 @@ const result = spawnSync(reactSnapBin, {
 });
 
 if (result.status) {
-  console.log(`react-snap failed with exit code ${result.status}. Skipping prerender output.`);
+  console.error(`react-snap failed with exit code ${result.status}. build/ is only partially prerendered — run \`npm run build\` again.`);
+  process.exit(result.status);
 }
 
 process.exit(0);

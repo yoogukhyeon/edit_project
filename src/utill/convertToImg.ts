@@ -22,6 +22,12 @@ export const convertToPNG = (file: File, setFile: Dispatch<SetStateAction<string
         canvas.width = img.width;
         canvas.height = img.height;
 
+        // JPG는 투명도를 지원하지 않아 투명 영역이 검게 나오므로 흰 배경을 먼저 칠한다.
+        if (type === 'image/jpeg') {
+          ctx.fillStyle = '#fff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
         // 캔버스에 이미지를 그린다.
         ctx.drawImage(img, 0, 0);
 
