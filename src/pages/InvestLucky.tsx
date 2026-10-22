@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import SEOContent from '@components/common/SEOContent';
+import TodayLucksPromo from '@components/common/TodayLucksPromo';
 
 const InvestLucky = () => {
   return (
@@ -13,6 +14,7 @@ const InvestLucky = () => {
       />
       <InvestLuckyWrap>
         <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">오늘의 투자 운세</h1>
+        <TodayLucksPromo />
         <iframe src="https://webtool.cusis.net/ex/today-lucky/tl.html" className="dark:bg-white dark:py-3 dark:rounded-sm" frameBorder="0"></iframe>
       </InvestLuckyWrap>
       <SEOContent page="investLucky" />
@@ -22,7 +24,6 @@ const InvestLucky = () => {
 
 const InvestLuckyWrap = styled.div`
   > iframe {
-    margin-top: 20px;
     width: 100%;
     height: 1080px;
   }
