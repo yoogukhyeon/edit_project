@@ -1,5 +1,6 @@
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
+import Ip from '@components/ip/Ip';
 import { useEffect, useState } from 'react';
 import SEOMetaTag from 'seo/SEOMetaTag';
 
@@ -19,10 +20,11 @@ const MyIp = () => {
         imgsrc={'/images/meta.png'}
       />
       <h1 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">내 아이피 확인</h1>
-      <div className="mt-3 mb-5">
-        <div className="mt-5 mb-7 text-center bg-slate-100 p-5 rounded-md">
-          <p className="mb-2 text-lg font-medium text-gray-900 ">사용자 브라우저 정보 확인</p>
-          <p className="text-gray-500 text-base max-sm:text-sm">{userAgent}</p>
+      <Ip />
+      <div className="mb-5">
+        <div className="mb-7 text-center bg-slate-100 p-5 rounded-md dark:bg-slate-700">
+          <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white">사용자 브라우저 정보 확인</p>
+          <p className="text-gray-500 text-base max-sm:text-sm dark:text-gray-300">{userAgent}</p>
         </div>
       </div>
       <p className="mb-2 text-lg font-medium text-gray-900 dark:text-white"> IP 주소를 확인하는 가장 쉽고 빠른 방법?</p>

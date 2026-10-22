@@ -1,80 +1,66 @@
-import React, { useState } from 'react';
+import { toolCategories } from 'constants/tools';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-  const navigate = useNavigate();
-
-  const goToHome = () => {
-    navigate('/');
-  };
-
+  const { pathname } = useLocation();
   const [nav, setNav] = useState<boolean>(false);
 
-  const handleNav = () => {
-    setNav(!nav);
-  };
-
-  const navItems = [
-    // { id: 1, path: '/', title: 'PDF 보기' },
-    { id: 2, path: '/pdf-img', title: 'PDF 이미지 변환' },
-    { id: 3, path: '/img-png', title: '이미지 PNG 변환' },
-    { id: 4, path: '/img-jpg', title: '이미지 JPG 변환' },
-    { id: 5, path: '/html-remove', title: 'HTML 태그 제거기' },
-    { id: 6, path: '/text-convert', title: '영어 대문자 소문자 변환' },
-    { id: 7, path: '/counter-char', title: '글자수 문자수 계산기' },
-    { id: 8, path: '/make-qr', title: '나만의 QR코드 만들기' },
-    { id: 9, path: '/my-ip', title: '내 아이피 확인(IP address)' },
-    { id: 10, path: '/lotto', title: '로또회차별당첨번호' },
-    { id: 11, path: '/invest-lucky', title: '오늘의 투자운세' },
-    { id: 12, path: '/make-meta', title: 'SEO 만들기' },
-    { id: 13, path: '/encode-decode', title: 'URL 인코드 / 디코드 변환' },
-    { id: 14, path: '/img-compress', title: '이미지 용량 줄이기' },
-    { id: 15, path: '/pdf-merge', title: 'PDF 합치기' },
-    { id: 16, path: '/pdf-split', title: 'PDF 나누기' },
-    { id: 17, path: '/age-calc', title: '만 나이 계산기' },
-    { id: 18, path: '/d-day', title: 'D-day 계산기' },
-  ];
+  // 페이지를 이동하면 메뉴를 닫는다.
+  useEffect(() => {
+    setNav(false);
+  }, [pathname]);
 
   return (
-    <div className=" flex justify-between items-center max-w-[1240px] mx-auto  text-white">
-      {/* Mobile Navigation Icon */}
-      <div onClick={handleNav} className="block md:hidden">
-        {nav ? <AiOutlineClose className="dark:white black" size={24} /> : <AiOutlineMenu className="dark:white black" size={24} />}
-      </div>
-
-      {/* Mobile Navigation Menu */}
-      <ul
-        style={{
-          zIndex: '9999',
-        }}
-        className={
-          nav
-            ? 'fixed md:hidden left-0 top-0 w-[60%] h-full px-2 border-r border-r-gray-900 bg-slate-50'
-            : 'w-[60%] fixed top-0 bottom-0 left-[-100%]'
-        }
+    <div className="md:hidden">
+      <button
+        type="button"
+        onClick={() => setNav(!nav)}
+        aria-label={nav ? '메뉴 닫기' : '메뉴 열기'}
+        aria-expanded={nav}
+        className="p-1 text-gray-900 dark:text-white"
       >
-        {/* Mobile Logo */}
-        <div
-          onClick={goToHome}
-          className="p-4 cursor-pointer text-black flex gap-3 justify-start items-center text-base font-extrabold dark:text-white"
-        >
-          <img src="/images/logo.png" alt="로고" width={40} height={40} />
-          EVERYDAY 웹툴
-        </div>
+        {nav ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
+      </button>
 
-        {/* Mobile Navigation Items */}
-        {navItems.map((item) => (
-          <li
-            key={item.id}
-            className="p-4 border-b text-black rounded-xl hover:bg-sky-100 duration-300 hover:text-black cursor-pointer border-gray-600"
-          >
-            <NavLink to={item.path} className="block py-1 rounded-md  max-sm:text-xs">
-              {item.title}
-            </NavLink>
-          </li>
+      {/* 배경을 누르면 닫힘 */}
+      {nav && <div className="fixed inset-0 z-[9998] bg-black/30" onClick={() => setNav(false)} aria-hidden="true" />}
+
+      <nav
+        aria-label="웹툴 메뉴"
+        className={`fixed top-0 bottom-0 z-[9999] w-[75%] max-w-xs overflow-y-auto bg-white px-3 pb-8 shadow-xl transition-[left] duration-300 dark:bg-slate-800 ${
+          nav ? 'left-0' : 'left-[-100%]'
+        }`}
+      >
+        <Link to="/" className="flex items-center gap-3 p-4 text-base font-extrabold text-gray-900 dark:text-white">
+          <img src="/images/logo.png" alt="로고" width={32} height={32} />
+          EVERYDAY 웹툴
+        </Link>
+
+        {toolCategories.map((category) => (
+          <div key={category.name} className="mt-3">
+            <p className="px-3 pb-1 text-xs font-semibold text-sky-600 dark:text-sky-300">{category.name}</p>
+            <ul>
+              {category.tools.map((tool) => (
+                <li key={tool.path}>
+                  <NavLink
+                    to={tool.path}
+                    end
+                    className={({ isActive }) =>
+                      `block rounded-lg px-3 py-2.5 text-sm ${
+                        isActive ? 'bg-sky-50 font-semibold text-sky-700 dark:bg-slate-700 dark:text-sky-300' : 'text-gray-800 dark:text-gray-200'
+                      }`
+                    }
+                  >
+                    {tool.title}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </nav>
     </div>
   );
 };
