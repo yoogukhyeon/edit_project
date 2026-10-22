@@ -10,6 +10,7 @@ import Main from 'pages/Main';
 import MakeQr from 'pages/MakeQr';
 import MetaTag from 'pages/MetaTag';
 import MyIp from 'pages/MyIp';
+import NotFound from 'pages/NotFound';
 import PdfToimg from 'pages/PdfToimg';
 import TextConvert from 'pages/TextConvert';
 import UrlEncoded from 'pages/UrlEncoded';
@@ -48,6 +49,7 @@ function App() {
           <Route path="/lotto" element={<Lotto />}></Route>
           <Route path="/invest-lucky" element={<InvestLucky />}></Route>
           <Route path="/encode-decode" element={<UrlEncoded />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Route>
       </Routes>
     </div>

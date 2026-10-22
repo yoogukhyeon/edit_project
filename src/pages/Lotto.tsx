@@ -42,6 +42,7 @@ const Lotto = () => {
 
     const parsing = async () => {
       const html: any = await fetchdata();
+      if (!html) return;
       const $ = cheerio.load(html.data);
       const ulList = [];
 

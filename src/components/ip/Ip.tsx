@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 interface IpData {
@@ -16,7 +16,11 @@ const Ip = () => {
     setIP(res.data);
   };
 
-  useMemo(() => getData(), []);
+  useEffect(() => {
+    // react-snap 프리렌더 시 빌드 PC의 IP가 정적 HTML에 박히지 않도록 제외
+    if (navigator.userAgent === 'ReactSnap') return;
+    getData();
+  }, []);
 
   return (
     <div className="mt-5 mb-7 text-center bg-slate-200 p-5 rounded-md">
