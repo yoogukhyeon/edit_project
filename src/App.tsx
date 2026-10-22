@@ -1,27 +1,10 @@
 import { GlobalStyle } from 'css/Globalstyles';
-import AgeCalc from 'pages/AgeCalc';
-import CounterChar from 'pages/CounterChar';
-import Dday from 'pages/Dday';
-import HtmlTagRemove from 'pages/HtmlTagRemove';
-import ImgCompress from 'pages/ImgCompress';
-import ImgToJpg from 'pages/ImgToJpg';
-import ImgToPng from 'pages/ImgToPng';
-import InvestLucky from 'pages/InvestLucky';
 import Layout from 'pages/Layout';
-import Lotto from 'pages/Lotto';
-import Main from 'pages/Main';
-import MakeQr from 'pages/MakeQr';
-import MetaTag from 'pages/MetaTag';
-import MyIp from 'pages/MyIp';
 import NotFound from 'pages/NotFound';
-import PdfMerge from 'pages/PdfMerge';
-import PdfSplit from 'pages/PdfSplit';
-import PdfToimg from 'pages/PdfToimg';
-import TextConvert from 'pages/TextConvert';
-import UrlEncoded from 'pages/UrlEncoded';
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { pageRoutes } from 'routes';
 
 function App() {
   return (
@@ -41,24 +24,9 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Main />}></Route>
-          <Route path="/pdf-img" element={<PdfToimg />}></Route>
-          <Route path="/img-png" element={<ImgToPng />}></Route>
-          <Route path="/img-jpg" element={<ImgToJpg />}></Route>
-          <Route path="/html-remove" element={<HtmlTagRemove />}></Route>
-          <Route path="/text-convert" element={<TextConvert />}></Route>
-          <Route path="/counter-char" element={<CounterChar />}></Route>
-          <Route path="/make-qr" element={<MakeQr />}></Route>
-          <Route path="/make-meta" element={<MetaTag />}></Route>
-          <Route path="/my-ip" element={<MyIp />}></Route>
-          <Route path="/lotto" element={<Lotto />}></Route>
-          <Route path="/invest-lucky" element={<InvestLucky />}></Route>
-          <Route path="/encode-decode" element={<UrlEncoded />}></Route>
-          <Route path="/img-compress" element={<ImgCompress />}></Route>
-          <Route path="/pdf-merge" element={<PdfMerge />}></Route>
-          <Route path="/pdf-split" element={<PdfSplit />}></Route>
-          <Route path="/age-calc" element={<AgeCalc />}></Route>
-          <Route path="/d-day" element={<Dday />}></Route>
+          {Object.entries(pageRoutes).map(([path, Page]) => (
+            <Route key={path} path={path} element={<Page />} />
+          ))}
           <Route path="*" element={<NotFound />}></Route>
         </Route>
       </Routes>

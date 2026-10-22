@@ -1,26 +1,13 @@
-import React, { useState } from 'react';
-import { LocalizationMap, Viewer, Worker, CharacterMap, SpecialZoomLevel } from '@react-pdf-viewer/core';
-import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
-import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
-import ko_KR from '@react-pdf-viewer/locales/lib/ko_KR.json';
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import React, { lazy, Suspense, useState } from 'react';
 import styled from 'styled-components';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import ToolIndex from '@components/common/ToolIndex';
 
-const characterMap: CharacterMap = {
-  isCompressed: true,
-  url: 'https://unpkg.com/pdfjs-dist@2.6.347/cmaps/',
-};
+const PdfViewer = lazy(() => import('@components/pdf/PdfViewer'));
 
 const Main = () => {
-  const defaultLayoutPluginInstance = defaultLayoutPlugin();
-  const toolbarPluginInstance = toolbarPlugin();
-  const { Toolbar } = toolbarPluginInstance;
-
   const [url, setUrl] = useState('');
 
   // Handle the `onChange` event of the `file` input
@@ -36,29 +23,27 @@ const Main = () => {
   return (
     <MainWrap>
       <SEOMetaTag
-        title={'PDF 보기'}
+        title={'EVERYDAY 웹툴 - PDF 합치기, 이미지 용량 줄이기, 글자수 계산 등 무료 웹툴 모음'}
         description={
-          '웹에서 바로 사용할 수 있는 다양한 웹툴을 제공합니다. PDF 미리보기, 이미지 변환, HTML 태그 제거기, 영어 대문자 소문자 변환, 글자수 문자수 계산기, 나만의 QR코드 만들기, 메타태그(SEO) 만들기, UserAgent확인, ip, 아이피, 내 아이피, 로또번호, 투자운세 쉽게 확인할수 있습니다.'
+          'PDF 보기·합치기·나누기, 이미지 용량 줄이기와 JPG/PNG 변환, 글자수 계산, 만 나이·D-day 계산, QR코드 만들기까지 설치 없이 브라우저에서 바로 쓰는 무료 웹툴 모음입니다.'
         }
-        url={'https://webtool.everyday-365.com'}
+        url={'https://webtool.everyday-365.com/'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-3 text-lg font-medium text-gray-900 dark:text-white">PDF 보기</h1>
+      <h1 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">EVERYDAY 웹툴 - 무료 온라인 도구 모음</h1>
+      <p className="mb-6 text-sm text-gray-500 dark:text-gray-400">
+        PDF, 이미지, 텍스트, 계산기 도구를 설치 없이 브라우저에서 바로 사용하세요. 파일은 서버로 전송되지 않습니다.
+      </p>
+      <h2 className="mb-3 text-lg font-medium text-gray-900 dark:text-white">PDF 보기</h2>
       <label htmlFor="file">
         <input id="file" type="file" accept=".pdf" onChange={onChange} />
       </label>
       <div>
         {url ? (
           <div className="mt-3">
-            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js">
-              <Viewer
-                characterMap={characterMap}
-                localization={ko_KR as unknown as LocalizationMap}
-                fileUrl={url}
-                plugins={[defaultLayoutPluginInstance, toolbarPluginInstance]}
-                defaultScale={SpecialZoomLevel.PageWidth}
-              />
-            </Worker>
+            <Suspense fallback={<div className="py-20 text-center text-sm text-gray-500">PDF 뷰어를 불러오는 중...</div>}>
+              <PdfViewer url={url} />
+            </Suspense>
           </div>
         ) : (
           <div

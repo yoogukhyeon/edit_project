@@ -5,9 +5,10 @@ const routes = [
   {
     path: '/',
     source: 'src/pages/Main.tsx',
-    title: 'PDF 보기 | EVERYDAY 웹툴',
-    description: '브라우저에서 PDF 파일을 바로 미리보기할 수 있는 무료 웹툴입니다. 설치 없이 PDF 문서를 열고 페이지 너비에 맞춰 확인하세요.',
-    keywords: ['PDF 보기', 'PDF 미리보기', 'PDF 뷰어', '무료 PDF 도구'],
+    title: 'EVERYDAY 웹툴 - PDF 합치기, 이미지 용량 줄이기, 글자수 계산 등 무료 웹툴 모음',
+    description:
+      'PDF 보기·합치기·나누기, 이미지 용량 줄이기와 JPG/PNG 변환, 글자수 계산, 만 나이·D-day 계산, QR코드 만들기까지 설치 없이 브라우저에서 바로 쓰는 무료 웹툴 모음입니다.',
+    keywords: ['무료 웹툴', '온라인 도구 모음', 'PDF 합치기', '이미지 용량 줄이기', '글자수 계산기'],
   },
   {
     path: '/pdf-img',
