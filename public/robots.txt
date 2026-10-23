@@ -1,5 +1,8 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
+# 로또 데이터용 프록시(외부 사이트 HTML)와 프리렌더 빈 템플릿은 색인 대상이 아니다
+Disallow: /api/
+Disallow: /200.html
 
 Sitemap: https://webtool.everyday-365.com/sitemap.xml

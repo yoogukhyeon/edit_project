@@ -17,14 +17,7 @@ const Compound = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'복리 계산기 · 적립식 투자 계산기'}
-        description={
-          '초기 투자금과 매월 적립금, 연 수익률, 기간을 입력하면 복리로 불어나는 최종 금액과 연도별 원금·수익을 계산하는 적립식 복리 계산기입니다.'
-        }
-        url={'https://webtool.everyday-365.com/compound'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="복리 계산기 · 적립식 투자 계산기">
         매월 꾸준히 적립하며 복리로 굴렸을 때 자산이 어떻게 불어나는지 연도별로 확인하세요. (월복리, 매월 말 적립 기준)
       </ToolHeader>

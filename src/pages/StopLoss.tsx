@@ -17,14 +17,7 @@ const StopLoss = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'손절가 익절가 계산기'}
-        description={
-          '매수가와 손절·익절 비율을 입력하면 손절가, 익절가, 예상 손익금액과 손익비(R:R)를 계산합니다. 감당할 손실금액으로 적정 매수 수량도 알려드립니다.'
-        }
-        url={'https://webtool.everyday-365.com/stop-loss'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="손절가 · 익절가 계산기">
         매수 전에 손절가와 익절가를 미리 정해두면 감정적인 매매를 줄일 수 있습니다. 손익비와 적정 매수 수량도 함께 확인하세요.
       </ToolHeader>

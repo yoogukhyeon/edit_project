@@ -25,12 +25,7 @@ const PdfView = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'PDF 보기'}
-        description={'PDF 파일을 프로그램 설치 없이 브라우저에서 바로 열어보는 무료 PDF 뷰어입니다. 파일은 서버로 전송되지 않습니다.'}
-        url={'https://webtool.everyday-365.com/pdf-view'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="PDF 보기">PDF 파일을 선택하면 이 화면에서 바로 열어볼 수 있습니다. 파일은 서버로 전송되지 않습니다.</ToolHeader>
 
       <label

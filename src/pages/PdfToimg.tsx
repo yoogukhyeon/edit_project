@@ -107,12 +107,7 @@ const PdfToimg = () => {
 
   return (
     <div className="w-full">
-      <SEOMetaTag
-        title={'PDF 이미지 변환'}
-        description={'PDF 파일의 모든 페이지를 고화질 JPG·PNG 이미지로 변환하고 ZIP으로 한 번에 내려받으세요. 파일은 서버로 전송되지 않습니다.'}
-        url={'https://webtool.everyday-365.com/pdf-img'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="PDF 이미지 변환">
         PDF를 선택하면 모든 페이지를 이미지로 바꿔 미리 보여드립니다. 파일은 서버로 전송되지 않고 브라우저에서만 처리됩니다.
       </ToolHeader>

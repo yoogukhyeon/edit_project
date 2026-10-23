@@ -75,14 +75,7 @@ const PdfMerge = () => {
 
   return (
     <div className="w-full">
-      <SEOMetaTag
-        title={'PDF 합치기'}
-        description={
-          '여러 개의 PDF 파일을 하나로 합치는 무료 PDF 병합 도구입니다. 순서를 바꿔 원하는 순서대로 합칠 수 있고, 파일은 서버에 업로드되지 않습니다.'
-        }
-        url={'https://webtool.everyday-365.com/pdf-merge'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="PDF 합치기">PDF 파일을 추가하고 순서를 정한 뒤 합치기를 누르세요. 파일은 브라우저 안에서만 처리됩니다.</ToolHeader>
 
       <label

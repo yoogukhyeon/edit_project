@@ -22,14 +22,7 @@ const CounterChar = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'글자수 문자수 계산기'}
-        description={
-          '블로그 포스팅, SEO 최적화 글자수, 이력서, 자기소개서, 에세이 작성을 잘 하기 위해서 필요한 글자수세기, 문장수세기, 숫자수세기, 라인수세기, 특수문자수세기'
-        }
-        url={'https://webtool.everyday-365.com/counter-char'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="글자수 문자수 계산기">문장을 입력하거나 붙여넣으면 공백 포함·제외 글자수와 바이트 수가 바로 계산됩니다.</ToolHeader>
 
       <div className="mb-2 flex items-center justify-between">

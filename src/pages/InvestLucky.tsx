@@ -11,12 +11,7 @@ const InvestLucky = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'오늘의 투자운세'}
-        description={'오늘의 재물운·투자운을 무료로 확인하고, 물타기·수익률·분할매수 계산기로 오늘의 매매 계획까지 숫자로 점검하세요.'}
-        url={'https://webtool.everyday-365.com/invest-lucky'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="오늘의 투자 운세">오늘의 재물·투자운은 운월관에서 무료로 확인하고, 매매 계획은 아래 투자 계산기로 점검해보세요.</ToolHeader>
 
       <TodayLucksPromo />

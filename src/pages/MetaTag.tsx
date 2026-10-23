@@ -49,14 +49,7 @@ const MetaTag = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'메타태그(SEO) 만들기'}
-        description={
-          '제목, 설명, 대표 URL, 공유 이미지를 입력하면 title·description·canonical·Open Graph·Twitter 메타태그를 바로 만들어주는 무료 SEO 메타태그 생성기입니다.'
-        }
-        url={'https://webtool.everyday-365.com/make-meta'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="메타태그(SEO) 만들기">
         값을 입력하면 아래에 메타태그가 바로 만들어집니다. 복사해서 HTML의 &lt;head&gt; 안에 붙여넣으세요.
       </ToolHeader>

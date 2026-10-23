@@ -44,14 +44,7 @@ const StockProfit = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'주식 코인 수익률 계산기'}
-        description={
-          '매수가·매도가·수량을 입력하면 수수료와 세금을 뺀 실제 손익과 수익률을 계산합니다. 손익분기 매도가와 목표 수익률이 되는 매도가도 알려드립니다.'
-        }
-        url={'https://webtool.everyday-365.com/stock-profit'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="주식 · 코인 수익률 계산기">
         수수료와 세금까지 뺀 실제 손익을 계산합니다. 시장을 고르면 수수료 예시값이 채워지고, 직접 수정할 수 있습니다.
       </ToolHeader>

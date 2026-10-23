@@ -34,14 +34,7 @@ const Dday = () => {
 
   return (
     <div className="w-full">
-      <SEOMetaTag
-        title={'D-day 계산기 · 날짜 계산기'}
-        description={
-          '목표일까지 남은 날짜(D-day), 시작일부터 며칠째인지, 100일·1000일 기념일, 특정 날짜에서 N일 후 날짜를 계산하는 무료 날짜 계산기입니다.'
-        }
-        url={'https://webtool.everyday-365.com/d-day'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="D-day 계산기 · 날짜 계산기">시험, 전역, 출산 예정일까지 남은 날이나 연애·결혼 기념일, N일 후 날짜를 계산합니다.</ToolHeader>
 
       <section className={cardClass}>

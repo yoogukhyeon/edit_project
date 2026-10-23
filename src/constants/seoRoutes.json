@@ -1,0 +1,194 @@
+[
+  {
+    "path": "/",
+    "source": "src/pages/Main.tsx",
+    "name": "EVERYDAY 웹툴",
+    "title": "EVERYDAY 웹툴 - PDF 합치기, 이미지 용량 줄이기, 글자수 세기 등 무료 웹툴 모음",
+    "description": "PDF 합치기·나누기, 이미지 용량 줄이기, 글자수 세기, 만 나이·D-day 계산, 물타기·수익률 계산기, QR코드 만들기까지 설치 없이 브라우저에서 바로 쓰는 무료 웹툴 모음입니다.",
+    "keywords": ["웹툴", "무료 웹툴", "온라인 도구 모음", "PDF 합치기", "이미지 용량 줄이기", "글자수 세기"]
+  },
+  {
+    "path": "/pdf-view",
+    "source": "src/pages/PdfView.tsx",
+    "name": "PDF 보기",
+    "title": "PDF 보기 - 설치 없는 무료 온라인 PDF 뷰어",
+    "description": "PDF 파일을 프로그램 설치 없이 브라우저에서 바로 열어보는 무료 온라인 PDF 뷰어입니다. 확대·검색·인쇄를 지원하며 파일은 서버로 전송되지 않습니다.",
+    "keywords": ["PDF 보기", "PDF 뷰어", "온라인 PDF 뷰어", "PDF 미리보기", "PDF 열기"]
+  },
+  {
+    "path": "/pdf-img",
+    "source": "src/pages/PdfToimg.tsx",
+    "name": "PDF 이미지 변환",
+    "title": "PDF 이미지 변환 - PDF를 JPG·PNG로 고화질 변환",
+    "description": "PDF의 모든 페이지를 고화질 JPG·PNG 이미지로 변환해 미리 보고 ZIP으로 한 번에 내려받으세요. 화질을 선택할 수 있고 파일은 서버로 전송되지 않습니다.",
+    "keywords": ["PDF 이미지 변환", "PDF JPG 변환", "PDF PNG 변환", "PDF 이미지 추출", "PDF 사진 변환"]
+  },
+  {
+    "path": "/pdf-merge",
+    "source": "src/pages/PdfMerge.tsx",
+    "name": "PDF 합치기",
+    "title": "PDF 합치기 - 여러 PDF 파일 무료 병합",
+    "description": "여러 개의 PDF 파일을 원하는 순서로 하나로 합치는 무료 PDF 병합 도구입니다. 화질 손실 없이 합치며 회원가입·설치가 필요 없고 파일은 서버에 업로드되지 않습니다.",
+    "keywords": ["PDF 합치기", "PDF 병합", "PDF 파일 합치기", "PDF 묶기", "무료 PDF 합치기"]
+  },
+  {
+    "path": "/pdf-split",
+    "source": "src/pages/PdfSplit.tsx",
+    "name": "PDF 나누기",
+    "title": "PDF 나누기 - PDF 페이지 추출·분할 무료",
+    "description": "PDF에서 원하는 페이지만 추출하거나, 한 페이지씩 또는 N페이지 단위로 나누는 무료 PDF 분할 도구입니다. 화질 손실이 없고 파일은 서버에 업로드되지 않습니다.",
+    "keywords": ["PDF 나누기", "PDF 분할", "PDF 페이지 추출", "PDF 자르기", "PDF 페이지 나누기"]
+  },
+  {
+    "path": "/img-compress",
+    "source": "src/pages/ImgCompress.tsx",
+    "name": "이미지 용량 줄이기",
+    "title": "이미지 용량 줄이기 - 사진 용량·크기 줄이기 무료",
+    "description": "JPG, PNG, WebP 사진의 화질과 가로 크기를 조절해 용량을 줄이는 무료 이미지 압축 도구입니다. 여러 장을 한 번에 줄여 ZIP으로 받을 수 있고 사진은 서버로 전송되지 않습니다.",
+    "keywords": ["이미지 용량 줄이기", "사진 용량 줄이기", "이미지 압축", "사진 크기 줄이기", "이미지 리사이즈"]
+  },
+  {
+    "path": "/img-png",
+    "source": "src/pages/ImgToPng.tsx",
+    "name": "이미지 PNG 변환",
+    "title": "이미지 PNG 변환 - JPG를 PNG로 무료 변환",
+    "description": "JPG, WebP, GIF 이미지를 PNG로 바로 변환하는 무료 도구입니다. 여러 장을 한 번에 변환해 ZIP으로 받을 수 있고 투명 배경은 그대로 유지됩니다.",
+    "keywords": ["PNG 변환", "JPG PNG 변환", "이미지 PNG 변환", "PNG 변환기", "WebP PNG 변환"]
+  },
+  {
+    "path": "/img-jpg",
+    "source": "src/pages/ImgToJpg.tsx",
+    "name": "이미지 JPG 변환",
+    "title": "이미지 JPG 변환 - PNG를 JPG로 무료 변환",
+    "description": "PNG, WebP, GIF 이미지를 JPG로 바로 변환하는 무료 도구입니다. 투명한 부분은 흰 배경으로 바꾸며, 여러 장을 한 번에 변환해 ZIP으로 받을 수 있습니다.",
+    "keywords": ["JPG 변환", "PNG JPG 변환", "이미지 JPG 변환", "JPG 변환기", "WebP JPG 변환"]
+  },
+  {
+    "path": "/counter-char",
+    "source": "src/pages/CounterChar.tsx",
+    "name": "글자수 세기",
+    "title": "글자수 세기 - 공백 포함·제외 글자수 계산기",
+    "description": "자기소개서, 블로그 글의 글자수를 공백 포함·제외로 바로 세고 바이트(UTF-8·한글 2byte), 단어·문장·줄 수까지 계산하는 무료 글자수 계산기입니다.",
+    "keywords": ["글자수 세기", "글자수 계산기", "자소서 글자수", "공백 제외 글자수", "바이트 계산기"]
+  },
+  {
+    "path": "/text-convert",
+    "source": "src/pages/TextConvert.tsx",
+    "name": "영어 대소문자 변환",
+    "title": "영어 대소문자 변환기 - 대문자·소문자·첫 글자 대문자",
+    "description": "영어 문장을 대문자, 소문자, 단어 첫 글자 대문자(Title Case), 문장 첫 글자 대문자로 입력 즉시 변환하고 결과를 바로 복사할 수 있는 무료 도구입니다.",
+    "keywords": ["대소문자 변환", "영어 대문자 변환", "소문자 변환", "Title Case 변환", "대문자 소문자 바꾸기"]
+  },
+  {
+    "path": "/html-remove",
+    "source": "src/pages/HtmlTagRemove.tsx",
+    "name": "HTML 태그 제거기",
+    "title": "HTML 태그 제거기 - HTML에서 텍스트만 추출",
+    "description": "HTML 소스를 붙여넣으면 태그를 지우고 텍스트만 바로 추출합니다. 줄바꿈과 &nbsp; 같은 HTML 특수문자도 깔끔하게 정리되며 결과를 바로 복사할 수 있습니다.",
+    "keywords": ["HTML 태그 제거", "HTML 텍스트 추출", "태그 제거기", "HTML 제거", "HTML to text"]
+  },
+  {
+    "path": "/encode-decode",
+    "source": "src/pages/UrlEncoded.tsx",
+    "name": "URL 인코딩·디코딩",
+    "title": "URL 인코딩·디코딩 - 한글 URL 변환기",
+    "description": "한글, 공백, 특수문자가 들어간 URL과 텍스트를 입력 즉시 인코딩·디코딩하는 무료 URL 변환기입니다. 잘못된 퍼센트 인코딩도 알려드립니다.",
+    "keywords": ["URL 인코딩", "URL 디코딩", "한글 URL 변환", "URL 인코더", "퍼센트 인코딩"]
+  },
+  {
+    "path": "/age-calc",
+    "source": "src/pages/AgeCalc.tsx",
+    "name": "만 나이 계산기",
+    "title": "만 나이 계산기 - 만 나이·연 나이·세는 나이 계산",
+    "description": "생년월일만 입력하면 만 나이, 연 나이, 세는 나이와 다음 생일까지 남은 날, 태어난 지 며칠째인지 바로 계산하는 무료 만 나이 계산기입니다.",
+    "keywords": ["만 나이 계산기", "만나이 계산", "나이 계산기", "연 나이", "만 나이 통일법"]
+  },
+  {
+    "path": "/d-day",
+    "source": "src/pages/Dday.tsx",
+    "name": "D-day 계산기",
+    "title": "D-day 계산기 - 디데이·100일·날짜 계산",
+    "description": "목표일까지 남은 D-day, 사귄 날부터 며칠째인지와 100일·1000일 기념일, 특정 날짜에서 N일 후 날짜와 요일을 계산하는 무료 날짜 계산기입니다.",
+    "keywords": ["D-day 계산기", "디데이 계산기", "100일 계산기", "날짜 계산기", "기념일 계산"]
+  },
+  {
+    "path": "/avg-price",
+    "source": "src/pages/AvgPrice.tsx",
+    "name": "물타기 계산기",
+    "title": "물타기 계산기 - 주식·코인 평단가 계산",
+    "description": "주식·코인 물타기 평단가를 계산하고 목표 평단가를 만들려면 얼마에 몇 주를 더 사야 하는지 역산합니다. 수수료와 현재가 기준 평가손익도 함께 확인하세요.",
+    "keywords": ["물타기 계산기", "평단가 계산기", "주식 물타기", "코인 물타기 계산기", "평균 단가 계산"]
+  },
+  {
+    "path": "/stock-profit",
+    "source": "src/pages/StockProfit.tsx",
+    "name": "주식·코인 수익률 계산기",
+    "title": "주식 수익률 계산기 - 수수료·세금 포함 손익 계산",
+    "description": "매수가·매도가·수량을 입력하면 수수료와 세금을 뺀 순손익과 수익률, 손익분기 매도가, 목표 수익률이 되는 매도가를 계산하는 주식·코인 수익률 계산기입니다.",
+    "keywords": ["주식 수익률 계산기", "코인 수익률 계산기", "손익분기 매도가", "주식 수수료 계산", "주식 손익 계산"]
+  },
+  {
+    "path": "/split-buy",
+    "source": "src/pages/SplitBuy.tsx",
+    "name": "분할매수 계산기",
+    "title": "분할매수 계산기 - 주식·코인 분할매수 평단 계획",
+    "description": "총 예산, 첫 매수가, 회차별 비중과 하락 간격을 입력하면 회차별 매수가·수량·누적 평단가를 표로 계획해주는 주식·코인 분할매수 계산기입니다.",
+    "keywords": ["분할매수 계산기", "분할 매수", "주식 분할매수", "코인 분할매수", "분할매수 평단"]
+  },
+  {
+    "path": "/stop-loss",
+    "source": "src/pages/StopLoss.tsx",
+    "name": "손절·익절 계산기",
+    "title": "손절가 계산기 - 손절·익절가와 손익비 계산",
+    "description": "매수가와 손절·익절 비율로 손절가, 익절가, 예상 손익금액과 손익비(R:R)를 계산합니다. 감당할 손실 한도로 적정 매수 수량도 알려드립니다.",
+    "keywords": ["손절가 계산기", "익절가 계산", "손익비 계산", "손절 라인", "포지션 사이즈 계산"]
+  },
+  {
+    "path": "/compound",
+    "source": "src/pages/Compound.tsx",
+    "name": "복리 계산기",
+    "title": "복리 계산기 - 적립식 투자 수익 계산",
+    "description": "초기 투자금, 매월 적립금, 연 수익률, 기간을 입력하면 복리로 불어나는 최종 금액과 연도별 원금·수익을 계산하는 적립식 복리 계산기입니다.",
+    "keywords": ["복리 계산기", "적립식 계산기", "적립식 복리", "투자 수익 계산기", "월 적립 복리"]
+  },
+  {
+    "path": "/invest-lucky",
+    "source": "src/pages/InvestLucky.tsx",
+    "name": "오늘의 투자운세",
+    "title": "오늘의 투자운세 - 오늘의 재물운 무료 확인",
+    "description": "오늘의 재물운·투자운을 운월관에서 무료로 확인하고, 물타기·수익률·분할매수·손절가 계산기로 오늘의 매매 계획까지 숫자로 점검하세요.",
+    "keywords": ["오늘의 투자운세", "오늘의 재물운", "투자 운세", "오늘의 운세", "재물운"]
+  },
+  {
+    "path": "/make-qr",
+    "source": "src/pages/MakeQr.tsx",
+    "name": "QR코드 만들기",
+    "title": "QR코드 만들기 - 무료 QR코드·와이파이 QR 생성",
+    "description": "URL, 텍스트, 와이파이 정보를 입력하면 QR코드를 바로 만들어 고해상도 PNG로 저장할 수 있는 무료 QR코드 생성기입니다. QR 색상도 바꿀 수 있습니다.",
+    "keywords": ["QR코드 만들기", "QR코드 생성", "와이파이 QR코드", "무료 QR코드", "URL QR코드"]
+  },
+  {
+    "path": "/make-meta",
+    "source": "src/pages/MetaTag.tsx",
+    "name": "메타태그 만들기",
+    "title": "메타태그 생성기 - SEO 메타태그·OG 태그 만들기",
+    "description": "제목, 설명, 대표 URL, 공유 이미지를 입력하면 title·description·canonical·Open Graph·Twitter 메타태그를 바로 만들어주는 무료 SEO 메타태그 생성기입니다.",
+    "keywords": ["메타태그 생성기", "메타태그 만들기", "SEO 메타태그", "OG 태그 생성", "Open Graph 태그"]
+  },
+  {
+    "path": "/my-ip",
+    "source": "src/pages/MyIp.tsx",
+    "name": "내 아이피 확인",
+    "title": "내 아이피 확인 - 내 IP 주소 조회",
+    "description": "지금 접속한 기기의 공인 IP 주소와 국가, 브라우저(User Agent) 정보를 접속하자마자 바로 확인하는 무료 IP 주소 조회 도구입니다.",
+    "keywords": ["내 아이피 확인", "IP 주소 확인", "내 IP 조회", "아이피 조회", "공인 IP 확인"]
+  },
+  {
+    "path": "/lotto",
+    "source": "src/pages/Lotto.tsx",
+    "name": "로또 당첨번호",
+    "title": "로또 당첨번호 조회 - 회차별 로또 당첨번호",
+    "description": "최근 회차별 로또 당첨번호와 보너스 번호, 1등 당첨자 수와 1등 당첨금, 추첨일을 한눈에 확인하는 로또 당첨번호 조회 페이지입니다.",
+    "keywords": ["로또 당첨번호", "로또 회차별 당첨번호", "로또 번호 조회", "로또 1등 당첨금", "이번주 로또"]
+  }
+]

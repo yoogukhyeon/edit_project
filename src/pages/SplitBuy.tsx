@@ -25,14 +25,7 @@ const SplitBuy = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'분할매수 계산기'}
-        description={
-          '총 예산과 첫 매수가, 분할 비중, 하락 간격을 입력하면 회차별 매수가·수량·평단가를 표로 계획해주는 주식·코인 분할매수 계산기입니다.'
-        }
-        url={'https://webtool.everyday-365.com/split-buy'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="분할매수 계산기">
         예산을 몇 번에 나눠, 얼마씩 떨어질 때마다 살지 정하면 회차별 매수 계획과 평단가 변화를 보여드립니다.
       </ToolHeader>

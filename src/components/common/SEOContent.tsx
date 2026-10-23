@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { SEOPageKey, seoContent } from 'constants/seoContent';
+import { findTool } from 'constants/tools';
+import { findSeoRoute } from 'seo/seoRoutes';
 
 type SEOContentProps = {
   page: SEOPageKey;
@@ -8,7 +10,6 @@ type SEOContentProps = {
 
 const SEOContent = ({ page }: SEOContentProps) => {
   const content = seoContent[page];
-  const pageUrl = `https://webtool.everyday-365.com${content.path === '/' ? '/' : content.path}`;
   const faqStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -21,37 +22,31 @@ const SEOContent = ({ page }: SEOContentProps) => {
       },
     })),
   };
-  const breadcrumbStructuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'EVERYDAY 웹툴',
-        item: 'https://webtool.everyday-365.com/',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: content.title,
-        item: pageUrl,
-      },
-    ],
-  };
+  // 이동 경로 구조화 데이터는 SEOMetaTag에서 만든다. 여기서는 화면용 경로만 표시한다.
+  const found = findTool(content.path);
+  const route = findSeoRoute(content.path);
 
   return (
     <section className="mt-10 border-t border-gray-200 pt-8 text-gray-700 dark:border-gray-700 dark:text-gray-200">
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(faqStructuredData)}</script>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbStructuredData)}</script>
       </Helmet>
       <nav className="mb-4 text-xs text-gray-500 dark:text-gray-400" aria-label="현재 위치">
         <Link className="hover:text-sky-600" to="/">
           EVERYDAY 웹툴
         </Link>
-        <span className="mx-2">/</span>
-        <span>{content.title}</span>
+        {found && (
+          <>
+            <span className="mx-2">/</span>
+            <span>{found.category.name}</span>
+          </>
+        )}
+        {content.path !== '/' && (
+          <>
+            <span className="mx-2">/</span>
+            <span>{route?.name ?? content.title}</span>
+          </>
+        )}
       </nav>
       <h2 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">{content.title}</h2>
       <p className="text-sm leading-7 text-gray-600 dark:text-gray-300">{content.intro}</p>

@@ -14,14 +14,7 @@ const UrlEncoded = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'URL 인코더 / 디코더'}
-        description={
-          '웹 개발에 필수적인 URL 인코딩은 더 이상 어렵지 않습니다. 간단하게 텍스트를 입력하고 이 무료 온라인 URL 인코딩 유틸리티로 안전한 데이터 전송을 위한 인코딩된 문자열을 생성해보세요!'
-        }
-        url={'https://webtool.everyday-365.com/encode-decode'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="URL 인코더 / 디코더">
         텍스트나 URL을 입력하면 인코딩·디코딩 결과가 바로 표시됩니다. 한글, 공백, 특수문자가 들어간 주소를 변환할 때 사용하세요.
       </ToolHeader>

@@ -55,14 +55,7 @@ const MakeQr = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'QR코드 만들기 · 와이파이 QR코드'}
-        description={
-          'URL, 텍스트, 와이파이 정보를 입력하면 QR코드를 바로 만들어 고해상도 PNG로 저장할 수 있는 무료 QR코드 생성기입니다. 색상도 바꿀 수 있습니다.'
-        }
-        url={'https://webtool.everyday-365.com/make-qr'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="나만의 QR코드 만들기">
         링크·텍스트·와이파이 정보를 입력하면 QR코드가 바로 만들어집니다. 와이파이 QR은 휴대폰 카메라로 찍으면 비밀번호 입력 없이 연결됩니다.
       </ToolHeader>

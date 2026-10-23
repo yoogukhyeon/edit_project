@@ -28,14 +28,7 @@ const AgeCalc = () => {
 
   return (
     <div className="w-full">
-      <SEOMetaTag
-        title={'만 나이 계산기'}
-        description={
-          '생년월일을 입력하면 만 나이, 연 나이, 세는 나이와 다음 생일까지 남은 날, 태어난 지 며칠인지 바로 계산해주는 무료 만 나이 계산기입니다.'
-        }
-        url={'https://webtool.everyday-365.com/age-calc'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="만 나이 계산기">
         2023년 6월 28일부터 법적·사회적 나이는 만 나이로 통일되었습니다. 생년월일을 입력하면 바로 계산됩니다.
       </ToolHeader>

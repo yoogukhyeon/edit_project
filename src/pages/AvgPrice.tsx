@@ -38,14 +38,7 @@ const AvgPrice = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'물타기 계산기 · 평단가 계산기'}
-        description={
-          '주식·코인 물타기 평단가를 계산하고, 목표 평단가를 만들려면 얼마에 몇 주를 더 사야 하는지 역산합니다. 수수료와 현재가 기준 평가손익까지 한 번에 확인하세요.'
-        }
-        url={'https://webtool.everyday-365.com/avg-price'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="물타기 계산기 · 평단가 계산기">
         매수 내역을 입력하면 평균 단가가 바로 계산됩니다. 주식은 정수, 코인은 소수점 수량도 입력할 수 있습니다.
       </ToolHeader>

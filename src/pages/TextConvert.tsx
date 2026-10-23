@@ -12,12 +12,7 @@ const TextConvert = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'영어 대문자 소문자 변환'}
-        description={'영어 대문자에서 소문자로, 소문자에서 대문자로 변경할 수 있는 무료 온라인 대/소문자 변환기.'}
-        url={'https://webtool.everyday-365.com/text-convert'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="영어 대문자 소문자 변환">영어 문장을 입력하면 대문자, 소문자, 단어·문장 첫 글자 대문자로 바로 변환됩니다.</ToolHeader>
 
       <div className="mb-2 flex items-center justify-between">

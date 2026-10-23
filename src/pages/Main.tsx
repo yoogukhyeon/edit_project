@@ -20,14 +20,7 @@ const Main = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'EVERYDAY 웹툴 - PDF 합치기, 이미지 용량 줄이기, 글자수 계산 등 무료 웹툴 모음'}
-        description={
-          'PDF 보기·합치기·나누기, 이미지 용량 줄이기와 JPG/PNG 변환, 글자수 계산, 만 나이·D-day 계산, 물타기·수익률 계산기, QR코드 만들기까지 설치 없이 브라우저에서 바로 쓰는 무료 웹툴 모음입니다.'
-        }
-        url={'https://webtool.everyday-365.com/'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
 
       <section className="mb-8 rounded-2xl bg-gradient-to-br from-sky-500 via-indigo-500 to-violet-500 px-6 py-8 text-white shadow-lg max-sm:px-4 max-sm:py-6">
         <h1 className="text-2xl font-bold leading-snug max-sm:text-xl">자주 쓰는 웹 도구, 설치 없이 바로</h1>

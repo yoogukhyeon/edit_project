@@ -14,14 +14,7 @@ const HtmlTagRemove = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'HTML 태그 제거기'}
-        description={
-          '웹페이지는 html로 이루어져 있어서 개발자모드에서 html 소스를 가져오고 싶을때가 있다. 그런 경우에 html tag를 지우고 정보만 필요한 경우 html태그제거앱을 이용하면 간단합니다. html 태그제거기를 활용해서 순수한 텍스트만 추출해서 사용할 수 있습니다.'
-        }
-        url={'https://webtool.everyday-365.com/html-remove'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="HTML 태그 제거기">
         HTML 소스를 붙여넣으면 태그를 지우고 텍스트만 바로 추출합니다. 줄바꿈과 &amp;nbsp; 같은 특수문자도 정리됩니다.
       </ToolHeader>

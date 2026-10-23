@@ -57,7 +57,8 @@
     "prerender": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate:sitemap": "node sitemap-generator.js"
+    "generate:sitemap": "node sitemap-generator.js",
+    "indexnow": "node scripts/indexnow.js"
   },
   "reactSnap": {
     "inlineCss": true,

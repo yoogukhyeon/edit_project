@@ -109,14 +109,7 @@ const ImgCompress = () => {
 
   return (
     <div className="w-full">
-      <SEOMetaTag
-        title={'이미지 용량 줄이기 · 크기 조절'}
-        description={
-          'JPG, PNG, WebP 이미지 용량을 브라우저에서 바로 줄이세요. 화질과 최대 가로 크기를 조절하고 여러 장을 한 번에 압축해 ZIP으로 내려받을 수 있습니다.'
-        }
-        url={'https://webtool.everyday-365.com/img-compress'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="이미지 용량 줄이기 · 크기 조절">
         이미지는 서버로 전송되지 않고 브라우저 안에서만 처리됩니다. 한 번에 최대 {MAX_FILES}장, 장당 20MB까지 가능합니다.
       </ToolHeader>

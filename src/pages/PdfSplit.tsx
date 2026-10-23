@@ -112,14 +112,7 @@ const PdfSplit = () => {
 
   return (
     <div className="w-full">
-      <SEOMetaTag
-        title={'PDF 나누기 · 페이지 추출'}
-        description={
-          'PDF에서 원하는 페이지만 추출하거나, 한 페이지씩 또는 N페이지 단위로 나누는 무료 PDF 분할 도구입니다. 파일은 서버에 업로드되지 않습니다.'
-        }
-        url={'https://webtool.everyday-365.com/pdf-split'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="PDF 나누기 · 페이지 추출">PDF 파일을 선택하고 나누는 방식을 고르세요. 파일은 브라우저 안에서만 처리됩니다.</ToolHeader>
 
       <label

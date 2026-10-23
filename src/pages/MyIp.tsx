@@ -14,12 +14,7 @@ const MyIp = () => {
 
   return (
     <div>
-      <SEOMetaTag
-        title={'아이피 확인'}
-        description={'IP, ip 확인, ip주소 확인, ipconfig, ip 조회, ip 주소를 확인하는 가장 쉬운 방법'}
-        url={'https://webtool.everyday-365.com/my-ip'}
-        imgsrc={'/images/meta.png'}
-      />
+      <SEOMetaTag />
       <ToolHeader title="내 아이피 확인">지금 접속한 기기의 공인 IP 주소와 국가, 브라우저 정보를 바로 확인합니다.</ToolHeader>
       <Ip />
       <div className="mb-5">
