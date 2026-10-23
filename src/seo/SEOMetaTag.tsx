@@ -61,6 +61,10 @@ const SEOMetaTag = ({ title, description, url, imgsrc = DEFAULT_IMAGE, keywords 
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageUrl} />
+      {/* 기본 공유 이미지(meta.png)는 1200x630 */}
+      {imageUrl === DEFAULT_IMAGE && <meta property="og:image:width" content="1200" />}
+      {imageUrl === DEFAULT_IMAGE && <meta property="og:image:height" content="630" />}
+      <meta property="og:image:alt" content={`${SITE_NAME} - 설치 없이 바로 쓰는 무료 웹 도구 모음`} />
       <meta property="og:url" content={canonicalUrl} />
 
       <meta name="twitter:card" content="summary_large_image" />
