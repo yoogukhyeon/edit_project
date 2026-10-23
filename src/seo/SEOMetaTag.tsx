@@ -49,9 +49,6 @@ const SEOMetaTag = ({ title, description, url, imgsrc = DEFAULT_IMAGE, keywords 
       <html lang="ko" />
       <title>{pageTitle}</title>
 
-      <link rel="shortcut icon" href="/images/favicon.ico" />
-      <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
-
       <meta name="description" content={description} />
       <meta name="keywords" content={keywordContent} />
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />

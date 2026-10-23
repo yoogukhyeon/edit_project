@@ -1,7 +1,7 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import { NumberField, ResultCard, ShareBar, num, won } from '@components/invest/InvestUI';
-import { h1Class, leadClass } from 'constants/ui';
 import { useToolState } from 'hooks/useToolState';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { positionSizeForRisk, stopTakeProfit, toNumber } from 'utill/invest';
@@ -25,10 +25,9 @@ const StopLoss = () => {
         url={'https://webtool.everyday-365.com/stop-loss'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>손절가 · 익절가 계산기</h1>
-      <p className={leadClass}>
+      <ToolHeader title="손절가 · 익절가 계산기">
         매수 전에 손절가와 익절가를 미리 정해두면 감정적인 매매를 줄일 수 있습니다. 손익비와 적정 매수 수량도 함께 확인하세요.
-      </p>
+      </ToolHeader>
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <NumberField id="entry" label="매수가" value={state.entry} onChange={set('entry')} suffix="원" />

@@ -1,7 +1,8 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import OutputField from '@components/common/OutputField';
 import SEOContent from '@components/common/SEOContent';
-import { h1Class, leadClass, smallButtonClass, textareaClass } from 'constants/ui';
+import { smallButtonClass, textareaClass } from 'constants/ui';
 import React, { useState } from 'react';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { toSentenceCase, toTitleCase } from 'utill/textTransform';
@@ -17,8 +18,7 @@ const TextConvert = () => {
         url={'https://webtool.everyday-365.com/text-convert'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>영어 대문자 소문자 변환</h1>
-      <p className={leadClass}>영어 문장을 입력하면 대문자, 소문자, 단어·문장 첫 글자 대문자로 바로 변환됩니다.</p>
+      <ToolHeader title="영어 대문자 소문자 변환">영어 문장을 입력하면 대문자, 소문자, 단어·문장 첫 글자 대문자로 바로 변환됩니다.</ToolHeader>
 
       <div className="mb-2 flex items-center justify-between">
         <label htmlFor="original" className="text-sm font-medium text-gray-900 dark:text-white">

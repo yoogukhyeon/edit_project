@@ -1,3 +1,5 @@
+import { smallButtonClass } from 'constants/ui';
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import React, { useMemo, useState } from 'react';
@@ -28,20 +30,13 @@ const CounterChar = () => {
         url={'https://webtool.everyday-365.com/counter-char'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">글자수 문자수 계산기</h1>
-      <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
-        문장을 입력하거나 붙여넣으면 공백 포함·제외 글자수와 바이트 수가 바로 계산됩니다.
-      </p>
+      <ToolHeader title="글자수 문자수 계산기">문장을 입력하거나 붙여넣으면 공백 포함·제외 글자수와 바이트 수가 바로 계산됩니다.</ToolHeader>
 
       <div className="mb-2 flex items-center justify-between">
         <label htmlFor="original" className="text-sm font-medium text-gray-900 dark:text-white">
           문장 입력
         </label>
-        <button
-          type="button"
-          onClick={() => setText('')}
-          className="rounded-md border border-gray-300 px-2.5 py-1 text-xs font-medium text-gray-700 hover:border-sky-500 hover:text-sky-600 dark:border-gray-600 dark:text-gray-200"
-        >
+        <button type="button" onClick={() => setText('')} className={smallButtonClass}>
           초기화
         </button>
       </div>

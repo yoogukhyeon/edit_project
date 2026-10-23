@@ -1,3 +1,4 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import Ip from '@components/ip/Ip';
@@ -19,7 +20,7 @@ const MyIp = () => {
         url={'https://webtool.everyday-365.com/my-ip'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">내 아이피 확인</h1>
+      <ToolHeader title="내 아이피 확인">지금 접속한 기기의 공인 IP 주소와 국가, 브라우저 정보를 바로 확인합니다.</ToolHeader>
       <Ip />
       <div className="mb-5">
         <div className="mb-7 text-center bg-slate-100 p-5 rounded-md dark:bg-slate-700">

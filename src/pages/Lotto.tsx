@@ -1,3 +1,4 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Loading from '@components/common/common/Loading';
 import SEOContent from '@components/common/SEOContent';
 import FirstLotto from '@components/lotto/FirstLotto';
@@ -24,6 +25,7 @@ export type TLotto = {
 
 const Lotto = () => {
   const [lottoList, setLottoList] = useState<TLotto[]>([]);
+  const [failed, setFailed] = useState<boolean>(false);
   const { setLotto } = useFirstLottoStore();
 
   useEffect(() => {
@@ -32,18 +34,22 @@ const Lotto = () => {
         ? 'http://localhost:3000/lottowinnumber/fo/lottowinnumberlist'
         : '/api/lottowinnumber/fo/lottowinnumberlist';
 
-    // eslint-disable-next-line consistent-return
     async function fetchdata() {
       try {
         return await axios.get(url);
       } catch (error) {
-        console.error(error);
+        // 실패하면 undefined를 반환하고 아래에서 안내 문구를 띄운다
+        return undefined;
       }
     }
 
     const parsing = async () => {
       const html: any = await fetchdata();
-      if (!html) return;
+      // 데이터 출처 사이트가 응답하지 않으면 로딩 대신 안내 문구를 보여준다
+      if (!html) {
+        setFailed(true);
+        return;
+      }
       const $ = cheerio.load(html.data);
       const ulList = [];
 
@@ -83,7 +89,7 @@ const Lotto = () => {
         url={'https://webtool.everyday-365.com/lotto'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">로또 회차별 당첨번호</h1>
+      <ToolHeader title="로또 회차별 당첨번호">최근 회차의 당첨번호와 보너스 번호, 1등 당첨자 수와 당첨금을 한눈에 확인하세요.</ToolHeader>
       <FirstLotto />
       {lottoList?.length > 0 && (
         <div className="flex flex-col ">
@@ -117,7 +123,12 @@ const Lotto = () => {
           </div>
         </div>
       )}
-      {lottoList?.length < 1 && <Loading />}
+      {lottoList?.length < 1 && !failed && <Loading />}
+      {failed && (
+        <p className="rounded-lg bg-amber-50 p-4 text-sm text-amber-800 dark:bg-slate-700 dark:text-amber-300">
+          당첨번호를 불러오지 못했습니다. 잠시 후 새로고침해주세요. 최신 결과는 동행복권 사이트에서도 확인할 수 있습니다.
+        </p>
+      )}
       <SEOContent page="lotto" />
     </>
   );

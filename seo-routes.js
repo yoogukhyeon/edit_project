@@ -62,7 +62,7 @@ const routes = [
   {
     path: '/make-qr',
     source: 'src/pages/MakeQr.tsx',
-    title: 'QR코드 만들기 | EVERYDAY 웹툴',
+    title: 'QR코드 만들기 · 와이파이 QR코드 | EVERYDAY 웹툴',
     description: 'URL이나 텍스트를 입력해 나만의 QR코드를 생성하는 무료 웹툴입니다. 브라우저에서 바로 QR코드를 확인하세요.',
     keywords: ['QR코드 만들기', 'QR 생성기', '무료 QR코드', 'URL QR'],
   },

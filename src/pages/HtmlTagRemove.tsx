@@ -1,7 +1,8 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import OutputField from '@components/common/OutputField';
 import SEOContent from '@components/common/SEOContent';
-import { h1Class, leadClass, smallButtonClass, textareaClass } from 'constants/ui';
+import { smallButtonClass, textareaClass } from 'constants/ui';
 import React, { useMemo, useState } from 'react';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { stripHtml } from 'utill/textTransform';
@@ -21,8 +22,9 @@ const HtmlTagRemove = () => {
         url={'https://webtool.everyday-365.com/html-remove'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>HTML 태그 제거기</h1>
-      <p className={leadClass}>HTML 소스를 붙여넣으면 태그를 지우고 텍스트만 바로 추출합니다. 줄바꿈과 &amp;nbsp; 같은 특수문자도 정리됩니다.</p>
+      <ToolHeader title="HTML 태그 제거기">
+        HTML 소스를 붙여넣으면 태그를 지우고 텍스트만 바로 추출합니다. 줄바꿈과 &amp;nbsp; 같은 특수문자도 정리됩니다.
+      </ToolHeader>
 
       <div className="grid gap-5 md:grid-cols-2">
         <div>

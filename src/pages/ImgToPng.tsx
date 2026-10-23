@@ -1,7 +1,7 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import ImageConverter from '@components/image/ImageConverter';
-import { h1Class, leadClass } from 'constants/ui';
 import SEOMetaTag from 'seo/SEOMetaTag';
 
 const ImgToPng = () => {
@@ -13,8 +13,7 @@ const ImgToPng = () => {
         url={'https://webtool.everyday-365.com/img-png'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>이미지 PNG 변환</h1>
-      <p className={leadClass}>이미지를 선택하면 바로 PNG로 변환됩니다. 투명 배경은 그대로 유지됩니다.</p>
+      <ToolHeader title="이미지 PNG 변환">이미지를 선택하면 바로 PNG로 변환됩니다. 투명 배경은 그대로 유지됩니다.</ToolHeader>
       <ImageConverter type="image/png" ext="png" />
       <SEOContent page="imgToPng" />
       <Comment pathname="imgToPng" />

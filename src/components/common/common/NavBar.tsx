@@ -2,6 +2,7 @@ import { toolCategories } from 'constants/tools';
 import React, { useEffect, useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import ToolIcon from '../ToolIcon';
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -34,13 +35,13 @@ const Navbar = () => {
         }`}
       >
         <Link to="/" className="flex items-center gap-3 p-4 text-base font-extrabold text-gray-900 dark:text-white">
-          <img src="/images/logo.png" alt="로고" width={32} height={32} />
+          <img src="/images/logo.svg" alt="EVERYDAY 웹툴 로고" width={32} height={32} />
           EVERYDAY 웹툴
         </Link>
 
         {toolCategories.map((category) => (
           <div key={category.name} className="mt-3">
-            <p className="px-3 pb-1 text-xs font-semibold text-sky-600 dark:text-sky-300">{category.name}</p>
+            <p className={`px-3 pb-1 text-xs font-bold ${category.style.text}`}>{category.name}</p>
             <ul>
               {category.tools.map((tool) => (
                 <li key={tool.path}>
@@ -48,11 +49,12 @@ const Navbar = () => {
                     to={tool.path}
                     end
                     className={({ isActive }) =>
-                      `block rounded-lg px-3 py-2.5 text-sm ${
+                      `flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm ${
                         isActive ? 'bg-sky-50 font-semibold text-sky-700 dark:bg-slate-700 dark:text-sky-300' : 'text-gray-800 dark:text-gray-200'
                       }`
                     }
                   >
+                    <ToolIcon icon={tool.icon} style={category.style} size="sm" />
                     {tool.title}
                   </NavLink>
                 </li>

@@ -1,7 +1,7 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import { NumberField, ResultCard, ShareBar, num, pct, toneOf, won } from '@components/invest/InvestUI';
-import { h1Class, leadClass } from 'constants/ui';
 import { useToolState } from 'hooks/useToolState';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { sellPriceForReturn, toNumber, tradeProfit } from 'utill/invest';
@@ -52,8 +52,9 @@ const StockProfit = () => {
         url={'https://webtool.everyday-365.com/stock-profit'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>주식 · 코인 수익률 계산기</h1>
-      <p className={leadClass}>수수료와 세금까지 뺀 실제 손익을 계산합니다. 시장을 고르면 수수료 예시값이 채워지고, 직접 수정할 수 있습니다.</p>
+      <ToolHeader title="주식 · 코인 수익률 계산기">
+        수수료와 세금까지 뺀 실제 손익을 계산합니다. 시장을 고르면 수수료 예시값이 채워지고, 직접 수정할 수 있습니다.
+      </ToolHeader>
 
       <div className="mb-4 flex gap-2">
         {Object.entries(PRESETS).map(([key, p]) => (

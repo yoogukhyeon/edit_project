@@ -1,3 +1,4 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import JSZip from 'jszip';
@@ -116,10 +117,9 @@ const ImgCompress = () => {
         url={'https://webtool.everyday-365.com/img-compress'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">이미지 용량 줄이기 · 크기 조절</h1>
-      <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
+      <ToolHeader title="이미지 용량 줄이기 · 크기 조절">
         이미지는 서버로 전송되지 않고 브라우저 안에서만 처리됩니다. 한 번에 최대 {MAX_FILES}장, 장당 20MB까지 가능합니다.
-      </p>
+      </ToolHeader>
 
       <label
         htmlFor="compress-input"

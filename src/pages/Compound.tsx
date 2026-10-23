@@ -1,7 +1,7 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import { NumberField, ResultCard, ShareBar, pct, won } from '@components/invest/InvestUI';
-import { h1Class, leadClass } from 'constants/ui';
 import { useToolState } from 'hooks/useToolState';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { compoundGrowth, toNumber } from 'utill/invest';
@@ -25,8 +25,9 @@ const Compound = () => {
         url={'https://webtool.everyday-365.com/compound'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>복리 계산기 · 적립식 투자 계산기</h1>
-      <p className={leadClass}>매월 꾸준히 적립하며 복리로 굴렸을 때 자산이 어떻게 불어나는지 연도별로 확인하세요. (월복리, 매월 말 적립 기준)</p>
+      <ToolHeader title="복리 계산기 · 적립식 투자 계산기">
+        매월 꾸준히 적립하며 복리로 굴렸을 때 자산이 어떻게 불어나는지 연도별로 확인하세요. (월복리, 매월 말 적립 기준)
+      </ToolHeader>
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <NumberField id="initial" label="초기 투자금" value={state.initial} onChange={set('initial')} suffix="원" />
@@ -45,7 +46,7 @@ const Compound = () => {
           </div>
 
           <div className="mt-4 overflow-x-auto">
-            <table className="w-full min-w-[480px] text-right text-sm">
+            <table className="w-full text-right text-sm">
               <thead>
                 <tr className="border-b border-gray-200 text-xs text-gray-500 dark:border-gray-700 dark:text-gray-400">
                   <th className="py-2 text-center">연차</th>

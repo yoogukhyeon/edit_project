@@ -1,6 +1,6 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
-import { h1Class, leadClass } from 'constants/ui';
 import React, { lazy, Suspense, useState } from 'react';
 import { toast } from 'react-toastify';
 import SEOMetaTag from 'seo/SEOMetaTag';
@@ -31,8 +31,7 @@ const PdfView = () => {
         url={'https://webtool.everyday-365.com/pdf-view'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>PDF 보기</h1>
-      <p className={leadClass}>PDF 파일을 선택하면 이 화면에서 바로 열어볼 수 있습니다. 파일은 서버로 전송되지 않습니다.</p>
+      <ToolHeader title="PDF 보기">PDF 파일을 선택하면 이 화면에서 바로 열어볼 수 있습니다. 파일은 서버로 전송되지 않습니다.</ToolHeader>
 
       <label
         htmlFor="file"

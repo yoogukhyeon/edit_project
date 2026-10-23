@@ -20,7 +20,7 @@ const CopyButton = ({ text, label = '복사' }: Props) => {
     <button
       type="button"
       onClick={onCopy}
-      className="rounded-md border border-gray-300 px-2.5 py-1 text-xs font-medium text-gray-700 hover:border-sky-500 hover:text-sky-600 dark:border-gray-600 dark:text-gray-200"
+      className="min-h-[36px] rounded-md border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-sky-500 hover:text-sky-600 dark:border-gray-600 dark:text-gray-200"
     >
       {label}
     </button>

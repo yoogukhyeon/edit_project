@@ -73,4 +73,5 @@ test('복리 적립', () => {
   close(grow[0].value, 1000000 * 1.01 ** 12, 2);
   expect(toNumber('1,234.5')).toBe(1234.5);
   expect(toNumber('abc')).toBe(0);
+  expect(toNumber('-5')).toBe(0);
 });

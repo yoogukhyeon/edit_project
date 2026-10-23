@@ -117,7 +117,7 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
       },
       {
         heading: '브라우저에서 바로 변환합니다',
-        body: '별도의 PDF 변환 프로그램을 설치하지 않아도 파일을 선택해 변환을 시작할 수 있습니다. 큰 파일은 변환 시간이 길어질 수 있으니 5MB 이하 파일 사용을 권장합니다.',
+        body: '별도의 PDF 변환 프로그램을 설치하지 않아도 파일을 선택해 변환을 시작할 수 있습니다. 최대 50MB까지 변환할 수 있으며, 페이지가 많거나 최고화질을 선택하면 시간이 더 걸립니다.',
       },
     ],
     faqs: [
@@ -288,6 +288,10 @@ export const seoContent: Record<SEOPageKey, SEOContentItem> = {
     faqs: [
       { question: 'URL QR코드를 만들 수 있나요?', answer: '네. URL을 입력하면 해당 주소로 연결되는 QR코드를 만들 수 있습니다.' },
       { question: 'QR코드 생성은 무료인가요?', answer: '네. 별도 설치 없이 무료로 QR코드를 생성할 수 있습니다.' },
+      {
+        question: '와이파이 QR코드는 어떻게 만드나요?',
+        answer: '와이파이 탭에서 와이파이 이름과 비밀번호를 입력하면 됩니다. 휴대폰 카메라로 찍으면 비밀번호 입력 없이 바로 연결됩니다.',
+      },
       { question: '한글 텍스트도 QR코드로 만들 수 있나요?', answer: '입력 가능한 범위 안에서 한글 텍스트도 QR코드로 만들 수 있습니다.' },
     ],
     related: [

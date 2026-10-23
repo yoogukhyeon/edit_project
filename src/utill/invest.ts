@@ -126,8 +126,8 @@ export const compoundGrowth = (initial: number, monthly: number, annualRate: num
   return rows;
 };
 
-// 입력 문자열을 숫자로 (쉼표 허용, 잘못된 값은 0)
+// 입력 문자열을 숫자로 (쉼표 허용). 가격·수량·비율은 음수가 될 수 없으므로 잘못된 값과 음수는 0으로 본다.
 export const toNumber = (text: string) => {
   const n = Number(String(text).replace(/,/g, '').trim());
-  return Number.isFinite(n) ? n : 0;
+  return Number.isFinite(n) && n > 0 ? n : 0;
 };

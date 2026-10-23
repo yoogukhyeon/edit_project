@@ -1,7 +1,7 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import { NumberField, ResultCard, ShareBar, num, pct, toneOf, won } from '@components/invest/InvestUI';
-import { h1Class, leadClass } from 'constants/ui';
 import { useToolState } from 'hooks/useToolState';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { averagePrice, qtyForTargetAverage, toNumber } from 'utill/invest';
@@ -46,8 +46,9 @@ const AvgPrice = () => {
         url={'https://webtool.everyday-365.com/avg-price'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>물타기 계산기 · 평단가 계산기</h1>
-      <p className={leadClass}>매수 내역을 입력하면 평균 단가가 바로 계산됩니다. 주식은 정수, 코인은 소수점 수량도 입력할 수 있습니다.</p>
+      <ToolHeader title="물타기 계산기 · 평단가 계산기">
+        매수 내역을 입력하면 평균 단가가 바로 계산됩니다. 주식은 정수, 코인은 소수점 수량도 입력할 수 있습니다.
+      </ToolHeader>
 
       <section className="rounded-xl border border-gray-200 p-4 dark:border-gray-700">
         <h2 className="mb-3 text-base font-semibold text-gray-900 dark:text-white">매수 내역</h2>
@@ -68,7 +69,7 @@ const AvgPrice = () => {
                 aria-label={`${i + 1}차 삭제`}
                 disabled={lots.length === 1}
                 onClick={() => setLots(lots.filter((_, j) => j !== i))}
-                className="pb-2.5 text-gray-400 hover:text-red-500 disabled:opacity-30"
+                className="flex h-[42px] w-8 items-center justify-center text-gray-400 hover:text-red-500 disabled:opacity-30"
               >
                 ✕
               </button>

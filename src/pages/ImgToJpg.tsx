@@ -1,7 +1,7 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import ImageConverter from '@components/image/ImageConverter';
-import { h1Class, leadClass } from 'constants/ui';
 import SEOMetaTag from 'seo/SEOMetaTag';
 
 const ImgToJpg = () => {
@@ -13,8 +13,7 @@ const ImgToJpg = () => {
         url={'https://webtool.everyday-365.com/img-jpg'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>이미지 JPG 변환</h1>
-      <p className={leadClass}>이미지를 선택하면 바로 JPG로 변환됩니다. 투명한 부분은 흰색 배경으로 바뀝니다.</p>
+      <ToolHeader title="이미지 JPG 변환">이미지를 선택하면 바로 JPG로 변환됩니다. 투명한 부분은 흰색 배경으로 바뀝니다.</ToolHeader>
       <ImageConverter type="image/jpeg" ext="jpg" />
       <SEOContent page="imgToJpg" />
       <Comment pathname="imgToJpg" />

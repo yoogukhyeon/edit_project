@@ -4,6 +4,9 @@
 
 body {
   @apply text-black dark:text-white dark:bg-slate-800;
+  /* 한국어를 단어(어절) 단위로 줄바꿈하고, 공백 없는 긴 URL 등은 넘치지 않게 끊는다 */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 svg {
@@ -16,5 +19,15 @@ a {
 
 input,
 textarea {
-  @apply placeholder:text-xs;
+  @apply placeholder:text-gray-400;
+}
+
+/* iOS Safari는 16px 미만 입력칸을 누르면 화면을 확대하므로 모바일에서는 16px로 */
+@media (max-width: 767px) {
+  input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']),
+  textarea,
+  select {
+    /* Tailwind의 text-sm 등 클래스보다 우선해야 하므로 !important */
+    font-size: 16px !important;
+  }
 }

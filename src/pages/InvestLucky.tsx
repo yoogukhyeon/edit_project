@@ -1,8 +1,8 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import TodayLucksPromo from '@components/common/TodayLucksPromo';
 import { toolCategories } from 'constants/tools';
-import { h1Class, leadClass } from 'constants/ui';
 import { Link } from 'react-router-dom';
 import SEOMetaTag from 'seo/SEOMetaTag';
 
@@ -17,8 +17,7 @@ const InvestLucky = () => {
         url={'https://webtool.everyday-365.com/invest-lucky'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>오늘의 투자 운세</h1>
-      <p className={leadClass}>오늘의 재물·투자운은 운월관에서 무료로 확인하고, 매매 계획은 아래 투자 계산기로 점검해보세요.</p>
+      <ToolHeader title="오늘의 투자 운세">오늘의 재물·투자운은 운월관에서 무료로 확인하고, 매매 계획은 아래 투자 계산기로 점검해보세요.</ToolHeader>
 
       <TodayLucksPromo />
 

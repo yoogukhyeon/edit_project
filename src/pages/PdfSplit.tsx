@@ -1,3 +1,4 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import JSZip from 'jszip';
@@ -119,10 +120,7 @@ const PdfSplit = () => {
         url={'https://webtool.everyday-365.com/pdf-split'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">PDF 나누기 · 페이지 추출</h1>
-      <p className="text-sm mb-5 text-gray-500 whitespace-pre-line dark:text-gray-400">
-        PDF 파일을 선택하고 나누는 방식을 고르세요. 파일은 브라우저 안에서만 처리됩니다.
-      </p>
+      <ToolHeader title="PDF 나누기 · 페이지 추출">PDF 파일을 선택하고 나누는 방식을 고르세요. 파일은 브라우저 안에서만 처리됩니다.</ToolHeader>
 
       <label
         htmlFor="split-input"

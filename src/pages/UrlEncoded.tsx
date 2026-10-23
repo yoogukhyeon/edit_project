@@ -1,7 +1,8 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import OutputField from '@components/common/OutputField';
 import SEOContent from '@components/common/SEOContent';
-import { h1Class, leadClass, smallButtonClass, textareaClass } from 'constants/ui';
+import { smallButtonClass, textareaClass } from 'constants/ui';
 import { useState } from 'react';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { safeDecodeURIComponent } from 'utill/textTransform';
@@ -21,10 +22,9 @@ const UrlEncoded = () => {
         url={'https://webtool.everyday-365.com/encode-decode'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>URL 인코더 / 디코더</h1>
-      <p className={leadClass}>
+      <ToolHeader title="URL 인코더 / 디코더">
         텍스트나 URL을 입력하면 인코딩·디코딩 결과가 바로 표시됩니다. 한글, 공백, 특수문자가 들어간 주소를 변환할 때 사용하세요.
-      </p>
+      </ToolHeader>
 
       <div className="mb-2 flex items-center justify-between">
         <label htmlFor="original" className="text-sm font-medium text-gray-900 dark:text-white">

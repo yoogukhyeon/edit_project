@@ -9,7 +9,7 @@ const Header = () => {
     <header className="pt-6">
       <div className="flex justify-between items-center">
         <Link to="/" className="flex gap-3 justify-start items-center text-2xl font-extrabold dark:text-white max-sm:text-xl">
-          <img src="/images/logo.png" alt="로고" width={40} height={40} />
+          <img src="/images/logo.svg" alt="EVERYDAY 웹툴 로고" width={40} height={40} />
           EVERYDAY 웹툴
         </Link>
         <div className="flex justify-center items-center gap-2">

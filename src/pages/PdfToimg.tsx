@@ -1,211 +1,196 @@
-import Alert from '@components/common/common/Alert';
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
-import Loading from '@components/common/common/Loading';
 import SEOContent from '@components/common/SEOContent';
-import useAlert from '@hooks/useAlert';
-import { ChangeEvent, useState } from 'react';
-import { Link } from 'react-router-dom';
+import JSZip from 'jszip';
+import { ChangeEvent, DragEvent, useState } from 'react';
 import { toast } from 'react-toastify';
 import SEOMetaTag from 'seo/SEOMetaTag';
-import { getByteSize } from 'utill/getByteSize';
-import JSZip from 'jszip';
-import { saveAs } from 'file-saver';
+import { downloadBlob, formatBytes } from 'utill/getByteSize';
+
+type Format = 'image/jpeg' | 'image/png';
+type PageImage = { name: string; blob: Blob; url: string };
+
+const MAX_SIZE = 1024 ** 2 * 50; // 50mb
+const SCALES = [
+  { value: 1.5, label: '보통 (빠름)' },
+  { value: 2, label: '고화질' },
+  { value: 3, label: '최고화질 (느림)' },
+];
+
+const toBlob = (canvas: HTMLCanvasElement, type: Format) =>
+  new Promise<Blob>((resolve, reject) => {
+    canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error('blob'))), type, 0.92);
+  });
 
 const PdfToimg = () => {
-  const [img, setImg] = useState<string>('');
-  const [oriFile, setOriFile] = useState<any>();
-  const [loading, setLoading] = useState<boolean>(false);
-  const [fileSize, setFileSize] = useAlert(false);
-  const [fileType, setFileType] = useAlert(false);
-  const onFileChange = async (e: ChangeEvent<HTMLInputElement>) => {
-    const { files } = e.target;
+  const [format, setFormat] = useState<Format>('image/jpeg');
+  const [scale, setScale] = useState<number>(2);
+  const [images, setImages] = useState<PageImage[]>([]);
+  const [fileName, setFileName] = useState<string>('');
+  const [progress, setProgress] = useState<{ done: number; total: number } | null>(null);
 
-    // eslint-disable-next-line no-useless-return
-    if (files.length === 0) return;
+  const ext = format === 'image/png' ? 'png' : 'jpg';
 
-    // max
-    const size = 1024 ** 2 * 5; // 5mb
-    // 5mb 이하로 용량 체크
-    if (files[0].size > size) {
-      setFileSize(true);
+  const convert = async (file?: File) => {
+    if (!file) return;
+    if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+      toast.error('PDF 파일만 변환할 수 있습니다.');
+      return;
+    }
+    if (file.size > MAX_SIZE) {
+      toast.error('50MB 이하 PDF만 변환할 수 있습니다.');
       return;
     }
 
-    const file = files[0];
-    setOriFile(file);
-
-    if (file.type !== 'application/pdf') {
-      toast.error('PDF 파일만 업로드 해주세요.');
-      setImg('');
-      setFileType(true);
-      return;
-    }
-
-    setLoading(true);
-
-    const pdfBlob = await file.arrayBuffer();
-    const pdfjslib = await import('pdfjs-dist/build/pdf');
-    const pdfjsWorker = await import('pdfjs-dist/build/pdf.worker.entry');
-
-    pdfjslib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+    images.forEach((image) => URL.revokeObjectURL(image.url));
+    setImages([]);
+    setFileName(file.name);
+    const base = file.name.replace(/\.pdf$/i, '');
 
     try {
-      const pdf = await pdfjslib.getDocument({ data: pdfBlob }).promise;
+      // pdf.js는 용량이 커서 변환할 때만 불러온다.
+      const pdfjslib = await import('pdfjs-dist/build/pdf');
+      const pdfjsWorker = await import('pdfjs-dist/build/pdf.worker.entry');
+      pdfjslib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+      const pdf = await pdfjslib.getDocument({ data: await file.arrayBuffer() }).promise;
 
-      const pdfToPdfUrl = [];
-
-      // setImg(imgDataUrl);
-      // setFileType(false);
-      setTimeout(async () => {
-        // eslint-disable-next-line no-plusplus
-        for (let i = 0; i < pdf.numPages; i++) {
-          const page = await pdf.getPage(i + 1);
-
-          const canvas = document.createElement('canvas');
-          const context = canvas.getContext('2d');
-          const viewport = page.getViewport({ scale: 1.0 });
-
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-
-          await page.render({ canvasContext: context, viewport }).promise;
-
-          // 데이터를 인코딩된 문자열로 변환 (base64)
-          const imgDataUrl = canvas.toDataURL('image/png');
-          pdfToPdfUrl.push(imgDataUrl);
-        }
-
-        const zip: any = new JSZip();
-        const imagesFolder = zip.folder('images');
-
-        const imagesFetcher = await Promise.all(
-          pdfToPdfUrl.map(async (imgSrc, index) => {
-            const res = await fetch(imgSrc);
-
-            return res.blob();
-          }),
-        );
-
-        imagesFetcher.forEach((imgBlob, index) => {
-          imagesFolder.file(`img_${index}.jpg`, imgBlob, { blob: true });
-        });
-
-        zip.generateAsync({ type: 'blob' }).then((content) => {
-          saveAs(content, `${file.name.split('.')[0]}.zip`);
-          setLoading(false);
-        });
-
-        toast.info('PDF 이미지 압축을 완료했습니다.');
-      }, 2000);
-    } catch (err) {
-      console.error('오류 PDF', err);
+      const result: PageImage[] = [];
+      setProgress({ done: 0, total: pdf.numPages });
+      // eslint-disable-next-line no-plusplus
+      for (let i = 1; i <= pdf.numPages; i++) {
+        // eslint-disable-next-line no-await-in-loop
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale });
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const context = canvas.getContext('2d') as CanvasRenderingContext2D;
+        // JPG는 투명 배경이 검게 나오므로 흰 배경을 먼저 칠한다.
+        context.fillStyle = '#fff';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        // eslint-disable-next-line no-await-in-loop
+        await page.render({ canvasContext: context, viewport }).promise;
+        // eslint-disable-next-line no-await-in-loop
+        const blob = await toBlob(canvas, format);
+        result.push({ name: `${base}_${String(i).padStart(3, '0')}.${ext}`, blob, url: URL.createObjectURL(blob) });
+        setProgress({ done: i, total: pdf.numPages });
+      }
+      setImages(result);
+      toast.success(`${result.length}페이지를 이미지로 변환했습니다.`);
+    } catch (error) {
+      toast.error('PDF를 읽을 수 없습니다. 암호가 걸렸거나 손상된 파일인지 확인해주세요.');
+    } finally {
+      setProgress(null);
     }
   };
+
+  const onFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    convert(e.target.files?.[0]);
+    e.target.value = '';
+  };
+
+  const onDrop = (e: DragEvent<HTMLLabelElement>) => {
+    e.preventDefault();
+    convert(e.dataTransfer.files[0]);
+  };
+
+  const onDownloadAll = async () => {
+    const zip = new JSZip();
+    images.forEach((image) => zip.file(image.name, image.blob));
+    downloadBlob(await zip.generateAsync({ type: 'blob' }), `${fileName.replace(/\.pdf$/i, '') || 'pdf'}_images.zip`);
+  };
+
+  const optionClass = (active: boolean) =>
+    `min-h-[36px] rounded-lg px-3 py-1.5 text-sm ${
+      active ? 'bg-sky-600 text-white' : 'bg-slate-100 text-gray-700 dark:bg-slate-700 dark:text-gray-200'
+    }`;
+
   return (
     <div className="w-full">
       <SEOMetaTag
         title={'PDF 이미지 변환'}
-        description={'PDF 형식을 JPG로 신속하게 무료로 변환하세요. PDF 형식을 손쉽게 JPG 파일로 변환할 수 있습니다.'}
+        description={'PDF 파일의 모든 페이지를 고화질 JPG·PNG 이미지로 변환하고 ZIP으로 한 번에 내려받으세요. 파일은 서버로 전송되지 않습니다.'}
         url={'https://webtool.everyday-365.com/pdf-img'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white max-sm:text-xl">PDF 이미지 변환</h1>
-      {loading ? (
-        <Loading />
-      ) : (
-        <>
-          <div className="mb-3 w-full">
-            <div className="flex flex-row items-center ">
-              <input onChange={onFileChange} type="file" id="custom-input" hidden />
-              <label
-                htmlFor="custom-input"
-                className="flex items-center justify-center text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer"
-              >
-                파일을 선택해주세요.
-              </label>
+      <ToolHeader title="PDF 이미지 변환">
+        PDF를 선택하면 모든 페이지를 이미지로 바꿔 미리 보여드립니다. 파일은 서버로 전송되지 않고 브라우저에서만 처리됩니다.
+      </ToolHeader>
+
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <span className="text-sm font-medium text-gray-900 dark:text-white">형식</span>
+        {(['image/jpeg', 'image/png'] as Format[]).map((value) => (
+          <button key={value} type="button" onClick={() => setFormat(value)} className={optionClass(format === value)}>
+            {value === 'image/png' ? 'PNG' : 'JPG'}
+          </button>
+        ))}
+        <span className="ml-2 text-sm font-medium text-gray-900 dark:text-white">화질</span>
+        {SCALES.map((option) => (
+          <button key={option.value} type="button" onClick={() => setScale(option.value)} className={optionClass(scale === option.value)}>
+            {option.label}
+          </button>
+        ))}
+      </div>
+
+      <label
+        htmlFor="pdf-input"
+        onDragOver={(e) => e.preventDefault()}
+        onDrop={onDrop}
+        className="flex h-40 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 px-4 text-center hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600"
+      >
+        {progress ? (
+          <>
+            <p className="text-sm font-semibold text-gray-700 dark:text-gray-200">
+              변환 중... {progress.done} / {progress.total} 페이지
+            </p>
+            <div className="mt-3 h-2 w-2/3 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-600">
+              <div
+                className="h-full bg-sky-500 transition-all"
+                style={{ width: `${progress.total ? (progress.done / progress.total) * 100 : 0}%` }}
+              />
             </div>
-            {fileSize && <Alert text="해당 파일은 제한된 용량을 초과하였습니다." setValue={setFileSize} />}
-            {fileType && <Alert text="PDF 파일만 업로드 해주세요." setValue={setFileType} />}
+          </>
+        ) : (
+          <>
+            <p className="mb-1 text-sm text-gray-600 dark:text-gray-300">
+              <span className="font-semibold">클릭 or 드래그로</span> PDF 파일을 선택해주세요.
+            </p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">최대 50MB · 형식과 화질은 위에서 먼저 고르세요</p>
+          </>
+        )}
+        <input id="pdf-input" type="file" accept=".pdf,application/pdf" className="hidden" disabled={!!progress} onChange={onFileChange} />
+      </label>
+
+      {images.length > 0 && (
+        <div className="mt-5">
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+            <p className="text-sm text-gray-700 dark:text-gray-200">
+              <span className="font-semibold">{fileName}</span> · {images.length}페이지 · 총{' '}
+              {formatBytes(images.reduce((sum, image) => sum + image.blob.size, 0))}
+            </p>
+            <button onClick={onDownloadAll} className="min-h-[36px] rounded-lg bg-sky-600 px-4 py-2 text-sm font-medium text-white hover:bg-sky-700">
+              전체 ZIP 다운로드
+            </button>
           </div>
-          {img ? (
-            <>
-              <div className="flex justify-center items-center">
-                <img className="h-auto max-w-full" src={img} alt="img" />
-              </div>
-
-              <ul className="grid w-full gap-6 md:grid-cols-2 mt-6">
-                <li>
-                  <div className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 max-sm:text-xs">
-                    <div className="block">
-                      <div className="w-full text-lg max-sm:text-base font-semibold">{oriFile?.name}</div>
-                      <div className="w-full pt-1">{getByteSize(oriFile?.size)}</div>
-                      <div className="w-full pt-1">{oriFile?.type}</div>
-                    </div>
-
-                    <svg
-                      className="w-7 h-7 "
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                      />
-                    </svg>
-                  </div>
-                </li>
-                <li className="flex items-center justify-center">
-                  <Link
-                    className="flex items-center justify-center w-full h-full text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-base px-5 py-2.5 text-center "
-                    to={img}
-                    download="PDF-IMG"
-                    target="_blank"
-                    rel="noreferrer"
+          <ul className="grid grid-cols-2 gap-3 md:grid-cols-4">
+            {images.map((image, i) => (
+              <li key={image.url} className="rounded-lg border border-slate-200 bg-slate-50 p-2 dark:border-slate-600 dark:bg-slate-700/50">
+                <img src={image.url} alt={`${i + 1}페이지`} className="aspect-[3/4] w-full rounded bg-white object-contain" loading="lazy" />
+                <div className="mt-2 flex items-center justify-between gap-1">
+                  <span className="text-xs text-gray-600 dark:text-gray-300">
+                    {i + 1}p · {formatBytes(image.blob.size)}
+                  </span>
+                  <button
+                    onClick={() => downloadBlob(image.blob, image.name)}
+                    className="min-h-[32px] rounded-md border border-sky-600 px-2 text-xs text-sky-600 hover:bg-sky-50 dark:hover:bg-slate-700"
                   >
-                    <button>변환된 이미지 다운로드</button>
-                  </Link>
-                </li>
-              </ul>
-            </>
-          ) : (
-            <>
-              <div className="flex items-center justify-center w-full">
-                <label
-                  htmlFor="dropzone-file"
-                  className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-                  style={{ height: '500px' }}
-                >
-                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                    <svg
-                      className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 20 16"
-                    >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                      />
-                    </svg>
-                    <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                      <span className="font-semibold">PDF </span> 파일을 업로드 해주세요.
-                    </p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">PDF</p>
-                  </div>
-                  <input id="dropzone-file" type="file" className="hidden" onChange={onFileChange} />
-                </label>
-              </div>
-            </>
-          )}
-        </>
+                    저장
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
       <SEOContent page="pdfToImg" />

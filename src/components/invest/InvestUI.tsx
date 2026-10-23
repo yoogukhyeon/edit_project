@@ -71,11 +71,15 @@ export const ShareBar = ({ shareUrl, onReset, event }: ShareProps) => {
       <button
         type="button"
         onClick={onReset}
-        className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm text-gray-700 dark:border-gray-600 dark:text-gray-200"
+        className="min-h-[40px] rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 dark:border-gray-600 dark:text-gray-200"
       >
         초기화
       </button>
-      <button type="button" onClick={onShare} className="rounded-lg bg-sky-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-sky-700">
+      <button
+        type="button"
+        onClick={onShare}
+        className="min-h-[40px] rounded-lg bg-sky-600 px-4 py-2 text-sm font-medium text-white hover:bg-sky-700"
+      >
         결과 공유 링크 복사
       </button>
     </div>
@@ -83,6 +87,14 @@ export const ShareBar = ({ shareUrl, onReset, event }: ShareProps) => {
 };
 
 // 금액·수량 표시
-export const won = (n: number) => `${Math.round(n).toLocaleString()}원`;
-export const num = (n: number, digits = 2) => n.toLocaleString(undefined, { maximumFractionDigits: digits });
-export const pct = (rate: number, digits = 2) => `${rate > 0 ? '+' : ''}${(rate * 100).toFixed(digits)}%`;
+// 계산 범위를 벗어난 값(Infinity 등)은 '-'로, -0은 0으로 표시한다.
+const OUT_OF_RANGE = '-';
+export const won = (n: number) => (Number.isFinite(n) ? `${(Math.round(n) || 0).toLocaleString()}원` : OUT_OF_RANGE);
+export const num = (n: number, digits = 2) =>
+  Number.isFinite(n) ? (n || 0).toLocaleString(undefined, { maximumFractionDigits: digits }) : OUT_OF_RANGE;
+export const pct = (rate: number, digits = 2) => {
+  if (!Number.isFinite(rate)) return OUT_OF_RANGE;
+  const fixed = (rate * 100).toFixed(digits);
+  if (Number(fixed) === 0) return `${(0).toFixed(digits)}%`;
+  return `${rate > 0 ? '+' : ''}${fixed}%`;
+};

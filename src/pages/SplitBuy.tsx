@@ -1,7 +1,7 @@
+import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import { NumberField, ResultCard, ShareBar, num, pct, won } from '@components/invest/InvestUI';
-import { h1Class, leadClass } from 'constants/ui';
 import { useToolState } from 'hooks/useToolState';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { parseWeights, splitBuyPlan, toNumber } from 'utill/invest';
@@ -33,8 +33,9 @@ const SplitBuy = () => {
         url={'https://webtool.everyday-365.com/split-buy'}
         imgsrc={'/images/meta.png'}
       />
-      <h1 className={h1Class}>분할매수 계산기</h1>
-      <p className={leadClass}>예산을 몇 번에 나눠, 얼마씩 떨어질 때마다 살지 정하면 회차별 매수 계획과 평단가 변화를 보여드립니다.</p>
+      <ToolHeader title="분할매수 계산기">
+        예산을 몇 번에 나눠, 얼마씩 떨어질 때마다 살지 정하면 회차별 매수 계획과 평단가 변화를 보여드립니다.
+      </ToolHeader>
 
       <div className="mb-4 flex gap-2">
         {[
@@ -80,7 +81,7 @@ const SplitBuy = () => {
               key={p.value}
               type="button"
               onClick={() => set('weights')(p.value)}
-              className={`rounded-md border px-2.5 py-1 text-xs ${
+              className={`min-h-[36px] rounded-md border px-3 py-1.5 text-xs ${
                 state.weights === p.value
                   ? 'border-sky-600 text-sky-700 dark:text-sky-300'
                   : 'border-gray-300 text-gray-600 dark:border-gray-600 dark:text-gray-300'
@@ -102,15 +103,15 @@ const SplitBuy = () => {
           </div>
 
           <div className="mt-4 overflow-x-auto">
-            <table className="w-full min-w-[560px] text-right text-sm">
+            <table className="w-full text-right text-sm md:min-w-[560px]">
               <thead>
                 <tr className="border-b border-gray-200 text-xs text-gray-500 dark:border-gray-700 dark:text-gray-400">
                   <th className="py-2 text-center">회차</th>
                   <th>매수가</th>
                   <th>1차 대비</th>
                   <th>수량</th>
-                  <th>매수금액</th>
-                  <th>누적 금액</th>
+                  <th className="max-sm:hidden">매수금액</th>
+                  <th className="max-sm:hidden">누적 금액</th>
                   <th className="pr-1">누적 평단</th>
                 </tr>
               </thead>
@@ -124,8 +125,8 @@ const SplitBuy = () => {
                       {num(row.qty, decimals)}
                       {unit}
                     </td>
-                    <td>{won(row.amount)}</td>
-                    <td>{won(row.totalAmount)}</td>
+                    <td className="max-sm:hidden">{won(row.amount)}</td>
+                    <td className="max-sm:hidden">{won(row.totalAmount)}</td>
                     <td className="pr-1 font-semibold">{won(row.avg)}</td>
                   </tr>
                 ))}
