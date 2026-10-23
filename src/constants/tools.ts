@@ -25,9 +25,9 @@ export const toolCategories: ToolCategory[] = [
     name: '텍스트',
     tools: [
       { path: '/counter-char', title: '글자수 계산기', desc: '공백 포함·제외 글자수와 바이트 계산' },
-      { path: '/text-convert', title: '영어 대소문자 변환', desc: '대문자, 소문자, 첫 글자 대문자로 변환' },
+      { path: '/text-convert', title: '대소문자 변환', desc: '대문자, 소문자, 첫 글자 대문자로 변환' },
       { path: '/html-remove', title: 'HTML 태그 제거기', desc: 'HTML 소스에서 텍스트만 추출' },
-      { path: '/encode-decode', title: 'URL 인코더 / 디코더', desc: '한글·특수문자 URL 인코딩과 디코딩' },
+      { path: '/encode-decode', title: 'URL 인코딩', desc: '한글·특수문자 URL 인코딩과 디코딩' },
     ],
   },
   {
@@ -38,13 +38,23 @@ export const toolCategories: ToolCategory[] = [
     ],
   },
   {
+    name: '투자',
+    tools: [
+      { path: '/avg-price', title: '물타기 계산기', desc: '평단가 계산, 목표 평단 만들 수량 역산' },
+      { path: '/stock-profit', title: '수익률 계산기', desc: '수수료·세금 뺀 실제 손익과 손익분기 매도가' },
+      { path: '/split-buy', title: '분할매수 계산기', desc: '회차별 매수가·수량·평단가 계획표' },
+      { path: '/stop-loss', title: '손절·익절 계산기', desc: '손절·익절가, 손익비, 적정 매수 수량' },
+      { path: '/compound', title: '복리 계산기', desc: '매월 적립 복리 투자의 연도별 자산' },
+      { path: '/invest-lucky', title: '오늘의 투자운세', desc: '오늘의 재물·투자운 무료 확인' },
+    ],
+  },
+  {
     name: '기타',
     tools: [
       { path: '/make-qr', title: 'QR코드 만들기', desc: 'URL이나 텍스트로 QR코드 생성' },
-      { path: '/make-meta', title: '메타태그(SEO) 만들기', desc: 'title, description, OG 태그 생성' },
+      { path: '/make-meta', title: '메타태그 만들기', desc: 'title, description, OG 태그 생성' },
       { path: '/my-ip', title: '내 아이피 확인', desc: '내 공인 IP와 브라우저 정보 확인' },
       { path: '/lotto', title: '로또 당첨번호', desc: '회차별 로또 당첨번호와 1등 당첨금' },
-      { path: '/invest-lucky', title: '오늘의 투자운세', desc: '띠별 오늘의 투자운세' },
     ],
   },
 ];

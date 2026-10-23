@@ -136,6 +136,41 @@ const routes = [
     description: '목표일까지 남은 날짜, 100일·1000일 기념일, N일 후 날짜를 계산하는 무료 D-day 계산기입니다.',
     keywords: ['D-day 계산기', '디데이 계산기', '날짜 계산기', '100일 계산기'],
   },
+  {
+    path: '/avg-price',
+    source: 'src/pages/AvgPrice.tsx',
+    title: '물타기 계산기 · 평단가 계산기 | EVERYDAY 웹툴',
+    description: '주식·코인 물타기 평단가를 계산하고 목표 평단가를 만들 매수 수량을 역산하는 무료 물타기 계산기입니다.',
+    keywords: ['물타기 계산기', '평단가 계산기', '주식 물타기', '코인 물타기 계산기'],
+  },
+  {
+    path: '/stock-profit',
+    source: 'src/pages/StockProfit.tsx',
+    title: '주식 코인 수익률 계산기 | EVERYDAY 웹툴',
+    description: '수수료와 세금을 뺀 실제 손익, 수익률, 손익분기 매도가를 계산하는 주식·코인 수익률 계산기입니다.',
+    keywords: ['주식 수익률 계산기', '코인 수익률 계산기', '손익분기 매도가', '주식 수수료 계산'],
+  },
+  {
+    path: '/split-buy',
+    source: 'src/pages/SplitBuy.tsx',
+    title: '분할매수 계산기 | EVERYDAY 웹툴',
+    description: '예산과 하락 간격, 비중으로 회차별 매수가·수량·평단가를 계획하는 분할매수 계산기입니다.',
+    keywords: ['분할매수 계산기', '분할 매수', '주식 분할매수', '코인 분할매수'],
+  },
+  {
+    path: '/stop-loss',
+    source: 'src/pages/StopLoss.tsx',
+    title: '손절가 익절가 계산기 | EVERYDAY 웹툴',
+    description: '손절가, 익절가, 손익비와 손실 한도 기준 적정 매수 수량을 계산합니다.',
+    keywords: ['손절가 계산기', '익절가 계산', '손익비 계산', '손절 라인'],
+  },
+  {
+    path: '/compound',
+    source: 'src/pages/Compound.tsx',
+    title: '복리 계산기 · 적립식 투자 계산기 | EVERYDAY 웹툴',
+    description: '매월 적립 복리 투자의 연도별 원금·수익·평가금액을 계산하는 적립식 복리 계산기입니다.',
+    keywords: ['복리 계산기', '적립식 계산기', '적립식 복리', '투자 수익 계산기'],
+  },
 ];
 
 module.exports = {

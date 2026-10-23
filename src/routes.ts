@@ -21,6 +21,11 @@ export const pageRoutes: Record<string, LazyPage> = {
   '/pdf-split': lazyPage(() => import('pages/PdfSplit')),
   '/age-calc': lazyPage(() => import('pages/AgeCalc')),
   '/d-day': lazyPage(() => import('pages/Dday')),
+  '/avg-price': lazyPage(() => import('pages/AvgPrice')),
+  '/stock-profit': lazyPage(() => import('pages/StockProfit')),
+  '/split-buy': lazyPage(() => import('pages/SplitBuy')),
+  '/stop-loss': lazyPage(() => import('pages/StopLoss')),
+  '/compound': lazyPage(() => import('pages/Compound')),
 };
 
 // 현재 경로의 페이지 코드를 미리 불러온다 (hydrate 전에 호출).

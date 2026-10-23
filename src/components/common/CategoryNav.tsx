@@ -43,7 +43,7 @@ const CategoryNav = () => {
       </button>
 
       <div className={`${open ? 'block' : 'hidden'} absolute left-0 right-0 top-full z-50 pt-2`}>
-        <div className="grid grid-cols-5 gap-2 rounded-xl border border-gray-100 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-slate-800">
+        <div className="grid grid-cols-6 gap-2 rounded-xl border border-gray-100 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-slate-800">
           {toolCategories.map((category) => (
             <div key={category.name}>
               <p className="px-2 pb-1 text-xs font-semibold text-sky-600 dark:text-sky-300">{category.name}</p>

@@ -85,7 +85,12 @@
       "/pdf-merge",
       "/pdf-split",
       "/age-calc",
-      "/d-day"
+      "/d-day",
+      "/avg-price",
+      "/stock-profit",
+      "/split-buy",
+      "/stop-loss",
+      "/compound"
     ],
     "concurrency": 2
   },
