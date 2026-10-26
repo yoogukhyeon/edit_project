@@ -1,4 +1,4 @@
-import { TLotto } from 'pages/Lotto';
+import { TLotto } from 'utill/lottoData';
 import { create } from 'zustand';
 
 type FirstLotto = {

@@ -1,6 +1,7 @@
 import { IconType } from 'react-icons';
 import {
   TbCake,
+  TbDice5,
   TbCalendarEvent,
   TbChartArrowsVertical,
   TbClover,
@@ -12,10 +13,12 @@ import {
   TbFileTypePng,
   TbLetterCase,
   TbLink,
+  TbPhotoCheck,
   TbPhotoDown,
   TbPigMoney,
   TbQrcode,
   TbResize,
+  TbRulerMeasure,
   TbShieldCheck,
   TbSparkles,
   TbStairsDown,
@@ -80,6 +83,7 @@ export const toolCategories: ToolCategory[] = [
       { path: '/img-compress', title: '이미지 용량 줄이기', desc: '사진 용량·크기를 줄여 여러 장 한 번에 압축', icon: TbResize },
       { path: '/img-png', title: '이미지 PNG 변환', desc: 'JPG, GIF 등을 PNG로 변환', icon: TbFileTypePng },
       { path: '/img-jpg', title: '이미지 JPG 변환', desc: 'PNG, GIF 등을 JPG로 변환', icon: TbFileTypeJpg },
+      { path: '/heic-jpg', title: 'HEIC JPG 변환', desc: '아이폰 HEIC 사진을 JPG·PNG로 한 번에 변환', icon: TbPhotoCheck },
     ],
   },
   {
@@ -98,6 +102,7 @@ export const toolCategories: ToolCategory[] = [
     tools: [
       { path: '/age-calc', title: '만 나이 계산기', desc: '만 나이, 연 나이, 다음 생일까지 남은 날', icon: TbCake },
       { path: '/d-day', title: 'D-day 계산기', desc: 'D-day, 100일 기념일, N일 후 날짜', icon: TbCalendarEvent },
+      { path: '/pyeong', title: '평수 계산기', desc: '㎡ ↔ 평 변환, 아파트 평수, 평당 가격', icon: TbRulerMeasure },
     ],
   },
   {
@@ -120,6 +125,7 @@ export const toolCategories: ToolCategory[] = [
       { path: '/make-meta', title: '메타태그 만들기', desc: 'title, description, OG 태그 생성', icon: TbTags },
       { path: '/my-ip', title: '내 아이피 확인', desc: '내 공인 IP와 브라우저 정보 확인', icon: TbWorld },
       { path: '/lotto', title: '로또 당첨번호', desc: '회차별 로또 당첨번호와 1등 당첨금', icon: TbClover },
+      { path: '/lotto-gen', title: '로또 번호 생성기', desc: '랜덤·통계 기반 로또 번호, 고정수·제외수', icon: TbDice5 },
     ],
   },
 ];

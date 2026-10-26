@@ -3,25 +3,12 @@ import Loading from '@components/common/common/Loading';
 import SEOContent from '@components/common/SEOContent';
 import FirstLotto from '@components/lotto/FirstLotto';
 import List from '@components/lotto/List';
-import axios from 'axios';
-import cheerio from 'cheerio';
 import React, { useEffect, useState } from 'react';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { useFirstLottoStore } from 'store/FirstLotto';
+import { fetchRecentLotto, TLotto } from 'utill/lottoData';
 
-export type TLotto = {
-  bnusNo: string;
-  drwNo1: string;
-  drwNo2: string;
-  drwNo3: string;
-  drwNo4: string;
-  drwNo5: string;
-  drwNo6: string;
-  drwNoDate: string;
-  firstAccumamnt: string;
-  firstPrzwnerCo: string;
-  no: string;
-};
+export type { TLotto } from 'utill/lottoData';
 
 const Lotto = () => {
   const [lottoList, setLottoList] = useState<TLotto[]>([]);
@@ -29,54 +16,15 @@ const Lotto = () => {
   const { setLotto } = useFirstLottoStore();
 
   useEffect(() => {
-    const url =
-      window.location.hostname === 'localhost'
-        ? 'http://localhost:3000/lottowinnumber/fo/lottowinnumberlist'
-        : '/api/lottowinnumber/fo/lottowinnumberlist';
-
-    async function fetchdata() {
-      try {
-        return await axios.get(url);
-      } catch (error) {
-        // 실패하면 undefined를 반환하고 아래에서 안내 문구를 띄운다
-        return undefined;
-      }
-    }
-
-    const parsing = async () => {
-      const html: any = await fetchdata();
+    fetchRecentLotto().then((rows) => {
       // 데이터 출처 사이트가 응답하지 않으면 로딩 대신 안내 문구를 보여준다
-      if (!html) {
+      if (!rows) {
         setFailed(true);
         return;
       }
-      const $ = cheerio.load(html.data);
-      const ulList = [];
-
-      const bodyList = $('tbody tr');
-
-      // eslint-disable-next-line array-callback-return
-      bodyList.map((i, element) => {
-        ulList[i] = {
-          no: $(element).find('td:nth-child(1)').text().replace(/\s/g, ''),
-          drwNo1: $(element).find('td:nth-child(2) > a div:nth-child(1)').text().replace(/\s/g, ''),
-          drwNo2: $(element).find('td:nth-child(2) > a div:nth-child(2)').text().replace(/\s/g, ''),
-          drwNo3: $(element).find('td:nth-child(2) > a div:nth-child(3)').text().replace(/\s/g, ''),
-          drwNo4: $(element).find('td:nth-child(2) > a div:nth-child(4)').text().replace(/\s/g, ''),
-          drwNo5: $(element).find('td:nth-child(2) > a div:nth-child(5)').text().replace(/\s/g, ''),
-          drwNo6: $(element).find('td:nth-child(2) > a div:nth-child(6)').text().replace(/\s/g, ''),
-          bnusNo: $(element).find('td:nth-child(2) > a div:nth-child(8)').text().replace(/\s/g, ''),
-          firstPrzwnerCo: $(element).find('td:nth-child(3)').text().replace(/\s/g, ''),
-          firstAccumamnt: $(element).find('td:nth-child(4)').text().replace(/\s/g, ''),
-          drwNoDate: $(element).find('td:nth-child(5)').text().replace(/\s/g, ''),
-        };
-      });
-
-      setLotto(ulList[0]);
-      setLottoList(ulList);
-    };
-
-    parsing();
+      setLotto(rows[0]);
+      setLottoList(rows);
+    });
   }, []);
 
   return (

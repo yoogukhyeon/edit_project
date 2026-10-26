@@ -2,145 +2,163 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://webtool.everyday-365.com/</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/pdf-view</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/pdf-img</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/pdf-merge</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/pdf-split</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/img-compress</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/img-png</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/img-jpg</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webtool.everyday-365.com/heic-jpg</loc>
+    <lastmod>2026-10-26T04:10:33.298Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/counter-char</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/text-convert</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/html-remove</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/encode-decode</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/age-calc</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/d-day</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webtool.everyday-365.com/pyeong</loc>
+    <lastmod>2026-10-26T04:10:33.298Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/avg-price</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/stock-profit</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/split-buy</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/stop-loss</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/compound</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/invest-lucky</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/make-qr</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/make-meta</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/my-ip</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-23T02:50:07.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webtool.everyday-365.com/lotto</loc>
-    <lastmod>2026-10-23T02:36:00.099Z</lastmod>
+    <lastmod>2026-10-26T04:10:33.298Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webtool.everyday-365.com/lotto-gen</loc>
+    <lastmod>2026-10-26T04:10:33.298Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
