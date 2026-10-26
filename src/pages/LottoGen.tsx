@@ -1,4 +1,5 @@
 import ToolHeader from '@components/common/ToolHeader';
+import LottoBall from '@components/lotto/LottoBall';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import { useEffect, useState } from 'react';
@@ -6,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { fetchRecentLotto, winningNumbers } from 'utill/lottoData';
-import { ballClass, countFrequency, GenMode, generateGames, parseNumbers, validateOptions } from 'utill/lottoGen';
+import { countFrequency, GenMode, generateGames, parseNumbers, validateOptions } from 'utill/lottoGen';
 
 const HISTORY_KEY = 'tool:lotto-gen:history';
 type HistoryItem = { at: string; games: number[][] };
@@ -31,16 +32,6 @@ const MODES: { value: GenMode; label: string; desc: string }[] = [
   { value: 'hot', label: '많이 나온 번호 위주', desc: '최근 회차에 자주 나온 번호 가중' },
   { value: 'cold', label: '적게 나온 번호 위주', desc: '최근 회차에 덜 나온 번호 가중' },
 ];
-
-const Ball = ({ n, small }: { n: number; small?: boolean }) => (
-  <span
-    className={`inline-flex shrink-0 items-center justify-center rounded-full font-bold shadow-sm ${ballClass(n)} ${
-      small ? 'h-7 w-7 text-xs' : 'h-10 w-10 text-base max-sm:h-9 max-sm:w-9 max-sm:text-sm'
-    }`}
-  >
-    {n}
-  </span>
-);
 
 const LottoGen = () => {
   const [count, setCount] = useState<number>(5);
@@ -195,7 +186,7 @@ const LottoGen = () => {
               >
                 <span className="w-6 shrink-0 text-center text-sm font-bold text-gray-500">{String.fromCharCode(65 + i)}</span>
                 {g.map((n) => (
-                  <Ball key={n} n={n} />
+                  <LottoBall key={n} n={n} />
                 ))}
               </li>
             ))}
@@ -236,7 +227,7 @@ const LottoGen = () => {
                   {item.games.map((g) => (
                     <div key={g.join('-')} className="flex gap-1">
                       {g.map((n) => (
-                        <Ball key={n} n={n} small />
+                        <LottoBall key={n} n={n} size="sm" />
                       ))}
                     </div>
                   ))}

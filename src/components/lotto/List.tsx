@@ -1,57 +1,27 @@
-import { TLotto } from 'pages/Lotto';
 import React from 'react';
-import { FaPlus } from 'react-icons/fa';
+import { TLotto, winningNumbers } from 'utill/lottoData';
+import LottoBall from './LottoBall';
 
-interface IProps {
-  val: TLotto;
-}
-
-const List = ({ val }: IProps) => {
-  return (
-    <tr className="border-b dark:border-neutral-500 " style={{ borderBottom: '1px solid #eee' }}>
-      <td className="whitespace-nowrap  px-6 py-4 ">{val.no}</td>
-      <td className="whitespace-nowrap  px-6 py-4">
-        <ul className="flex justify-center items-center gap-2">
-          <li>
-            <span className="bg-yellow-400 rounded-full h-9 w-9 flex items-center justify-center text-white max-sm:text-xs max-sm:h-7 max-sm:w-7">
-              {val.drwNo1}
-            </span>
-          </li>
-          <li>
-            <span className="bg-lime-800 rounded-full h-9 w-9 flex items-center justify-center text-white max-sm:text-xs max-sm:h-7 max-sm:w-7">
-              {val.drwNo2}
-            </span>
-          </li>
-          <li>
-            <span className="bg-green-700 rounded-full h-9 w-9 flex items-center justify-center  text-white max-sm:text-xs max-sm:h-7 max-sm:w-7">
-              {val.drwNo3}
-            </span>
-          </li>
-          <li>
-            <span className="bg-emerald-600 rounded-full h-9 w-9 flex items-center justify-center  text-white max-sm:text-xs max-sm:h-7 max-sm:w-7">
-              {val.drwNo4}
-            </span>
-          </li>
-          <li>
-            <span className="bg-blue-700 rounded-full h-9 w-9 flex items-center justify-center  text-white max-sm:text-xs max-sm:h-7 max-sm:w-7">
-              {val.drwNo5}
-            </span>
-          </li>
-          <li>
-            <FaPlus className=" text-lg" />
-          </li>
-          <li>
-            <span className="bg-sky-500 rounded-full h-9 w-9 flex items-center justify-center  text-white max-sm:text-xs max-sm:h-7 max-sm:w-7">
-              {val.bnusNo}
-            </span>
-          </li>
-        </ul>
-      </td>
-      <td className="whitespace-nowrap  px-6 py-4">{val.firstPrzwnerCo}</td>
-      <td className="whitespace-nowrap  px-6 py-4">{val.firstAccumamnt}</td>
-      <td className="whitespace-nowrap  px-6 py-4">{val.drwNoDate}</td>
-    </tr>
-  );
-};
+// 회차별 당첨번호 카드 (모바일에서도 6개 번호·보너스·1등 정보가 한 화면에 보이도록)
+const List = ({ val }: { val: TLotto }) => (
+  <li className="rounded-xl border border-slate-200 bg-white p-3 dark:border-slate-600 dark:bg-slate-800">
+    <div className="mb-2 flex items-baseline justify-between">
+      <span className="text-base font-bold text-gray-900 dark:text-white">{val.no}회</span>
+      <span className="text-xs text-gray-500 dark:text-gray-400">{val.drwNoDate}</span>
+    </div>
+    <div className="flex flex-wrap items-center gap-1.5">
+      {winningNumbers(val).map((n) => (
+        <LottoBall key={n} n={n} />
+      ))}
+      <span className="mx-0.5 text-lg font-bold text-gray-400" aria-label="보너스">
+        +
+      </span>
+      <LottoBall n={val.bnusNo} />
+    </div>
+    <p className="mt-2 text-xs text-gray-600 dark:text-gray-300">
+      1등 {val.firstPrzwnerCo}명 · 당첨금 <span className="font-semibold">{val.firstAccumamnt}</span>
+    </p>
+  </li>
+);
 
 export default React.memo(List);

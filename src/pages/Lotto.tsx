@@ -33,36 +33,14 @@ const Lotto = () => {
       <ToolHeader title="로또 회차별 당첨번호">최근 회차의 당첨번호와 보너스 번호, 1등 당첨자 수와 당첨금을 한눈에 확인하세요.</ToolHeader>
       <FirstLotto />
       {lottoList?.length > 0 && (
-        <div className="flex flex-col ">
-          <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-              <div className="overflow-hidden">
-                <table className="min-w-full text-center text-sm font-light">
-                  <thead className="border-b bg-blue-300 font-medium text-white dark:border-neutral-500 ">
-                    <tr>
-                      <th scope="col" className=" px-6 py-4">
-                        회차
-                      </th>
-                      <th scope="col" className=" px-6 py-4">
-                        당첨번호
-                      </th>
-                      <th scope="col" className=" px-6 py-4" style={{ wordBreak: 'keep-all' }}>
-                        1등당첨수
-                      </th>
-                      <th scope="col" className=" px-6 py-4">
-                        일등 당첨금액
-                      </th>
-                      <th scope="col" className=" px-6 py-4">
-                        발표일
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>{lottoList?.map((val: any) => <List key={val.no} val={val} />)}</tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+        <section>
+          <h2 className="mb-2 text-base font-semibold text-gray-900 dark:text-white">회차별 당첨번호</h2>
+          <ul className="grid gap-2.5 md:grid-cols-2">
+            {lottoList.map((val) => (
+              <List key={val.no} val={val} />
+            ))}
+          </ul>
+        </section>
       )}
       {lottoList?.length < 1 && !failed && <Loading />}
       {failed && (

@@ -19,17 +19,21 @@ const COMMON = [
 
 const QUICK_PYEONG = [10, 20, 25, 30, 32, 34, 40, 50];
 
-const DEFAULTS = { sqm: '84', price: '1000000000', priceSqm: '84' };
+const DEFAULTS = { sqm: '84', pyeong: '25.41', price: '1000000000', priceSqm: '84' };
 
 const Pyeong = () => {
-  const { state, set, setState, reset, shareUrl } = useToolState('tool:pyeong', DEFAULTS);
+  const { state, set, setState, reset, shareUrl } = useToolState('tool:pyeong:v2', DEFAULTS);
   const sqm = toNumber(state.sqm);
-  const pyeong = sqm > 0 ? String(round(sqmToPyeong(sqm))) : '';
+  const pyeong = toNumber(state.pyeong);
 
-  // ㎡·평 두 칸 중 어디에 입력해도 상태는 ㎡로 저장해 서로 맞춘다
+  // 입력한 칸의 값은 그대로 두고(25. 처럼 입력 중인 소수점 유지) 반대쪽 칸만 계산해서 채운다
+  const onSqmChange = (value: string) => {
+    const n = toNumber(value);
+    setState((prev) => ({ ...prev, sqm: value, pyeong: n > 0 ? String(round(sqmToPyeong(n))) : '' }));
+  };
   const onPyeongChange = (value: string) => {
-    const p = toNumber(value);
-    setState((prev) => ({ ...prev, sqm: value.trim() === '' ? '' : String(round(pyeongToSqm(p), 2)) }));
+    const n = toNumber(value);
+    setState((prev) => ({ ...prev, pyeong: value, sqm: n > 0 ? String(round(pyeongToSqm(n))) : '' }));
   };
 
   const prices = unitPrices(toNumber(state.price), toNumber(state.priceSqm));
@@ -43,14 +47,14 @@ const Pyeong = () => {
 
       <section className="rounded-xl border border-gray-200 p-4 dark:border-gray-700">
         <div className="grid grid-cols-[1fr_auto_1fr] items-end gap-3">
-          <NumberField id="sqm" label="제곱미터 (㎡)" value={state.sqm} onChange={set('sqm')} suffix="㎡" />
+          <NumberField id="sqm" label="제곱미터 (㎡)" value={state.sqm} onChange={onSqmChange} suffix="㎡" />
           <span className="pb-2.5 text-xl text-gray-400" aria-hidden="true">
             ⇄
           </span>
-          <NumberField id="pyeong" label="평" value={pyeong} onChange={onPyeongChange} suffix="평" />
+          <NumberField id="pyeong" label="평" value={state.pyeong} onChange={onPyeongChange} suffix="평" />
         </div>
         <p className="mt-3 rounded-lg bg-sky-50 p-3 text-center text-base font-semibold text-sky-800 dark:bg-slate-700 dark:text-sky-300">
-          {sqm > 0 ? `${round(sqm, 2).toLocaleString()}㎡ = ${Number(pyeong).toLocaleString()}평` : '면적을 입력해주세요'}
+          {sqm > 0 && pyeong > 0 ? `${round(sqm, 2).toLocaleString()}㎡ = ${round(pyeong, 2).toLocaleString()}평` : '면적을 입력해주세요'}
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
           {QUICK_PYEONG.map((p) => (
@@ -81,7 +85,7 @@ const Pyeong = () => {
             {COMMON.map((row) => (
               <tr
                 key={row.sqm}
-                onClick={() => set('sqm')(String(row.sqm))}
+                onClick={() => onSqmChange(String(row.sqm))}
                 className="cursor-pointer border-b border-gray-100 text-gray-800 hover:bg-sky-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-slate-700"
               >
                 <td className="py-2.5 font-medium">{row.sqm}㎡</td>
