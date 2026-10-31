@@ -2,8 +2,10 @@ import ToolHeader from '@components/common/ToolHeader';
 import Comment from '@components/common/common/Comment';
 import SEOContent from '@components/common/SEOContent';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import SEOMetaTag from 'seo/SEOMetaTag';
 import { addDays, diffDays, formatDday, formatYMD, getAnniversary, parseYMD, toYMDString } from 'utill/dateCalc';
+import { DDAY_EVENTS } from 'utill/ddayEvents';
 
 const inputClass =
   'block w-full p-2.5 text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white';
@@ -36,6 +38,19 @@ const Dday = () => {
     <div className="w-full">
       <SEOMetaTag />
       <ToolHeader title="D-day 계산기 · 날짜 계산기">시험, 전역, 출산 예정일까지 남은 날이나 연애·결혼 기념일, N일 후 날짜를 계산합니다.</ToolHeader>
+
+      <nav aria-label="기념일 D-day" className="mb-5 flex flex-wrap items-center gap-2">
+        <span className="text-sm font-medium text-gray-700 dark:text-gray-200">기념일 D-day</span>
+        {DDAY_EVENTS.map((event) => (
+          <Link
+            key={event.slug}
+            to={`/d-day/${event.slug}`}
+            className="flex min-h-[36px] items-center rounded-full bg-rose-50 px-3 text-sm font-medium !text-rose-700 hover:bg-rose-100 dark:bg-slate-700 dark:!text-rose-300"
+          >
+            {event.name}
+          </Link>
+        ))}
+      </nav>
 
       <section className={cardClass}>
         <h2 className="mb-3 text-base font-semibold text-gray-900 dark:text-white">목표일까지 남은 날 (D-day)</h2>

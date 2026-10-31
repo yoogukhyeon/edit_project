@@ -13,10 +13,12 @@ import {
   TbFileTypePng,
   TbLetterCase,
   TbLink,
+  TbPercentage,
   TbPhotoCheck,
   TbPhotoDown,
   TbPigMoney,
   TbQrcode,
+  TbReceiptTax,
   TbResize,
   TbRulerMeasure,
   TbShieldCheck,
@@ -103,6 +105,8 @@ export const toolCategories: ToolCategory[] = [
       { path: '/age-calc', title: '만 나이 계산기', desc: '만 나이, 연 나이, 다음 생일까지 남은 날', icon: TbCake },
       { path: '/d-day', title: 'D-day 계산기', desc: 'D-day, 100일 기념일, N일 후 날짜', icon: TbCalendarEvent },
       { path: '/pyeong', title: '평수 계산기', desc: '㎡ ↔ 평 변환, 아파트 평수, 평당 가격', icon: TbRulerMeasure },
+      { path: '/percent', title: '퍼센트·할인율 계산기', desc: '비율, 증감률, 할인율, 할인가 계산', icon: TbPercentage },
+      { path: '/vat', title: '부가세 계산기', desc: '공급가액 ↔ 합계, 부가세 10% 역산', icon: TbReceiptTax },
     ],
   },
   {
@@ -133,10 +137,15 @@ export const toolCategories: ToolCategory[] = [
 // 경로로 툴과 카테고리를 찾는다 (끝 슬래시 무시)
 export const findTool = (pathname: string) => {
   const path = pathname.replace(/\/+$/, '') || '/';
+  // 정확히 일치하는 툴이 없으면 상위 경로의 툴을 쓴다 (예: /d-day/christmas → D-day 계산기)
+  const candidates = [path, path.replace(/\/[^/]+$/, '')];
   // eslint-disable-next-line no-restricted-syntax
-  for (const category of toolCategories) {
-    const tool = category.tools.find((t) => t.path === path);
-    if (tool) return { tool, category };
+  for (const candidate of candidates) {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const category of toolCategories) {
+      const tool = category.tools.find((t) => t.path === candidate);
+      if (tool) return { tool, category };
+    }
   }
   return null;
 };

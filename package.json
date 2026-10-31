@@ -95,7 +95,14 @@
       "/compound",
       "/heic-jpg",
       "/pyeong",
-      "/lotto-gen"
+      "/lotto-gen",
+      "/percent",
+      "/vat",
+      "/d-day/pepero-day",
+      "/d-day/christmas",
+      "/d-day/new-year",
+      "/d-day/valentines-day",
+      "/d-day/white-day"
     ],
     "concurrency": 2
   },
